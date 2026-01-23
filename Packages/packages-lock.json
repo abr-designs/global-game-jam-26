@@ -17,7 +17,7 @@
         "com.unity.cinemachine": "3.1.2",
         "com.unity.inputsystem": "1.11.2"
       },
-      "hash": "cc760c167b45d885930df3334a6e14b8e4171d23"
+      "hash": "d7f7322f18fb02d7342c4180b7477e424960f424"
     },
     "com.cysharp.unitask": {
       "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
