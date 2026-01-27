@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Prototype.Alex.Scripts
@@ -8,6 +9,9 @@ namespace Prototype.Alex.Scripts
         private const float CELL_SIZE = 1.5f;
         private static List<CrowdController> s_crowdControllers;
         private static SpatialHashGrid s_grid;
+
+        [SerializeField]
+        private bool debugDraw;
 
         public static void RegisterController(CrowdController crowdController)
         {
@@ -41,5 +45,15 @@ namespace Prototype.Alex.Scripts
         {
             return s_grid.GetNeighbors(position);
         }
+
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            if (!debugDraw)
+                return;
+            
+            s_grid?.GizmosDrawGrid();
+        }
+#endif
     }
 }

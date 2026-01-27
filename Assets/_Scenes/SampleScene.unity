@@ -127638,6 +127638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f8375d64134b34832338db1d9d7bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Prototype.Alex.Scripts.CrowdControllerManager
+  debugDraw: 1
 --- !u!4 &2137884592
 Transform:
   m_ObjectHideFlags: 0

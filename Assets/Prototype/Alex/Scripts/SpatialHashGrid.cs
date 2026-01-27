@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using Utilities.Debugging;
 
 public class SpatialHashGrid
 {
@@ -57,5 +59,30 @@ public class SpatialHashGrid
         }
 
         return neighbors;
+    }
+
+
+    [Conditional("DEBUG")]
+    public void GizmosDrawGrid()
+    {
+        var size = new Vector3(m_cellSize, 0.01f, m_cellSize);
+        foreach (var keyValuePair in m_cells)
+        {
+            var count = keyValuePair.Value.Count;
+            var position = GetCellWorldPosition(keyValuePair.Key);
+            Gizmos.color = Color.Lerp(Color.green, Color.red, count / 5f);
+            Gizmos.DrawCube(position, size);
+            
+            Draw.Label(position, $"{count}");
+        }
+        
+        Vector3 GetCellWorldPosition(Vector2Int cell)
+        {
+            return new Vector3(
+                (cell.x + 0.5f) * m_cellSize,
+                0f,
+                (cell.y + 0.5f) * m_cellSize
+            );
+        }
     }
 }
