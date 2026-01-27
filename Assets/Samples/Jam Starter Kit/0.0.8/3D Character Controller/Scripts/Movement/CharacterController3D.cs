@@ -371,6 +371,9 @@ namespace Samples.CharacterController3D.Scripts
         
         private void OnJumpPressed(bool pressed)
         {
+            if (characterMovementData.NumberOfJumpsAllowed < 1)
+                return;
+            
             m_isJumpPressed = pressed;
         }
 #endif

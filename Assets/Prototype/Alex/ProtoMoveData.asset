@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb53417138442ce8d5b3efd632a3852, type: 3}
   m_Name: ProtoMoveData
   m_EditorClassIdentifier: 
-  maxSpeed: 7
-  GroundAcceleration: 100
-  AirAcceleration: 40
+  maxSpeed: 12
+  GroundAcceleration: 20
+  AirAcceleration: 5
   accelerationFactorFromDot:
     serializedVersion: 2
     m_Curve:
@@ -86,14 +86,14 @@ MonoBehaviour:
   gravityScaleDrop: 10
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 64
   JumpHeightCompensationFactor: 1.054
   MaxVerticalVelocity: 50
   JumpHeight: 1
-  TimeTillJumpApex: 0.3
+  TimeTillJumpApex: 0.4
   GravityOnReleaseMultiplier: 2
   MaxFallSpeed: 26
-  NumberOfJumpsAllowed: 1
+  NumberOfJumpsAllowed: 0
   TimeForUpwardsCancel: 0.027
   ApexThreshold: 0.97
   ApexHangTime: 0.04
