@@ -46,15 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Prototype.Alex.Scripts.ChargeMiniGame
   chargeBarUI: {fileID: 3531471613825463640}
-  chargeSpeed: 5
+  chargeUICanvas: {fileID: 3050050818606055680}
+  chargeSpeed: 1
   chargeCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -62,8 +63,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 1
+      outSlope: 1
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -71,9 +72,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  failed: 0
-  bonus: 0
-  toggle: 32
+  timeScaleDuring: 1
+  failPunishImpact: 0.1
+  inSafeArea: 0
+  inBonusArea: 0
+  m_chargingState: 0
 --- !u!1001 &6958429650374380234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,14 +85,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3026499563072638603}
     m_Modifications:
-    - target: {fileID: 5850245979755199853, guid: acabc042ebd93fa4f94e8ca38fac34b2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5878042345419407250, guid: acabc042ebd93fa4f94e8ca38fac34b2, type: 3}
-      propertyPath: chargeBarSize
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7831353997094479761, guid: acabc042ebd93fa4f94e8ca38fac34b2, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -174,10 +169,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8303652356030596912, guid: acabc042ebd93fa4f94e8ca38fac34b2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -126.466805
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -186,6 +177,11 @@ PrefabInstance:
 --- !u!224 &1068317050940603503 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7944950440193619621, guid: acabc042ebd93fa4f94e8ca38fac34b2, type: 3}
+  m_PrefabInstance: {fileID: 6958429650374380234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &3050050818606055680 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5387074714042305482, guid: acabc042ebd93fa4f94e8ca38fac34b2, type: 3}
   m_PrefabInstance: {fileID: 6958429650374380234}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &3531471613825463640 stripped

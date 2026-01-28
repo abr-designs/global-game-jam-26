@@ -1,11 +1,12 @@
 using System;
 using System.Diagnostics;
-using NaughtyAttributes;
 using UnityEngine;
 
 [ExecuteAlways]
 public class ChargeBarUI : MonoBehaviour
 {
+    public float SafeAreaSize => safeAreaSize;
+    
     [SerializeField]
     private RectTransform mainBarBackground;
     [SerializeField]
@@ -72,6 +73,13 @@ public class ChargeBarUI : MonoBehaviour
         return false;
     }
 
+    public void SetSafeAreaSize(float value)
+    {
+        value = Math.Clamp(value, 0f, 1f);
+        SetSize(safeAreaBar, 0f, -Height * (1f - value));
+        safeAreaSize = value;
+    }
+
     //================================================================================================================//
 
     private static bool RectTransformOverlaps(RectTransform a, Vector3 worldPoint)
@@ -99,7 +107,7 @@ public class ChargeBarUI : MonoBehaviour
 
     private void ApplyTransforms()
     {
-        SetSize(safeAreaBar, 0f, -Height * (1f - safeAreaSize));
+        SetSafeAreaSize(safeAreaSize);
         
         SetSize(bonusAreaBar, bonusBarSize);
         bonusAreaBar.anchoredPosition = new Vector2(0, -Height * bonusBarPosition);
@@ -125,7 +133,7 @@ public class ChargeBarUI : MonoBehaviour
         if (Application.isPlaying)
             return;
         
-        SetSize(safeAreaBar, 0f, -Height * (1f - safeAreaSize));
+        SetSafeAreaSize(safeAreaSize);
         
         SetSize(bonusAreaBar, bonusBarSize);
         bonusAreaBar.anchoredPosition = new Vector2(0, -Height * bonusBarPosition);
