@@ -4,6 +4,7 @@
 
 using System;
 using System.Diagnostics;
+using Prototype.Alex.Scripts;
 using UnityEngine;
 using Utilities;
 
@@ -16,6 +17,9 @@ namespace Samples.CharacterController3D.Scripts
         
         [SerializeField]
         private CharacterMovement3DDataScriptableObject characterMovementData;
+
+        [SerializeField]
+        private AnimationCurve animationCurve;
 
         //To Add
         //------------------------------------------------//
@@ -121,13 +125,15 @@ namespace Samples.CharacterController3D.Scripts
 
         private void ApplyMoveForce(Vector3 inputGoal, float acceleration)
         {
+            const float MAX_CROWD_DENSITY = 5f;
             var unitVelocity = m_goalVelocity.normalized;
             var velocityDot = Vector3.Dot(inputGoal, unitVelocity);
             var accel = acceleration * characterMovementData.accelerationFactorFromDot.Evaluate(velocityDot);
             var goalVelocity = inputGoal * (characterMovementData.maxSpeed * speedFactor);
+            var speedMult = animationCurve.Evaluate(CrowdControllerManager.GetDensityAtPosition(m_rigidbody.position)/MAX_CROWD_DENSITY);
 
-            m_goalVelocity = Vector3.MoveTowards(m_goalVelocity, 
-                goalVelocity + groundVelocity,
+            m_goalVelocity = Vector3.MoveTowards(m_goalVelocity,
+                (goalVelocity + groundVelocity) * speedMult,
                 accel * Time.fixedDeltaTime);
 
             var neededAcceleration = (m_goalVelocity - m_rigidbody.linearVelocity) / Time.fixedDeltaTime;

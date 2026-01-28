@@ -23683,6 +23683,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: Animated Player Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: crowdDensitySpeedMult.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: animationCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: 'crowdDensitySpeedMult.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: 'crowdDensitySpeedMult.Array.data[1]'
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: 'crowdDensitySpeedMult.Array.data[2]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: 'crowdDensitySpeedMult.Array.data[3]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: animationCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: animationCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: animationCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: animationCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: animationCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: animationCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: animationCurve.m_Curve.Array.data[1].inWeight
+      value: 0.2916667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: animationCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: animationCurve.m_Curve.Array.data[0].outWeight
+      value: 0.27083334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: animationCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111474340438848201, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
+      propertyPath: animationCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7627428415912310199, guid: af0d790eeb420fe438cdb9a028e1dd3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

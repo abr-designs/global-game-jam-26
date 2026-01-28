@@ -61,6 +61,13 @@ public class SpatialHashGrid
         return neighbors;
     }
 
+    public int GetDensityAtPosition(Vector3 worldPosition)
+    {
+        var cell = GetCell(worldPosition);
+
+        return !m_cells.TryGetValue(cell, out var list) ? 0 : list.Count;
+    }
+
 
     [Conditional("DEBUG")]
     public void GizmosDrawGrid()

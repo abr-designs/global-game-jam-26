@@ -46,6 +46,8 @@ namespace Prototype.Alex.Scripts
             return s_grid.GetNeighbors(position);
         }
 
+        public static int GetDensityAtPosition(Vector3 position) => s_grid.GetDensityAtPosition(position);
+
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
