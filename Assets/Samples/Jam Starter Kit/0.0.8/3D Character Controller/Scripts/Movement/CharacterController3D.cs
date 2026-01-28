@@ -130,7 +130,7 @@ namespace Samples.CharacterController3D.Scripts
             var velocityDot = Vector3.Dot(inputGoal, unitVelocity);
             var accel = acceleration * characterMovementData.accelerationFactorFromDot.Evaluate(velocityDot);
             var goalVelocity = inputGoal * (characterMovementData.maxSpeed * speedFactor);
-            var speedMult = animationCurve.Evaluate(CrowdControllerManager.GetDensityAtPosition(m_rigidbody.position)/MAX_CROWD_DENSITY);
+            var speedMult = 1f;// animationCurve.Evaluate(CrowdControllerManager.GetDensityAtPosition(m_rigidbody.position)/MAX_CROWD_DENSITY);
 
             m_goalVelocity = Vector3.MoveTowards(m_goalVelocity,
                 (goalVelocity + groundVelocity) * speedMult,
