@@ -128364,34 +128364,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: --- Charge MiniGame ---
       objectReference: {fileID: 0}
-    - target: {fileID: 7296038440525880193, guid: 6ef4c60d58d14244ca55d303b7cec392, type: 3}
-      propertyPath: timeScaleDuring
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 7296038440525880193, guid: 6ef4c60d58d14244ca55d303b7cec392, type: 3}
-      propertyPath: chargeCurve.m_Curve.Array.data[0].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7296038440525880193, guid: 6ef4c60d58d14244ca55d303b7cec392, type: 3}
-      propertyPath: chargeCurve.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7296038440525880193, guid: 6ef4c60d58d14244ca55d303b7cec392, type: 3}
-      propertyPath: chargeCurve.m_Curve.Array.data[0].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7296038440525880193, guid: 6ef4c60d58d14244ca55d303b7cec392, type: 3}
-      propertyPath: chargeCurve.m_Curve.Array.data[1].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7296038440525880193, guid: 6ef4c60d58d14244ca55d303b7cec392, type: 3}
-      propertyPath: chargeCurve.m_Curve.Array.data[0].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7296038440525880193, guid: 6ef4c60d58d14244ca55d303b7cec392, type: 3}
-      propertyPath: chargeCurve.m_Curve.Array.data[1].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
