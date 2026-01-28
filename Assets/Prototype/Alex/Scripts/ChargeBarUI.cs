@@ -50,17 +50,23 @@ public class ChargeBarUI : MonoBehaviour
         SetSize(chargeBar, 0f, Height * value);
     }
 
-    public bool GetChargeState(float value, out bool hasBonus)
+    public bool GetChargeSuccessState(float value, out bool hasBonus)
     {
         hasBonus = false;
 
         if (value < 0f || value > 1f)
             return false;
 
-        if (IsWithinBounds(safeAreaBar, value))
+        //Gets the top middle of the charge bar
+        var chargeRect = GetScreenRect(chargeBar);
+        var topPoint = new Vector3(chargeRect.center.x, chargeRect.yMax, 0f);
+
+        //Check first for the Safe area, since currently, there is never a situation where the bonus bar is in there
+        if (RectTransformOverlaps(safeAreaBar, topPoint))
             return true;
 
-        if (IsWithinBounds(bonusAreaBar, value))
+        //If we hit the bonus, technically we've missed the safe area so we will still return false
+        if (RectTransformOverlaps(bonusAreaBar, topPoint))
             hasBonus = true;
 
         return false;
@@ -68,14 +74,24 @@ public class ChargeBarUI : MonoBehaviour
 
     //================================================================================================================//
 
-    private bool IsWithinBounds(RectTransform rect, float value)
+    private static bool RectTransformOverlaps(RectTransform a, Vector3 worldPoint)
     {
-        var height = value * Height;
+        var rectA = GetScreenRect(a);
+        
+        var overlaps = rectA.Contains(worldPoint);
 
-        var localY = rect.localPosition.y;
-        var halfRectHeight = rect.rect.height / 2f;
+        return overlaps;
+    }
 
-        return height >= localY - halfRectHeight && height <= localY + halfRectHeight;
+    private static readonly Vector3[] Corners = new Vector3[4];
+    private static Rect GetScreenRect(RectTransform rt)
+    {
+        rt.GetWorldCorners(Corners);
+
+        var min = RectTransformUtility.WorldToScreenPoint(null, Corners[0]);
+        var max = RectTransformUtility.WorldToScreenPoint(null, Corners[2]);
+
+        return new Rect(min, max - min);
     }
 
     //================================================================================================================//

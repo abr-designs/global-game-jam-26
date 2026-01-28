@@ -54,7 +54,7 @@ namespace Prototype.Alex.Scripts
                     if (keyDown || m_value >= 1f)
                     {
                         chargeBarUI.SetChargeValue(m_value);
-                        failed = chargeBarUI.GetChargeState(m_value, out bonus);
+                        failed = chargeBarUI.GetChargeSuccessState(m_value, out bonus);
                         state = DEBUG_STATE.DONE;
                     }
                     
