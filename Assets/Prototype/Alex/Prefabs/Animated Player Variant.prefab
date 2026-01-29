@@ -169,8 +169,66 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5832797947512569605, guid: 0db9ce099acb7144e8d8e80121b3c442, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3819472166272982771}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1824256954671655241, guid: 0db9ce099acb7144e8d8e80121b3c442, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 8795968037078087542}
   m_SourcePrefab: {fileID: 100100000, guid: 0db9ce099acb7144e8d8e80121b3c442, type: 3}
+--- !u!1 &2339975591560487931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1824256954671655241, guid: 0db9ce099acb7144e8d8e80121b3c442, type: 3}
+  m_PrefabInstance: {fileID: 4118633599399447218}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8795968037078087542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339975591560487931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307a968c5cfa4c91b974ae485828262a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Prototype.Alex.Scripts.CharacterCameraReactor
+  maxSpeed: 30
+  transitionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  moveData: {fileID: 11400000, guid: 24dc7c4609afd1841a9050f5e2c522bc, type: 2}
+  cinemachineCamera: {fileID: 0}
+  cinemachineOrbitalFollow: {fileID: 0}
+  cinemachineRotationComposer: {fileID: 0}
+  lensFovMin: 60
+  lensFovMax: 80
+  orbitalTargetOffsetMin: {x: 0, y: 0, z: 0}
+  orbitalTargetOffsetMax: {x: 0, y: 1, z: 0}
+  orbitalRadiusMin: 2.2
+  orbitalRadiusMax: 2
+  composerTargetOffsetMin: {x: 0, y: 0.21, z: 0}
+  composerTargetOffsetMax: {x: 0, y: 0.5, z: 0}
+  m_lastT: 0
 --- !u!4 &7627428415912310199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5832797947512569605, guid: 0db9ce099acb7144e8d8e80121b3c442, type: 3}

@@ -1,12 +1,13 @@
 using Prototype.Alex.Scripts;
 using System.Collections;
 using System.Collections.Generic;
+using Samples.CharacterController3D.Scripts;
 using UnityEngine;
 
 public class UiChargePointManager : MonoBehaviour
 {
+    private Transform player;
     [Header("Settings")]
-    [SerializeField] private Transform player;
     [SerializeField] private float tickInterval = 1f;
 
     [Header("Indicator Pool")]
@@ -21,8 +22,9 @@ public class UiChargePointManager : MonoBehaviour
     private readonly List<ChargeWaypoint> chargePoints = new();
     private readonly List<UiChargePointIndicatorOverlayCanvas> indicators = new();
 
-    private void Awake()
+    private void Start()
     {
+        player = FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude).transform;
         chargePoints.AddRange(FindObjectsByType<ChargeWaypoint>(FindObjectsSortMode.None));
 
         for (int i = 0; i < indicatorCount; i++)
@@ -31,10 +33,7 @@ public class UiChargePointManager : MonoBehaviour
             indicator.Unassign();
             indicators.Add(indicator);
         }
-    }
-
-    private void Start()
-    {
+        
         StartCoroutine(Tick());
     }
 

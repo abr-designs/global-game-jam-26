@@ -14,7 +14,17 @@ namespace Samples.CharacterController3D.Scripts
     public class CharacterController3D : MonoBehaviour
     {
         public bool IsGrounded => m_3dBalancer.Grounded;
-        
+        public float Speed
+        {
+            get
+            {
+                var linearVelocity = m_rigidbody.linearVelocity;
+                linearVelocity.y = 0;
+
+                return linearVelocity.magnitude;
+            }
+        }
+
         [SerializeField]
         private CharacterMovement3DDataScriptableObject characterMovementData;
 
