@@ -11,9 +11,14 @@ namespace Prototype.Alex.Scripts
         private static ChargeMiniGame s_chargeMiniGame;
         private static Transform s_playerTransform;
 
+        [SerializeField]
+        private CHARGE_POINT_TYPE m_chargePointType;
+        public CHARGE_POINT_TYPE ChargePointType => m_chargePointType;
+
         [SerializeField, Min(0f)]
         private float useRadius;
         private bool m_activated;
+        public bool Activated => m_activated;
 
         [SerializeField, Min(0f)]
         private float postGameWaitTime = 1f;
