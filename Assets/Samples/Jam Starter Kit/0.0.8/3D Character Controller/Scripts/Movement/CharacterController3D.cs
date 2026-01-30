@@ -4,6 +4,7 @@
 
 using System;
 using System.Diagnostics;
+using NaughtyAttributes;
 using Prototype.Alex.Scripts;
 using UnityEngine;
 using Utilities;
@@ -31,6 +32,14 @@ namespace Samples.CharacterController3D.Scripts
         [SerializeField]
         private AnimationCurve animationCurve;
 
+        [SerializeField] 
+        private float boostTime;
+        private float m_currentBoostTime;
+        
+        [SerializeField, Min(1f)]
+        private float maxSpeedBoostMult = 1.5f;
+
+
         //To Add
         //------------------------------------------------//
 
@@ -43,6 +52,8 @@ namespace Samples.CharacterController3D.Scripts
 
         private Vector2 m_movementInput;
         private Vector3 m_adjustMovementDirection;
+        private Vector3 moveDirectionVelocity;
+        
         private Transform m_cameraTransform;
 
         private Vector3 m_goalVelocity;
@@ -140,10 +151,11 @@ namespace Samples.CharacterController3D.Scripts
             var velocityDot = Vector3.Dot(inputGoal, unitVelocity);
             var accel = acceleration * characterMovementData.accelerationFactorFromDot.Evaluate(velocityDot);
             var goalVelocity = inputGoal * (characterMovementData.maxSpeed * speedFactor);
-            var speedMult = 1f;// animationCurve.Evaluate(CrowdControllerManager.GetDensityAtPosition(m_rigidbody.position)/MAX_CROWD_DENSITY);
 
+            var boostAmount = transform.forward.normalized * (characterMovementData.maxSpeed * maxSpeedBoostMult * speedFactor * (m_currentBoostTime / boostTime));
+            
             m_goalVelocity = Vector3.MoveTowards(m_goalVelocity,
-                (goalVelocity + groundVelocity) * speedMult,
+                (goalVelocity + groundVelocity + boostAmount),
                 accel * Time.fixedDeltaTime);
 
             var neededAcceleration = (m_goalVelocity - m_rigidbody.linearVelocity) / Time.fixedDeltaTime;
@@ -254,6 +266,14 @@ namespace Samples.CharacterController3D.Scripts
             m_jumpBufferTimer = 0f;
             VerticalVelocity = characterMovementData.InitialJumpVelocity;
             m_numberOfJumpsUsed += numberOfJumpsUsed;
+
+            if (IsOnRamp())
+                AddBoost();
+        }
+
+        private void AddBoost()
+        {
+            m_currentBoostTime = boostTime;
         }
 
         private void Jump()
@@ -354,6 +374,11 @@ namespace Samples.CharacterController3D.Scripts
             m_rigidbody.linearVelocity = new Vector3(m_rigidbody.linearVelocity.x, VerticalVelocity, m_rigidbody.linearVelocity.z);
         }
 
+        private bool IsOnRamp()
+        {
+            return m_3dBalancer.GroundCollider.gameObject.CompareTag("Ramp");
+        }
+
         #endregion
         
         //Timers
@@ -363,6 +388,9 @@ namespace Samples.CharacterController3D.Scripts
 
         private void CountTimers()
         {
+            if (m_currentBoostTime > 0f)
+                m_currentBoostTime -= Time.deltaTime;
+            
             m_jumpBufferTimer -= Time.deltaTime;
             if (!m_3dBalancer.Grounded)
             {

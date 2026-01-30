@@ -11,6 +11,8 @@ namespace Samples.CharacterController3D.Scripts
         private CharacterMovement3DDataScriptableObject characterMovementData;
         
         public bool Grounded => grounded;
+        public Collider GroundCollider { get; private set; }
+
         [SerializeField]
         private bool grounded;
 
@@ -88,6 +90,8 @@ namespace Samples.CharacterController3D.Scripts
             m_groundDifference = rayHit.distance - characterMovementData.rideHeight;
             grounded = m_groundDifference <= 0f;
 
+            GroundCollider = grounded == false ? null : rayHit.collider;
+            
             if (!grounded)
                 return;
             //------------------------------------------------//
