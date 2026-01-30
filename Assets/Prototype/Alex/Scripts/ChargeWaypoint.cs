@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections;
+using Audio;
 using Samples.CharacterController3D.Scripts;
 using UnityEngine;
+using UnityEngine.VFX;
 using Utilities.Debugging;
+using VisualFX;
 
 namespace Prototype.Alex.Scripts
 {
@@ -39,6 +42,11 @@ namespace Prototype.Alex.Scripts
             if (Vector3.Distance(transform.position, s_playerTransform.position) > useRadius)
                 return;
 
+            StartChargePointInteraction();
+        }
+
+        private void StartChargePointInteraction()
+        {
             m_activated = true;
 
             StartCoroutine(MiniGameStartCoroutine());
@@ -58,8 +66,15 @@ namespace Prototype.Alex.Scripts
                 yield return new WaitForSecondsRealtime(1f);
             
             s_chargeMiniGame.HideGame();
+
+            OnExitMinigame();
         }
         
+        private void OnExitMinigame()
+        {
+            SFXManager.PlaySound(SFX.EXLPOSION);
+            VFX.CHARGE_EXPLOSION.PlayAtLocation(transform.position);
+        }
         
         
         //================================================================================================================//

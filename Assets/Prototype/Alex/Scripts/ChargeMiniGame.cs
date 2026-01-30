@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using Audio;
 using GameInput;
 using NaughtyAttributes;
 using UnityEngine;
@@ -100,7 +101,7 @@ namespace Prototype.Alex.Scripts
                         //TODO This will need to be smoothed out
                         if(!inSafeArea)
                             chargeBarUI.SetSafeAreaSize(chargeBarUI.SafeAreaSize - failPunishImpact);
-                        
+
                         m_onGameCompletedCallback?.Invoke(new MiniGameResults(inSafeArea, inBonusArea));
                     }
                     
@@ -137,6 +138,8 @@ namespace Prototype.Alex.Scripts
             Time.timeScale = timeScaleDuring;
             chargeUICanvas.enabled = true;
             m_chargingState = DEBUG_STATE.IDLE;
+
+            SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
         }
 
         public void HideGame()

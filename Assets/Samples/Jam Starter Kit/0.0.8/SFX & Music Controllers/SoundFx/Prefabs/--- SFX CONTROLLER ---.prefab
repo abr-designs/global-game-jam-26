@@ -43,6 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5126370574719963628, guid: ce08768a569db8b429bc3e45071f1f19, type: 2}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -177,8 +178,21 @@ MonoBehaviour:
   sfxAudioSource: {fileID: 6565548158353040769}
   sfxSourcePrefab: {fileID: 144211660340659278, guid: c7877577d67448743b4632fe48819da7, type: 3}
   sfxDatas:
-  - name: NONE
+  - name: None
     type: 0
-    audioClips: []
+    audioClips:
+    - {fileID: 0}
+    volume: 1
+    maxPlaying: 0
+  - name: UI Button Click
+    type: 1
+    audioClips:
+    - {fileID: 8300000, guid: 8276451a988551e469baaa20f69500ca, type: 3}
     volume: 0
+    maxPlaying: 0
+  - name: Explosion
+    type: 2
+    audioClips:
+    - {fileID: 8300000, guid: fd297085c8306544684ead6b3a1a5a1b, type: 3}
+    volume: 1
     maxPlaying: 0
