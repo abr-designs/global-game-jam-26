@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 2898321175370971641}
   - component: {fileID: 8692861736919559861}
   - component: {fileID: 667943725802149607}
+  - component: {fileID: 9063051205189052594}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -205,6 +206,20 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &9063051205189052594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8145352286825375579}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68317aca6a1d4d45a862864c755869ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Utility.CameraObjectHider
+  checkFrequency: 5
+  dotThreshold: 0
 --- !u!1001 &2370013589700821087
 PrefabInstance:
   m_ObjectHideFlags: 0

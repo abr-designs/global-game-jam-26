@@ -63,6 +63,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1bef75f0bae542547be450e9eea11e8c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 622285489944725323}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1bef75f0bae542547be450e9eea11e8c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7958796536884367107}
   m_SourcePrefab: {fileID: 100100000, guid: 1bef75f0bae542547be450e9eea11e8c, type: 3}
 --- !u!1 &7010538735665913910 stripped
 GameObject:
@@ -90,3 +93,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.0000005, y: 4, z: 0.5300007}
   m_Center: {x: 0.00000029802322, y: 2, z: 0.0149997175}
+--- !u!114 &7958796536884367107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7010538735665913910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd1f661787846438280c8c16c227b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Utility.CameraObject
+  renderer: {fileID: 8812017962510975459}
+  hideWhenLocalDirection: {x: 0, y: 0, z: -1}
+--- !u!23 &8812017962510975459 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 1bef75f0bae542547be450e9eea11e8c, type: 3}
+  m_PrefabInstance: {fileID: 7893409402445012327}
+  m_PrefabAsset: {fileID: 0}
