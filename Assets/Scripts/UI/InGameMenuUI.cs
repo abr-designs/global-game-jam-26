@@ -33,8 +33,9 @@ namespace UI
         private InputActions inputActions;
         private bool isOpen;
 
-
         public event Action RestartStage;
+        public event Action ExitStage;
+
         //============================================================================================================//
         private void Awake()
         {
@@ -119,6 +120,8 @@ namespace UI
 
         private void OnQuitButtonPressed()
         {
+            ExitStage?.Invoke();
+
             ScreenFader.FadeOut(1f, () =>
             {
                 SceneManager.LoadScene(0);
