@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class StageLogicalObject : MonoBehaviour
 {
-    public event Action CharacterDamaged;
+    public static event Action CharacterDamaged;
 
     protected void OnCharacterDamaged()
     {

@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7748939178564625831}
   - component: {fileID: 7444507426881147813}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: RetireButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3408,7 +3408,7 @@ MonoBehaviour:
   shouldStartOpen: 0
   restartButton: {fileID: 5085142675418481740}
   settingsButton: {fileID: 4255503656414899206}
-  quitButton: {fileID: 7444507426881147813}
+  retireButton: {fileID: 7444507426881147813}
   settingsWindow: {fileID: 8771253949597519337}
   inGameMenuWindow: {fileID: 4226752509301203032}
 --- !u!114 &8102210861217156564
@@ -4009,7 +4009,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 50, y: -50}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 300, y: 526.85}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7026579112021591104
 CanvasRenderer:
