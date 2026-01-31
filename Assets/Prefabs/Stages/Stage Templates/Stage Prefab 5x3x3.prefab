@@ -1159,6 +1159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3514940378301931353}
+  - component: {fileID: -5301495204860119600}
   m_Layer: 0
   m_Name: Stage Prefab 5x3x3
   m_TagString: Untagged
@@ -1184,6 +1185,20 @@ Transform:
   - {fileID: 8574786779025012197}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5301495204860119600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5843022541779302512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d01b1bfaa6f7f4e996acd98affd60c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageController
+  m_stageSpawnPoint: {fileID: 0}
+  m_stageExitTrigger: {fileID: 0}
 --- !u!1 &5927976642311192840
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,8 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using Audio;
 using GGJ.Player.Enums;
 using GGJ.Player.Interfaces;
+using Interactables;
 using Samples.CharacterController3D.Scripts;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 using Utilities.Debugging;
 
 namespace GGJ.Player
@@ -25,6 +29,8 @@ namespace GGJ.Player
         private RaycastHit[] m_raycastHits;
         private float m_lastUsed;
 
+        public static event Action<bool> Dashing;
+
         private void Start()
         {
             IAbility.CharacterController3D ??= FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
@@ -33,6 +39,10 @@ namespace GGJ.Player
         //TODO Consider if we should be checking the Grounded state or the Coyote Time
         public void UseAbility()
         {
+            //TODO Optional if ability & Interactable 
+            //if (InteractableManager.InteractablesInRange)
+            //    return;
+            
             if (IsBusy)
                 return;
 
@@ -74,12 +84,16 @@ namespace GGJ.Player
                 maxT = contactDir.magnitude / moveData.DashDistance;
             }
 
+            SFXManager.PlaySound(SFX.DASH);
+
             StartCoroutine(DashCoroutine(playerTransform, startPosition, dest, moveData.DashTime, maxT));
         }
 
         private IEnumerator DashCoroutine(Transform targetTransform, Vector3 startPos, Vector3 destination, float totalTime, float maxT = 1f)
         {
             IsBusy = true;
+            Dashing?.Invoke(true);
+
             playerAnimator.SetBool(DodgingAnimationHash, true);
             IAbility.CharacterController3D.TogglePhysics(false);
             
@@ -100,6 +114,7 @@ namespace GGJ.Player
             m_lastUsed = Time.timeSinceLevelLoad;
             
             IsBusy = false;
+            Dashing?.Invoke(false);
         }
     }
 }
