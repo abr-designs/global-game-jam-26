@@ -1,7 +1,15 @@
-﻿namespace Interactables
+﻿using UnityEngine;
+
+namespace Interactables
 {
-    public class IInteractable
+    public interface IInteractable
     {
-        private float InteractionDistance { get; }
+        float InteractionDistance { get; }
+        Transform transform { get; }
+        
+        void OnEnable();
+        void OnDisable();
+        
+        void Interact();
     }
 }

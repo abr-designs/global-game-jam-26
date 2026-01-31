@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4835964767345743515}
   - component: {fileID: 1293718183415021081}
   - component: {fileID: 5734676151587384364}
+  - component: {fileID: 710755784897349847}
   m_Layer: 0
   m_Name: --- PLAYER ---
   m_TagString: Untagged
@@ -64,6 +65,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a2539323c74b0fbf2cd23fb47f7f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGJ.Player.CharacterShootAbility
+--- !u!114 &710755784897349847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169258498058466993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2db34d0dfb14c32ac6b3698ffdfcc3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactables.InteractableManager
+  characterController3D: {fileID: 3982724268736218870}
+  interactionRange: 3
+  dotThreshold: 0.2
+  checkFrequency: 10
 --- !u!1 &8145352286825375579
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +469,17 @@ CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 3272429505740907481, guid: abffe6c89a1bdaf4d9da22ada59aa1e7, type: 3}
   m_PrefabInstance: {fileID: 2370013589700821087}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3982724268736218870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1704190604901009065, guid: abffe6c89a1bdaf4d9da22ada59aa1e7, type: 3}
+  m_PrefabInstance: {fileID: 2370013589700821087}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3298e5433373f54daaf9c720f308c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &6293631768035852610 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8625662616587682077, guid: abffe6c89a1bdaf4d9da22ada59aa1e7, type: 3}
