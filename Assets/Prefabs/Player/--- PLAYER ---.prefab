@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3298e5433373f54daaf9c720f308c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &6293631768035852610 stripped
+--- !u!95 &5688627116297719645 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7931378758649630466, guid: abffe6c89a1bdaf4d9da22ada59aa1e7, type: 3}
   m_PrefabInstance: {fileID: 2370013589700821087}

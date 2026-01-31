@@ -16207,6 +16207,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7828444334289246681, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
   m_PrefabInstance: {fileID: 1215230394}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1219217475 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6293631768035852610, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
+  m_PrefabInstance: {fileID: 6847961887198126117}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1221215126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28962,6 +28967,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1293718183415021081, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 1219217475}
     - target: {fileID: 2169258498058466993, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_Name
       value: --- PLAYER ---
