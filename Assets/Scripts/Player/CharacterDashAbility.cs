@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Audio;
 using GGJ.Player.Enums;
 using GGJ.Player.Interfaces;
 using Interactables;
 using Samples.CharacterController3D.Scripts;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 using Utilities.Debugging;
 
 namespace GGJ.Player
@@ -26,6 +28,8 @@ namespace GGJ.Player
 
         private RaycastHit[] m_raycastHits;
         private float m_lastUsed;
+
+        public static event Action<bool> Dashing;
 
         private void Start()
         {
@@ -88,6 +92,8 @@ namespace GGJ.Player
         private IEnumerator DashCoroutine(Transform targetTransform, Vector3 startPos, Vector3 destination, float totalTime, float maxT = 1f)
         {
             IsBusy = true;
+            Dashing?.Invoke(true);
+
             playerAnimator.SetBool(DodgingAnimationHash, true);
             IAbility.CharacterController3D.TogglePhysics(false);
             
@@ -108,6 +114,7 @@ namespace GGJ.Player
             m_lastUsed = Time.timeSinceLevelLoad;
             
             IsBusy = false;
+            Dashing?.Invoke(false);
         }
     }
 }

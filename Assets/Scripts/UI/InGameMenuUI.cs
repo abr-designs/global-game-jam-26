@@ -22,7 +22,7 @@ namespace UI
         [SerializeField]
         private Button settingsButton;
         [SerializeField]
-        private Button quitButton;
+        private Button retireButton;
         //[SerializeField]
         //private Button closeButton;
 
@@ -71,11 +71,7 @@ namespace UI
 
             settingsButton.onClick.AddListener(OnSettingButtonPressed);
 
-#if UNITY_WEBGL
-            quitButton.gameObject.SetActive(false);
-#else
-            quitButton.onClick.AddListener(OnQuitButtonPressed);
-#endif
+            retireButton.onClick.AddListener(OnRetireButtonPressed);
 
             //closeButton.onClick.AddListener(OnCloseButtonPressed);
 
@@ -130,7 +126,7 @@ namespace UI
             settingsWindow.OpenWindow();
         }
 
-        private void OnQuitButtonPressed()
+        private void OnRetireButtonPressed()
         {
             SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
 

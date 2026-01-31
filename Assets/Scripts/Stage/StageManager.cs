@@ -55,15 +55,16 @@ public class StageManager : MonoBehaviour
 
         // load level data
         LevelLoader.LoadFirstLevel();
-        LevelDataDefinition startingStageData = ((StageController)LevelLoader.CurrentLevelDataDefinition);
+        StageController startingStageData = ((StageController)LevelLoader.CurrentLevelDataDefinition);
         
         LoadStage(startingStageData);
     }
 
-    private void LoadStage(LevelDataDefinition stageData)
+    private void LoadStage(StageController stageController)
     {
-        GameObject newStageObject = Instantiate(stageData.gameObject, m_stageContainer);
-        m_currentStage = newStageObject.GetComponent<StageController>();
+        Debug.LogWarning("Instantiate stage");
+        //GameObject newStageObject = Instantiate(stageData.gameObject, m_stageContainer);
+        m_currentStage = stageController;// newStageObject.GetComponent<StageController>();
 
         LoadStageLogicalObjects();
         StartStage(m_currentStage);
@@ -73,11 +74,13 @@ public class StageManager : MonoBehaviour
     {
         stageLogicalObjects.Clear();
 
-        foreach (StageLogicalObject logicalObject in m_stageContainer.GetComponentsInChildren<StageLogicalObject>(true))
-        {
-            stageLogicalObjects.Add(logicalObject);
-            logicalObject.CharacterDamaged += LoseStage;
-        }
+        StageLogicalObject.CharacterDamaged += LoseStage;
+
+        //foreach (StageLogicalObject logicalObject in m_stageContainer.GetComponentsInChildren<StageLogicalObject>(true))
+        //{
+        //    stageLogicalObjects.Add(logicalObject);
+        //    logicalObject.CharacterDamaged += LoseStage;
+        //}
     }
 
     private void StartStage(StageController stage)
@@ -117,7 +120,7 @@ public class StageManager : MonoBehaviour
 
             // advance to next stage
             LevelLoader.LoadNextLevel();
-            LevelDataDefinition nextStageData = ((StageController)LevelLoader.CurrentLevelDataDefinition);
+            StageController nextStageData = ((StageController)LevelLoader.CurrentLevelDataDefinition);
             LoadStage(nextStageData);
         });
     }
@@ -129,11 +132,13 @@ public class StageManager : MonoBehaviour
         // destroy existing stage
         Destroy(m_currentStage.gameObject);
 
-        foreach (StageLogicalObject logicalObject in m_stageContainer.GetComponentsInChildren<StageLogicalObject>(true))
-        {
-            stageLogicalObjects.Add(logicalObject);
-            logicalObject.CharacterDamaged -= LoseStage;
-        }
+        StageLogicalObject.CharacterDamaged -= LoseStage;
+
+        //foreach (StageLogicalObject logicalObject in m_stageContainer.GetComponentsInChildren<StageLogicalObject>(true))
+        //{
+        //    stageLogicalObjects.Add(logicalObject);
+        //    logicalObject.CharacterDamaged -= LoseStage;
+        //}
 
         stageLogicalObjects.Clear();
     }
