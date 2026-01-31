@@ -15,8 +15,8 @@ namespace GGJ.Utility
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start()
         {
-            targetTransform.position = targetTransform.position;
-            targetTransform.rotation = targetTransform.rotation;
+            m_startWorldPosition = targetTransform.position;
+            m_startWorldRotation = targetTransform.rotation;
         }
 
         // Update is called once per frame
@@ -30,8 +30,8 @@ namespace GGJ.Utility
 
         private void ResetTransform()
         {
-            targetTransform.position = targetTransform.position;
-            targetTransform.rotation = targetTransform.rotation;
+            targetTransform.position = m_startWorldPosition;
+            targetTransform.rotation = m_startWorldRotation;
         }
     }
 }
