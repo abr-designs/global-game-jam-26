@@ -1,11 +1,25 @@
 using Levels;
+using UI;
 using UnityEngine;
+using Utilities;
 
 public class StageManager : MonoBehaviour
 {
     [SerializeField] private Transform m_stageContainer;
     [SerializeField] private Transform m_playerCharacter;
     [SerializeField] private StageController m_currentStage;
+
+    [Header("UI")]
+    [SerializeField] private InGameMenuUI m_inGameMenu;
+
+    private void OnEnable()
+    {
+        m_inGameMenu.RestartStage += RestartStage;
+    }
+    private void OnDisable()
+    {
+        m_inGameMenu.RestartStage += RestartStage;
+    }
 
     private void Start()
     {
@@ -67,19 +81,31 @@ public class StageManager : MonoBehaviour
             m_currentStage.StageSpawnPoint.transform.rotation);
 
         stage.StageExitTrigger.PlayerReachedExit += EndStage;
+
+        ScreenFader.FadeIn(1f, null);
+    }
+
+    private void RestartStage()
+    {
+        m_playerCharacter.transform.SetPositionAndRotation(
+            m_currentStage.StageSpawnPoint.position,
+            m_currentStage.StageSpawnPoint.transform.rotation);
     }
 
     private void EndStage()
     {
         m_currentStage.StageExitTrigger.PlayerReachedExit -= EndStage;
 
-        // destroy previous stage
-        Destroy(m_currentStage.gameObject);
+        ScreenFader.FadeOut(1f, () =>
+        {
+            // destroy previous stage
+            Destroy(m_currentStage.gameObject);
 
-        // advance to next stage
-        LevelLoader.LoadNextLevel();
-        LevelDataDefinition nextStageData = ((StageController)LevelLoader.CurrentLevelDataDefinition);
-        LoadStage(nextStageData);
+            // advance to next stage
+            LevelLoader.LoadNextLevel();
+            LevelDataDefinition nextStageData = ((StageController)LevelLoader.CurrentLevelDataDefinition);
+            LoadStage(nextStageData);
+        });
     }
 
     // ---------- HELPERS ---------- //
