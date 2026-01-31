@@ -1,3 +1,4 @@
+using Audio;
 using UnityEngine;
 
 public class SpikesTile : StageLogicalObject
@@ -7,6 +8,7 @@ public class SpikesTile : StageLogicalObject
         if (other.gameObject.tag != "Player")
             return;
 
+        SFXManager.PlaySound(SFX.PLAYER_DIED);
         base.OnCharacterDamaged();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Audio;
 using GGJ.Player.Enums;
 using GGJ.Player.Interfaces;
 using Samples.CharacterController3D.Scripts;
@@ -73,6 +74,8 @@ namespace GGJ.Player
                 //Stop at point
                 maxT = contactDir.magnitude / moveData.DashDistance;
             }
+
+            SFXManager.PlaySound(SFX.DASH);
 
             StartCoroutine(DashCoroutine(playerTransform, startPosition, dest, moveData.DashTime, maxT));
         }

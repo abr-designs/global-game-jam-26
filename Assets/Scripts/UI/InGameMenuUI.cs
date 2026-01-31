@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using Utilities;
 using UnityEngine.InputSystem;
 using GameInput;
+using Audio;
+using UnityUtils;
 
 namespace UI
 {
@@ -82,7 +84,10 @@ namespace UI
             if (shouldStartOpen)
                 OpenWindow();
             else
-                CloseWindow();
+            {
+                isOpen = false;
+                inGameMenuWindow.gameObject.SetActive(false);
+            }
         }   
 
         //============================================================================================================//
@@ -93,6 +98,8 @@ namespace UI
 
         private void ToggleMenu()
         {
+            SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
+
             if (isOpen)
                 CloseWindow();
             else
@@ -102,12 +109,15 @@ namespace UI
         //============================================================================================================//
         private void OnRestartButtonPressed()
         {
+            SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
+
             ScreenFader.FadeOut(1f, () =>
             {
                 RestartStage?.Invoke(); // TODO - need some delay while camera moves
 
-                Debug.LogWarning("Completed restart?");
                 CloseWindow();
+
+                SFXManager.PlaySound(SFX.PICKUP_OBJECT);
 
                 ScreenFader.FadeIn(null);
             });
@@ -115,22 +125,21 @@ namespace UI
         
         private void OnSettingButtonPressed()
         {
+            SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
+
             settingsWindow.OpenWindow();
         }
 
         private void OnQuitButtonPressed()
         {
+            SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
+
             ExitStage?.Invoke();
 
             ScreenFader.FadeOut(1f, () =>
             {
                 SceneManager.LoadScene(0);
             });
-        }
-
-        private void OnCloseButtonPressed()
-        {
-            CloseWindow();
         }
 
         //============================================================================================================//

@@ -1,3 +1,4 @@
+using Audio;
 using Levels;
 using System.Collections.Generic;
 using UI;
@@ -101,6 +102,8 @@ public class StageManager : MonoBehaviour
 
         stage.StageExitTrigger.PlayerReachedExit += EndStage;
 
+        //SFXManager.PlaySound(SFX.PICKUP_OBJECT);
+
         ScreenFader.FadeIn(1f, null);
     }
 
@@ -108,6 +111,8 @@ public class StageManager : MonoBehaviour
     {
         ScreenFader.FadeOut(1f, () =>
         {
+            SFXManager.PlaySound(SFX.PICKUP_OBJECT);
+
             BreakdownCurrentStage();
 
             // advance to next stage
@@ -152,11 +157,12 @@ public class StageManager : MonoBehaviour
 
     private void LoseStage()
     {
-        Debug.LogWarning($"StageManager: Lost stage [{m_currentStage.name}]");
-
         ScreenFader.FadeOut(1f, () =>
         {
             RestartStage(); // TODO - need some delay while camera moves
+
+            SFXManager.PlaySound(SFX.PICKUP_OBJECT);
+
             ScreenFader.FadeIn(null);
         });
     }
