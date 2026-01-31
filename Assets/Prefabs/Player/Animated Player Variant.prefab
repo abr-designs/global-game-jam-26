@@ -156,6 +156,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ea5bdefc5e4990145beac3b5ff298db5, type: 2}
     - target: {fileID: 7924086738605373563, guid: 0db9ce099acb7144e8d8e80121b3c442, type: 3}
+      propertyPath: usePhysics
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924086738605373563, guid: 0db9ce099acb7144e8d8e80121b3c442, type: 3}
       propertyPath: characterMovementData
       value: 
       objectReference: {fileID: 11400000, guid: ea5bdefc5e4990145beac3b5ff298db5, type: 2}

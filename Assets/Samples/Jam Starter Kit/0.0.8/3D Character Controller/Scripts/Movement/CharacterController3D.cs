@@ -12,7 +12,7 @@ namespace Samples.CharacterController3D.Scripts
         public bool IsGrounded => m_3dBalancer.Grounded;
         
         [SerializeField, ReadOnly]
-        private bool usePhysics;
+        private bool usePhysics = true;
         
         [SerializeField]
         private CharacterMovement3DDataScriptableObject characterMovementData;
@@ -81,7 +81,7 @@ namespace Samples.CharacterController3D.Scripts
         private void Update()
         {
             CountTimers();
-            //JumpInputChecks();
+            JumpInputChecks();
             
             m_adjustMovementDirection = GetCameraBasedMove(m_movementInput).normalized;
             m_3dBalancer?.FaceDirection(m_adjustMovementDirection);
