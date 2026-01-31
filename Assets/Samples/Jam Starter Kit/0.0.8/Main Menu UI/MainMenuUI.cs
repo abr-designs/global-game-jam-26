@@ -1,3 +1,5 @@
+using Audio;
+using Audio.SoundFX;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
@@ -43,6 +45,8 @@ namespace UI
         
         private void OnPlayButtonPressed()
         {
+            SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
+
             ScreenFader.FadeOut(1f, () =>
             {
                 SceneManager.LoadScene(1);
@@ -51,11 +55,15 @@ namespace UI
         
         private void OnSettingButtonPressed()
         {
+            SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
+
             settingsWindow.OpenWindow();
         }
 
         private void OnQuitButtonPressed()
         {
+            SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
+
             Application.Quit();
         }
         

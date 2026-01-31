@@ -245,8 +245,30 @@ namespace GameInput
         {
             ""name"": ""Menu"",
             ""id"": ""1e29f2a9-3106-48c5-a898-8091e2700d90"",
-            ""actions"": [],
-            ""bindings"": []
+            ""actions"": [
+                {
+                    ""name"": ""ToggleMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""3382ad85-f47a-45de-9e15-d3abce50326f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d3bd7cf6-7851-4344-ae6c-c051ada3b754"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -260,6 +282,7 @@ namespace GameInput
             m_Gameplay_MouseRightClick = m_Gameplay.FindAction("Mouse Right Click", throwIfNotFound: true);
             // Menu
             m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+            m_Menu_ToggleMenu = m_Menu.FindAction("ToggleMenu", throwIfNotFound: true);
         }
 
         ~@InputActions()
@@ -481,6 +504,7 @@ namespace GameInput
         // Menu
         private readonly InputActionMap m_Menu;
         private List<IMenuActions> m_MenuActionsCallbackInterfaces = new List<IMenuActions>();
+        private readonly InputAction m_Menu_ToggleMenu;
         /// <summary>
         /// Provides access to input actions defined in input action map "Menu".
         /// </summary>
@@ -492,6 +516,10 @@ namespace GameInput
             /// Construct a new instance of the input action map wrapper class.
             /// </summary>
             public MenuActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "Menu/ToggleMenu".
+            /// </summary>
+            public InputAction @ToggleMenu => m_Wrapper.m_Menu_ToggleMenu;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -518,6 +546,9 @@ namespace GameInput
             {
                 if (instance == null || m_Wrapper.m_MenuActionsCallbackInterfaces.Contains(instance)) return;
                 m_Wrapper.m_MenuActionsCallbackInterfaces.Add(instance);
+                @ToggleMenu.started += instance.OnToggleMenu;
+                @ToggleMenu.performed += instance.OnToggleMenu;
+                @ToggleMenu.canceled += instance.OnToggleMenu;
             }
 
             /// <summary>
@@ -529,6 +560,9 @@ namespace GameInput
             /// <seealso cref="MenuActions" />
             private void UnregisterCallbacks(IMenuActions instance)
             {
+                @ToggleMenu.started -= instance.OnToggleMenu;
+                @ToggleMenu.performed -= instance.OnToggleMenu;
+                @ToggleMenu.canceled -= instance.OnToggleMenu;
             }
 
             /// <summary>
@@ -612,6 +646,13 @@ namespace GameInput
         /// <seealso cref="MenuActions.RemoveCallbacks(IMenuActions)" />
         public interface IMenuActions
         {
+            /// <summary>
+            /// Method invoked when associated input action "ToggleMenu" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnToggleMenu(InputAction.CallbackContext context);
         }
     }
 }

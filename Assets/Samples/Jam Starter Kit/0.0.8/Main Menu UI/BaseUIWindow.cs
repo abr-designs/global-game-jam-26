@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Audio;
+using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
@@ -11,17 +12,17 @@ namespace UI
 
         [SerializeField]
         private Button closeButton;
-        
+
         protected void Start()
         {
             Assert.IsNotNull(closeButton);
-            
+
             closeButton.onClick.AddListener(CloseWindow);
-            
-            if(shouldStartOpen)
+
+            if (shouldStartOpen)
                 OpenWindow();
             else
-                CloseWindow();
+                gameObject.SetActive(false);
         }
 
         public virtual void OpenWindow()

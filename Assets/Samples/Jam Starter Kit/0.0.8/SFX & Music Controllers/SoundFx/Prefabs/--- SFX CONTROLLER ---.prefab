@@ -183,3 +183,33 @@ MonoBehaviour:
     audioClips: []
     volume: 0
     maxPlaying: 0
+  - name: UI BUTTON CLICK
+    type: 1
+    audioClips:
+    - {fileID: 8300000, guid: 7e16a3a85dd4ff848a3e5e3fc9365674, type: 3}
+    volume: 0
+    maxPlaying: 0
+  - name: PLAYER_DIED
+    type: 2
+    audioClips:
+    - {fileID: 8300000, guid: 5eedf5e33c59cad469bb1e0bf0b87157, type: 3}
+    volume: 0
+    maxPlaying: 0
+  - name: PICKUP OBJECT
+    type: 3
+    audioClips:
+    - {fileID: 8300000, guid: 26da0fedbfec37f49abd70fbba566e19, type: 3}
+    volume: 0
+    maxPlaying: 0
+  - name: DASH
+    type: 4
+    audioClips:
+    - {fileID: 8300000, guid: 77080a94b4f08d048963b5d3d9beff1b, type: 3}
+    volume: 0
+    maxPlaying: 0
+  - name: PROJECTILE
+    type: 5
+    audioClips:
+    - {fileID: 8300000, guid: 03667c8723a3c8e4a8da7b60e491704f, type: 3}
+    volume: 0
+    maxPlaying: 0
