@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Utility
+namespace GGJ.Utility
 {
     [RequireComponent(typeof(Camera))]
     public class CameraObjectHider : MonoBehaviour

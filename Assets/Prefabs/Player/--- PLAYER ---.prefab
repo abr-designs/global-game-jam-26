@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4835964767345743515}
+  - component: {fileID: 1293718183415021081}
+  - component: {fileID: 5734676151587384364}
   m_Layer: 0
   m_Name: --- PLAYER ---
   m_TagString: Untagged
@@ -35,6 +37,31 @@ Transform:
   - {fileID: 1696784709896511474}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1293718183415021081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169258498058466993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de2fe25f4894e5b94f9775d765bcfe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGJ.Player.CharacterDash
+  moveData: {fileID: 11400000, guid: ea5bdefc5e4990145beac3b5ff298db5, type: 2}
+--- !u!114 &5734676151587384364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169258498058466993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a2539323c74b0fbf2cd23fb47f7f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGJ.Player.CharacterShootAbility
 --- !u!1 &8145352286825375579
 GameObject:
   m_ObjectHideFlags: 0

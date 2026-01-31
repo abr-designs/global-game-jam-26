@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Utilities.Debugging;
 
-namespace Utility
+namespace GGJ.Utility
 {
     public class CameraObject : MonoBehaviour
     {

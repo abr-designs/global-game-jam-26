@@ -8,6 +8,13 @@ namespace Samples.CharacterController3D.Scripts
     {
         public float Gravity { get; private set; }
         public float InitialJumpVelocity { get; private set; }
+
+        //Dash
+        //----------------------------------------------------------//
+        [Header("Dashing")]
+        public float DashDistance;
+        public float DashTime;
+        public AnimationCurve DashCurve;
         
         //Locomotion
         //------------------------------------------------//
