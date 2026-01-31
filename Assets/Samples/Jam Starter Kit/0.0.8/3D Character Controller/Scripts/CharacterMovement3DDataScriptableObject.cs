@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace Samples.CharacterController3D.Scripts
@@ -30,6 +31,15 @@ namespace Samples.CharacterController3D.Scripts
         public AnimationCurve maxAccelerationForceFactorFromDot;
         public Vector3 forceScale;
         public float gravityScaleDrop;
+
+        [Header("Stairs"), Tag]
+        public string stairTag;
+        [Min(0f)]
+        public float stairReactionMaxSpeed;
+        [Min(0f)]
+        public float stairReactionTime;
+        [Min(1f)]
+        public float stairRideMultiplier;
         
         //Grounded/Collision Checks
         //------------------------------------------------//

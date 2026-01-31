@@ -114,6 +114,10 @@ MonoBehaviour:
     m_RotationOrder: 4
   forceScale: {x: 1, y: 0, z: 1}
   gravityScaleDrop: 10
+  stairTag: Stair
+  stairReactionMaxSpeed: 5
+  stairReactionTime: 0.1
+  stairRideMultiplier: 2
   GroundLayer:
     serializedVersion: 2
     m_Bits: 192

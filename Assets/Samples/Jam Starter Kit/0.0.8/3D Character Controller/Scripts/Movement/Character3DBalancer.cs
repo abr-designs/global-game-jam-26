@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using NaughtyAttributes;
+using UnityEngine;
 using Utilities;
 using Utilities.Debugging;
 
@@ -19,6 +20,10 @@ namespace Samples.CharacterController3D.Scripts
         private RaycastHit[] m_raycastHits;
 
         private float m_groundDifference;
+
+        [SerializeField, ReadOnly]
+        private float m_targetRideHeightMult = 1f;
+        private float m_rideHeightVelocity;
 
         //Unity Functions
         //============================================================================================================//
@@ -72,7 +77,10 @@ namespace Samples.CharacterController3D.Scripts
 
         private void AddFloat()
         {
-            var hitCount = Physics.RaycastNonAlloc(m_rigidbody.position, Vector3.down, m_raycastHits, characterMovementData.rideHeight * 2f,
+            var hitCount = Physics.RaycastNonAlloc(m_rigidbody.position, 
+                Vector3.down, 
+                m_raycastHits, 
+                characterMovementData.rideHeight * 2f * m_targetRideHeightMult,
                 characterMovementData.GroundLayer.value);
 
             if (hitCount == 0)
@@ -83,13 +91,28 @@ namespace Samples.CharacterController3D.Scripts
 
             var rayHit = m_raycastHits.GetNearestHit(hitCount);
 
+            var multTarget = 1f;
+            if (rayHit.transform.CompareTag(characterMovementData.stairTag))
+            {
+                multTarget = characterMovementData.stairRideMultiplier;
+            }
+
+            m_targetRideHeightMult = Mathf.SmoothDamp(
+                m_targetRideHeightMult,
+                multTarget,
+                ref m_rideHeightVelocity,
+                characterMovementData.stairReactionTime,
+                characterMovementData.stairReactionMaxSpeed,
+                Time.fixedDeltaTime);
+
             //Check if Grounded
             //------------------------------------------------//
-            m_groundDifference = rayHit.distance - characterMovementData.rideHeight;
+            m_groundDifference = rayHit.distance - (characterMovementData.rideHeight * m_targetRideHeightMult);
             grounded = m_groundDifference <= 0f;
 
             if (!grounded)
                 return;
+           
             //------------------------------------------------//
 
             var velocity = m_rigidbody.linearVelocity;
@@ -134,8 +157,8 @@ namespace Samples.CharacterController3D.Scripts
             if (Application.isPlaying)
                 return;
             
-            Debug.DrawRay(transform.position, Vector3.down * (characterMovementData.rideHeight * 2f), Color.red);
-            Debug.DrawRay(transform.position, Vector3.down * characterMovementData.rideHeight, Color.yellow);
+            Debug.DrawRay(transform.position, Vector3.down * (characterMovementData.rideHeight * m_targetRideHeightMult * 2f), Color.red);
+            Debug.DrawRay(transform.position, Vector3.down * characterMovementData.rideHeight * m_targetRideHeightMult, Color.yellow);
         }
 
 #endif

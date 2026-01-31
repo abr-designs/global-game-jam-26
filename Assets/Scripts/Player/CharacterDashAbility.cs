@@ -53,6 +53,7 @@ namespace GGJ.Player
             var collision = Physics.SphereCastNonAlloc(ray, playerCollider.radius, m_raycastHits, moveData.DashDistance, moveData.dashCollisionLayer.value);
 
             var maxT = 1f;
+            //If we're going to hit a wall, set that as the max travel distance
             if (collision > 0)
             {
                 Vector3 contactDir = Vector3.zero;
@@ -63,14 +64,10 @@ namespace GGJ.Player
                     
                     contactDir = Vector3.ProjectOnPlane(m_raycastHits[i].point - startPosition, Vector3.up);
 
+                    //When there is a contact in front of the player, then we can use that as the target Max T
                     var dot = Vector3.Dot(contactDir, forward);
                     if (dot > 0f)
                         break;
-                    
-                    /*Debug.DrawLine(m_raycastHits[i].point, startPosition, Color.magenta, 0.1f);
-                    Draw.Circle(m_raycastHits[i].point, Color.green);
-                    Draw.Circle(startPosition, Color.cyan);
-                    Debug.Break();*/
                 }
                 
                 //Stop at point
@@ -82,7 +79,6 @@ namespace GGJ.Player
 
         private IEnumerator DashCoroutine(Transform targetTransform, Vector3 startPos, Vector3 destination, float totalTime, float maxT = 1f)
         {
-            
             IsBusy = true;
             playerAnimator.SetBool(DodgingAnimationHash, true);
             IAbility.CharacterController3D.TogglePhysics(false);
