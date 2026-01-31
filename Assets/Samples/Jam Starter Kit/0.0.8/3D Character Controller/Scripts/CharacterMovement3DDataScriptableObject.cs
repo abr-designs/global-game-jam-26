@@ -14,7 +14,10 @@ namespace Samples.CharacterController3D.Scripts
         [Header("Dashing")]
         public float DashDistance;
         public float DashTime;
+        [Min(0f)]
+        public float DashCooldown;
         public AnimationCurve DashCurve;
+        public LayerMask dashCollisionLayer; 
         
         //Locomotion
         //------------------------------------------------//
