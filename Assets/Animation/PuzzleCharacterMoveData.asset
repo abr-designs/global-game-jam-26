@@ -12,6 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb53417138442ce8d5b3efd632a3852, type: 3}
   m_Name: PuzzleCharacterMoveData
   m_EditorClassIdentifier: 
+  DashDistance: 4.5
+  DashTime: 0.1
+  DashCooldown: 0.5
+  DashCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dashCollisionLayer:
+    serializedVersion: 2
+    m_Bits: 69
   maxSpeed: 6
   GroundAcceleration: 100
   AirAcceleration: 40
@@ -84,6 +114,10 @@ MonoBehaviour:
     m_RotationOrder: 4
   forceScale: {x: 1, y: 0, z: 1}
   gravityScaleDrop: 10
+  stairTag: Stair
+  stairReactionMaxSpeed: 5
+  stairReactionTime: 0.1
+  stairRideMultiplier: 2
   GroundLayer:
     serializedVersion: 2
     m_Bits: 192
