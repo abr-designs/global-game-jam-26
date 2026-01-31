@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit_Door_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a079a15498f0e8f4bb76f410fe7cabfb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -116,6 +120,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 07cc42102f2981f4593658ff1cd52148, type: 3}
       propertyPath: m_Name
       value: Door_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 07cc42102f2981f4593658ff1cd52148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

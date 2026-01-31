@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1941311272867158523, guid: 670b8b88b3f0e3740a44729f72112d53, type: 3}
       propertyPath: m_Name
-      value: 1x1Hallway Variant
+      value: 1x1HallwayDeadEnd Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4448009934002700877, guid: 670b8b88b3f0e3740a44729f72112d53, type: 3}
       propertyPath: m_LocalPosition.x

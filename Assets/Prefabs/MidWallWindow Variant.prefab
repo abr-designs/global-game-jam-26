@@ -72,7 +72,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8088766807402460809, guid: 968f4ac76c756ab4b9b4008e6ae2bb73, type: 3}
       propertyPath: m_Name
-      value: MidDoor Variant
+      value: MidWallWindow Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8789688265216502185, guid: 968f4ac76c756ab4b9b4008e6ae2bb73, type: 3}
       propertyPath: m_LocalPosition.x
