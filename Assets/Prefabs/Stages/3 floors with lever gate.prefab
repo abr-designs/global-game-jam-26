@@ -1220,6 +1220,7 @@ Transform:
   - {fileID: 2431983825522718029}
   - {fileID: 5686966336755682676}
   - {fileID: 6790141723410669744}
+  - {fileID: 3489123679026619875}
   m_Father: {fileID: 2078015962511581738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5991228845454921254
@@ -1878,7 +1879,7 @@ GameObject:
   - component: {fileID: 7656650058107135286}
   - component: {fileID: 3559228618203892584}
   m_Layer: 0
-  m_Name: 3 floors with lever door
+  m_Name: 3 floors with lever gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1914,7 +1915,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d01b1bfaa6f7f4e996acd98affd60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageController
-  m_stageSpawnPoint: {fileID: 3009998355089948842}
+  levelName: 3 floors with lever gate
+  levelDescription: Requires masks for jumpng and opening gate
+  levelTime: 0
+  minScoreToPass: 0
+  m_stageSpawnPoint: {fileID: 3489123679026619875}
   m_stageExitTrigger: {fileID: 991803736291662180}
 --- !u!1 &8526919732743915042
 GameObject:
@@ -2206,7 +2211,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6790141723410669744}
+    m_TransformParent: {fileID: 2821864008965857401}
     m_Modifications:
     - target: {fileID: 2241450959516019213, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_Name
@@ -2230,19 +2235,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2261,17 +2266,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
---- !u!114 &3009998355089948842 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2611458369081490500, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
-  m_PrefabInstance: {fileID: 1006671076148067566}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c6bcaceea9e474a821f127a834728e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StageSpawnPoint
 --- !u!4 &3489123679026619875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
@@ -3148,10 +3142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4448009934002700877, guid: 670b8b88b3f0e3740a44729f72112d53, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3489123679026619875}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 670b8b88b3f0e3740a44729f72112d53, type: 3}
 --- !u!4 &6790141723410669744 stripped

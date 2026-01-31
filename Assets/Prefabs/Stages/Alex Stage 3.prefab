@@ -1412,7 +1412,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d01b1bfaa6f7f4e996acd98affd60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageController
-  m_stageSpawnPoint: {fileID: 1504167723097680137}
+  levelName: Alex Stage 3
+  levelDescription: Spikes
+  levelTime: 0
+  minScoreToPass: 0
+  m_stageSpawnPoint: {fileID: 968716347447233600}
   m_stageExitTrigger: {fileID: 6331237658218754064}
 --- !u!1001 &981954743532775834
 PrefabInstance:
@@ -2049,17 +2053,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
   m_PrefabInstance: {fileID: 3522416478148810061}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1504167723097680137 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2611458369081490500, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
-  m_PrefabInstance: {fileID: 3522416478148810061}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c6bcaceea9e474a821f127a834728e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StageSpawnPoint
 --- !u!1001 &3735801934373864229
 PrefabInstance:
   m_ObjectHideFlags: 0
