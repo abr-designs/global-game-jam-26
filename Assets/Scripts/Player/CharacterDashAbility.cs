@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using GGJ.Player.Enums;
 using GGJ.Player.Interfaces;
+using Interactables;
 using Samples.CharacterController3D.Scripts;
 using UnityEngine;
 using Utilities.Debugging;
@@ -33,6 +34,10 @@ namespace GGJ.Player
         //TODO Consider if we should be checking the Grounded state or the Coyote Time
         public void UseAbility()
         {
+            //TODO Optional if ability & Interactable 
+            //if (InteractableManager.InteractablesInRange)
+            //    return;
+            
             if (IsBusy)
                 return;
 

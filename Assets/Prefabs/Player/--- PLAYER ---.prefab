@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactables.InteractableManager
   characterController3D: {fileID: 3982724268736218870}
   interactionRange: 3
-  dotThreshold: 0.2
+  dotThreshold: -1
   checkFrequency: 10
 --- !u!1 &8145352286825375579
 GameObject:
