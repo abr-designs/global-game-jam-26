@@ -71,6 +71,9 @@ namespace Interactables
 
         private void UpdateInteractablesInRange()
         {
+            if (s_interactables == null || s_interactables.Count < 0)
+                return;
+            
             var playerFacingDirection =
                 Vector3.ProjectOnPlane(characterController3D.transform.forward.normalized, Vector3.up);
             var playerPosition = characterController3D.transform.position;
