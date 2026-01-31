@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DashDistance: 4.5
   DashTime: 0.1
-  DashCooldown: 0
+  DashCooldown: 0.5
   DashCurve:
     serializedVersion: 2
     m_Curve:
@@ -41,7 +41,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   dashCollisionLayer:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 69
   maxSpeed: 6
   GroundAcceleration: 100
   AirAcceleration: 40
