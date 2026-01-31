@@ -379,7 +379,7 @@ namespace Samples.CharacterController3D.Scripts
         
         private void OnJumpPressed(bool pressed)
         {
-            //m_isJumpPressed = pressed;
+            m_isJumpPressed = pressed;
         }
         
         //============================================================================================================//
