@@ -1,5 +1,6 @@
 ﻿using System;
 using GameInput;
+using Samples.CharacterController3D.Scripts;
 using UnityEngine;
 using Utilities.Debugging;
 
@@ -8,6 +9,9 @@ public class Grapple : MonoBehaviour
     [SerializeField]
     private Rigidbody rb;
     private ConfigurableJoint m_joint;
+
+    [SerializeField]
+    private CharacterController3D characterController3D;
 
     [SerializeField] private float interactionDistance;
     private float m_interactionDistanceSqr;
@@ -47,6 +51,7 @@ public class Grapple : MonoBehaviour
             return;
         
         Attach(transform.position);
+        characterController3D.isGrappled = true;
     }
 
 
@@ -108,7 +113,11 @@ public class Grapple : MonoBehaviour
 
     private void Detach()
     {
-        if (m_joint) Destroy(m_joint);
+        if (m_joint)
+        {
+            Destroy(m_joint);
+            characterController3D.isGrappled = false;
+        }
     }
     //================================================================================================================//
 

@@ -31500,6 +31500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 525019617}
+  - component: {fileID: 525019621}
   - component: {fileID: 525019620}
   - component: {fileID: 525019619}
   - component: {fileID: 525019618}
@@ -31540,12 +31541,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 4.1560984, z: 5.322035}
+  m_Center: {x: 0, y: 1.5023462, z: 0}
 --- !u!23 &525019619
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31603,6 +31604,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525019616}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &525019621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525019616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc49c48e7c14aebae62fced62aa23d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Prototype.Alex.Scripts.LineAttachJoint
+  rb: {fileID: 1939118797}
+  playerCollider: {fileID: 1939118798}
+  characterController3D: {fileID: 1939118801}
+  pointATransform: {fileID: 1263275157}
+  pointBTransform: {fileID: 2071455182}
 --- !u!1001 &527449954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52277,6 +52295,8 @@ Transform:
   m_Children:
   - {fileID: 525019617}
   - {fileID: 761118824}
+  - {fileID: 1263275157}
+  - {fileID: 2071455182}
   m_Father: {fileID: 914801687}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &884156728
@@ -77172,6 +77192,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1380285173}
   m_SourcePrefab: {fileID: 100100000, guid: 93bddb72d4d625b418667c4213d356ea, type: 3}
+--- !u!1 &1263275156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1263275157}
+  m_Layer: 6
+  m_Name: PointA
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1263275157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263275156}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.94, y: 1.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 883366185}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1263435867 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 93bddb72d4d625b418667c4213d356ea, type: 3}
@@ -115773,6 +115824,22 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 4550290844947261344, guid: 23eafc3e3dd73e441958ef5068b600bd, type: 3}
   m_PrefabInstance: {fileID: 3837442142022086218}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &1939118798 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 3113372838201629080, guid: 23eafc3e3dd73e441958ef5068b600bd, type: 3}
+  m_PrefabInstance: {fileID: 3837442142022086218}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1939118801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1294904767734414568, guid: 23eafc3e3dd73e441958ef5068b600bd, type: 3}
+  m_PrefabInstance: {fileID: 3837442142022086218}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3298e5433373f54daaf9c720f308c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1939693160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123956,6 +124023,37 @@ CapsuleCollider:
   m_Height: 1.74
   m_Direction: 1
   m_Center: {x: 0, y: 1.03, z: 0}
+--- !u!1 &2071455181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2071455182}
+  m_Layer: 6
+  m_Name: PointB
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2071455182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071455181}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.04, y: 1.64, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 883366185}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2072154905 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 93bddb72d4d625b418667c4213d356ea, type: 3}
@@ -125534,6 +125632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grapple
   rb: {fileID: 1939118797}
+  characterController3D: {fileID: 1939118801}
   interactionDistance: 8
 --- !u!1001 &2098982092
 PrefabInstance:

@@ -14,6 +14,9 @@ namespace Samples.CharacterController3D.Scripts
     [RequireComponent(typeof(Rigidbody))]
     public class CharacterController3D : MonoBehaviour
     {
+        public bool isGrinding;
+        public bool isGrappled;
+        
         public bool IsGrounded => m_3dBalancer.Grounded;
         public float Speed
         {
@@ -105,6 +108,8 @@ namespace Samples.CharacterController3D.Scripts
 
         private void Update()
         {
+            speedFactor = isGrappled ? 2f : 1f;
+            
             ProcessInputs();
             CountTimers();
             JumpInputChecks();
@@ -359,7 +364,7 @@ namespace Samples.CharacterController3D.Scripts
             //Normal Gravity While Falling
             //------------------------------------------------//
 
-            if (!m_3dBalancer.Grounded && !m_isJumping)
+            if (!m_3dBalancer.Grounded && !m_isJumping && !isGrinding)
             {
                 if (!m_isFalling)
                     m_isFalling = true;
@@ -369,14 +374,13 @@ namespace Samples.CharacterController3D.Scripts
 
             //Clamp Fall Speed
             //------------------------------------------------//
-            VerticalVelocity = Math.Clamp(VerticalVelocity, -characterMovementData.MaxFallSpeed,
-                characterMovementData.MaxVerticalVelocity);
+            VerticalVelocity = Math.Clamp(VerticalVelocity, -characterMovementData.MaxFallSpeed, characterMovementData.MaxVerticalVelocity);
             m_rigidbody.linearVelocity = new Vector3(m_rigidbody.linearVelocity.x, VerticalVelocity, m_rigidbody.linearVelocity.z);
         }
 
         private bool IsOnRamp()
         {
-            return m_3dBalancer.GroundCollider.gameObject.CompareTag("Ramp");
+            return m_3dBalancer.GroundCollider != null && m_3dBalancer.GroundCollider.gameObject.CompareTag("Ramp");
         }
 
         #endregion
