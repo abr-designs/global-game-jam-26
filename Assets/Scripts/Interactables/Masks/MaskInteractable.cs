@@ -19,6 +19,11 @@ namespace Interactables.Masks
         
         [SerializeField, Min(0.1f)]
         private float interactionDistance = 0.1f;
+
+        [SerializeField]
+        private ParticleSystem particleSystem;
+        [SerializeField]
+        private Gradient[] maskGradients;
         
         public void OnEnable()
         {
@@ -66,9 +71,30 @@ namespace Interactables.Masks
 
         private void SetMaskVisual(MASK_TYPE maskType)
         {
+            SetParticles(maskType);
+            
             for (int i = 1; i < 3; i++)
             {
                 maskObjects[i].SetActive(i == (int)maskType);
+            }
+        }
+
+        private void SetParticles(MASK_TYPE maskType)
+        {
+            if (particleSystem == null)
+                return;
+            
+            if(maskType == MASK_TYPE.NONE)
+                particleSystem.Stop();
+            else
+            {
+                var mainModule = particleSystem.main;
+                var startColor = mainModule.startColor;
+                startColor.mode = ParticleSystemGradientMode.RandomColor;
+                startColor.gradient = maskGradients[(int)maskType];
+
+                mainModule.startColor = startColor;
+                particleSystem?.Play();
             }
         }
         
