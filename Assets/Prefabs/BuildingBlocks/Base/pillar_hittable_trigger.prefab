@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c83a3ac2ed3e9340b81de4e5184989c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c83a3ac2ed3e9340b81de4e5184989c, type: 3}
       propertyPath: m_LocalScale.z
@@ -119,7 +119,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1423436943547315440, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.67
+      value: 1.34
       objectReference: {fileID: 0}
     - target: {fileID: 1423436943547315440, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
       propertyPath: m_LocalScale.y
@@ -127,7 +127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423436943547315440, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.67
+      value: 1.34
       objectReference: {fileID: 0}
     - target: {fileID: 1423436943547315440, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -220,6 +220,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactionDistance: 0.1
+  vfxOnActivate: 5
+  localOffset: {x: 0, y: 3, z: 0}
 --- !u!65 &8852433488062167628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -317,7 +319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c83a3ac2ed3e9340b81de4e5184989c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c83a3ac2ed3e9340b81de4e5184989c, type: 3}
       propertyPath: m_LocalScale.z
@@ -391,7 +393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c83a3ac2ed3e9340b81de4e5184989c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c83a3ac2ed3e9340b81de4e5184989c, type: 3}
       propertyPath: m_LocalScale.z
@@ -459,6 +461,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3828936507630027394}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 5c83a3ac2ed3e9340b81de4e5184989c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5c83a3ac2ed3e9340b81de4e5184989c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3

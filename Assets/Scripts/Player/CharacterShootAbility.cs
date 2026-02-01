@@ -5,6 +5,7 @@ using GGJ.Player.Interfaces;
 using Projectiles;
 using Samples.CharacterController3D.Scripts;
 using UnityEngine;
+using VisualFX;
 
 namespace GGJ.Player
 {
@@ -25,9 +26,6 @@ namespace GGJ.Player
         [SerializeField, Min(0)]
         private int maxActiveProjectiles;
         private List<ICustomUpdate> m_activeProjectiles;
-
-        [SerializeField]
-        private ParticleSystem shootParticles;
 
         //Unity Functions
         //================================================================================================================//
@@ -68,8 +66,7 @@ namespace GGJ.Player
 
             m_coolDown = fireCooldown;
 
-            SFXManager.PlaySound(SFX.PROJECTILE);
-            shootParticles.Emit(Random.Range(20,50));
+
 
             var characterControllerTransform = IAbility.CharacterController3D.transform;
             var speed = characterMovement3DData.maxSpeed * 2f;
@@ -80,6 +77,8 @@ namespace GGJ.Player
             
             m_activeProjectiles.Add(projectile);
             
+            SFXManager.PlaySound(SFX.PROJECTILE);
+            VFX.BOUNCE.PlayAtLocation(startPosition);
         }
     }
 }

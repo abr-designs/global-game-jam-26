@@ -4,7 +4,6 @@ using GameInput;
 using GGJ.Player.Enums;
 using GGJ.Player.Interfaces;
 using Interactables;
-using NaughtyAttributes;
 using UnityEngine;
 using Utilities;
 
@@ -20,11 +19,6 @@ namespace GGJ.Player
         
         [SerializeField]
         private GameObject[] maskObjects = new GameObject[3];
-        
-        [SerializeField]
-        private ParticleSystem particleSystem;
-        [SerializeField]
-        private Gradient[] maskGradients;
 
         //Unity Functions
         //================================================================================================================//
@@ -81,26 +75,6 @@ namespace GGJ.Player
                 maskObjects[i].SetActive(i == (int)maskType);
             }
         }
-        
-        /*
-        private void SetParticles(MASK_TYPE maskType)
-        {
-            if (particleSystem == null)
-                return;
-            
-            if(maskType == MASK_TYPE.NONE)
-                particleSystem.Stop();
-            else
-            {
-                var mainModule = particleSystem.main;
-                var startColor = mainModule.startColor;
-                startColor.mode = ParticleSystemGradientMode.RandomColor;
-                startColor.gradient = maskGradients[(int)maskType];
-
-                mainModule.startColor = startColor;
-                particleSystem?.Play();
-            }
-        }*/
 
         //Functions
         //================================================================================================================//
@@ -116,13 +90,6 @@ namespace GGJ.Player
             m_abilities.FirstOrDefault(x => x.MaskType == CurrentlyEquippedMask)?
                 .UseAbility();
         }
-
-        /*[Button, Conditional("DEBUG")]
-        private void GiveNoMask() => EquipMask(MASK_TYPE.NONE);
-        [Button, Conditional("DEBUG")]
-        private void GiveDashMask() => EquipMask(MASK_TYPE.DASH);
-        [Button, Conditional("DEBUG")]
-        private void GiveShootMask() => EquipMask(MASK_TYPE.SHOOT);*/
         
         //Callbacks
         //================================================================================================================//
