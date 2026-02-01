@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System.Diagnostics;
+using System.Linq;
 using GameInput;
 using GGJ.Player.Enums;
 using GGJ.Player.Interfaces;
 using Interactables;
+using NaughtyAttributes;
 using UnityEngine;
 using Utilities;
 
@@ -85,6 +87,13 @@ namespace GGJ.Player
             m_abilities.FirstOrDefault(x => x.MaskType == CurrentlyEquippedMask)?
                 .UseAbility();
         }
+
+        [Button, Conditional("DEBUG")]
+        private void GiveNoMask() => EquipMask(MASK_TYPE.NONE);
+        [Button, Conditional("DEBUG")]
+        private void GiveDashMask() => EquipMask(MASK_TYPE.DASH);
+        [Button, Conditional("DEBUG")]
+        private void GiveShootMask() => EquipMask(MASK_TYPE.SHOOT);
         
         //Callbacks
         //================================================================================================================//
