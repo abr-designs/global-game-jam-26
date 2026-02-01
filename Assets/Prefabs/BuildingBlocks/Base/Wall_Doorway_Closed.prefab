@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestDoor
   _doorOpenAngle: 110
-  _doorSwingDuration: 2.35
+  _doorSwingDuration: 1.75
 --- !u!1001 &8286001044181564079
 PrefabInstance:
   m_ObjectHideFlags: 0
