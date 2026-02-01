@@ -51,7 +51,7 @@ MonoBehaviour:
     lifetime: 0
   - name: BOUNCE
     type: 4
-    prefab: {fileID: 1922072749481392877, guid: f533ab88e3c3e0e4fa92b154d99beda9, type: 3}
+    prefab: {fileID: 3276860915772333424, guid: bd7a98baf960fa3498d1ece0070e297a, type: 3}
     lifetime: 0.5
   - name: DASH
     type: 2
