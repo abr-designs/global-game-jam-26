@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using Audio;
 using NaughtyAttributes;
 using Projectiles;
 using UnityEngine;
@@ -67,6 +68,7 @@ namespace Samples.CharacterController3D.Scripts
         public bool Hit(Projectile _)
         {
             //TODO Announce that the player has been f'd up
+            SFXManager.PlaySound(SFX.PLAYER_DIED);
             StageLogicalObject.CharacterDamaged();
             return false;
         }
