@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Utility.CameraObjectHider
   checkFrequency: 3
-  dotThreshold: -0.8
+  dotThreshold: -0.45
 --- !u!1001 &2370013589700821087
 PrefabInstance:
   m_ObjectHideFlags: 0
