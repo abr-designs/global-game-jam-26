@@ -21,7 +21,7 @@ public class LeftSwingDoor : MonoBehaviour
     {
         StopAllCoroutines();
 
-        SFXManager.PlaySound(SFX.SWING_DOOR);
+        SFXManager.PlaySoundAtLocation(SFX.SWING_DOOR, transform.position);
         StartCoroutine(SwingDoor(_isOpen ? _closedRotation : _openRotation));
         _isOpen = !_isOpen;
     }

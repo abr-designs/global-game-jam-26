@@ -52,7 +52,7 @@ public class LoopingTimedSpikes : MonoBehaviour
 
     private IEnumerator Deploy()
     {
-        SFXManager.PlaySound(SFX.SPIKES_DEPLOY, volume: _spikeVolume);
+        SFXManager.PlaySoundAtLocation(SFX.SPIKES_DEPLOY, transform.position);// volume: _spikeVolume);
         yield return MoveSpikes(
             _retractedHeight,
             _deployedHeight,
@@ -63,7 +63,7 @@ public class LoopingTimedSpikes : MonoBehaviour
 
     private IEnumerator Retract()
     {
-        SFXManager.PlaySound(SFX.SPIKES_RETRACT, volume: _retractVolume);
+        SFXManager.PlaySoundAtLocation(SFX.SPIKES_RETRACT, transform.position);//, volume: _retractVolume);
         yield return MoveSpikes(
             _deployedHeight,
             _retractedHeight,

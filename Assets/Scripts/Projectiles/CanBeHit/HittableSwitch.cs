@@ -11,7 +11,7 @@ namespace Projectiles.CanBeHit
 
         public virtual void Interact()
         {
-            SFXManager.PlaySound(SFX.INTERACT_SWITCH);
+            SFXManager.PlaySoundAtLocation(SFX.INTERACT_SWITCH, transform.position);
 
             hitEvent.Invoke();
         }

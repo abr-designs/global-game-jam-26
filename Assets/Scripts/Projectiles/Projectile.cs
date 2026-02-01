@@ -86,7 +86,7 @@ namespace Projectiles
                     return canBeHit.Hit(this);
                 }
 
-                SFXManager.PlaySound(SFX.PROJECTILE_BOUNCE);
+                SFXManager.PlaySoundAtLocation(SFX.PROJECTILE_BOUNCE, transform.position);
 
                 if (maxBounces > 0 && m_bouncesRemaining-- == 1)
                     return false;
