@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Audio;
+using System;
 using UnityEngine;
+using VisualFX;
 
 namespace Projectiles
 {
@@ -53,12 +55,16 @@ namespace Projectiles
                 return false;
             }
 
-            //TODO Play some VFX for the bounce
-            //TODO Play some SFX for the bounce
+            
             
             transform.position += m_currentDirection * (m_currentSpeed * Time.deltaTime);
             
             return true;
+        }
+
+        private void OnDestroy()
+        {
+            VFX.BOUNCE.PlayAtLocation(transform.position, 2f);
         }
 
         private bool CheckForCollisions()
@@ -79,11 +85,14 @@ namespace Projectiles
                 {
                     return canBeHit.Hit(this);
                 }
-                
-                
+
+                SFXManager.PlaySoundAtLocation(SFX.PROJECTILE_BOUNCE, transform.position);
+
                 if (maxBounces > 0 && m_bouncesRemaining-- == 1)
                     return false;
                 
+                //TODO Play some SFX for the bounce
+                VFX.BOUNCE.PlayAtLocation(transform.position);
                 m_currentDirection = Vector3.Reflect(m_currentDirection, m_raycastHits[0].normal);
             }
 

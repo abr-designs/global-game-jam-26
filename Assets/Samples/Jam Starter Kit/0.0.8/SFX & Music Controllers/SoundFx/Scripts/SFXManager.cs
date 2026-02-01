@@ -32,6 +32,11 @@ namespace Audio
 
             public AudioClip GetRandomAudioClip()
             {
+                if (audioClips.Length == 0)
+                {
+                    Debug.LogWarning($"SFXManager: No audioClips assigned to SFX [{type}]");
+                    return null;
+                }
                 return audioClips.Length == 1 ? audioClips[0] : audioClips[Random.Range(0, audioClips.Length)];
             }
         }
@@ -102,6 +107,9 @@ namespace Audio
             
             var sfxData = GetSFXData(sfx);
 
+            if (sfxData == null)
+                return;
+
             var hasAntiSpam = _sfxAntiSpam.TryGetValue(sfx, out var count);
             if (sfxData.maxPlaying > 0 && hasAntiSpam && count > sfxData.maxPlaying)
                 return;
@@ -113,6 +121,11 @@ namespace Audio
             var audioClip = sfxData.GetRandomAudioClip();
 
             Assert.IsNotNull(sfxData);
+            if (audioClip == null)
+            {
+                Debug.LogWarning($"SFXManager: No sfxData found for SFX [{sfx}]");
+                return;
+            }
             Assert.IsNotNull(audioClip);
 
             sfxAudioSource.PlayOneShot(audioClip, volume);

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Audio;
 
 public class LoopingTimedSpikes : MonoBehaviour
 {
@@ -15,7 +16,14 @@ public class LoopingTimedSpikes : MonoBehaviour
     [SerializeField] private float _retractedHeight = -1.25f;
     [SerializeField] private float _deployedHeight = 1f;
 
+    [Header("Audio")]
+    [SerializeField, Range(0f, 1f)] private float _spikeVolume = 0.5f;
+    [SerializeField, Range(0f, 1f)] private float _retractVolume = 0.75f;
+
     private Coroutine _loopRoutine;
+
+    [SerializeField]
+    private ParticleSystem particleSystem;
 
     private void Start()
     {
@@ -44,14 +52,18 @@ public class LoopingTimedSpikes : MonoBehaviour
 
     private IEnumerator Deploy()
     {
+        SFXManager.PlaySoundAtLocation(SFX.SPIKES_DEPLOY, transform.position);// volume: _spikeVolume);
         yield return MoveSpikes(
             _retractedHeight,
             _deployedHeight,
             _deployDuration);
+        
+        particleSystem.Emit(Random.Range(10,30));
     }
 
     private IEnumerator Retract()
     {
+        SFXManager.PlaySoundAtLocation(SFX.SPIKES_RETRACT, transform.position);//, volume: _retractVolume);
         yield return MoveSpikes(
             _deployedHeight,
             _retractedHeight,

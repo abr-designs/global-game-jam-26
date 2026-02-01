@@ -1,3 +1,4 @@
+using Audio;
 using System.Collections;
 using UnityEngine;
 
@@ -19,6 +20,8 @@ public class LeftSwingDoor : MonoBehaviour
     public void ToggleDoor()
     {
         StopAllCoroutines();
+
+        SFXManager.PlaySoundAtLocation(SFX.SWING_DOOR, transform.position);
         StartCoroutine(SwingDoor(_isOpen ? _closedRotation : _openRotation));
         _isOpen = !_isOpen;
     }

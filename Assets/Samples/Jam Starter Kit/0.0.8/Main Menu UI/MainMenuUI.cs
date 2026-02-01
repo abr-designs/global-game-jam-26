@@ -1,5 +1,7 @@
+using System;
 using Audio;
 using Audio.SoundFX;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
@@ -10,40 +12,31 @@ namespace UI
 {
     public class MainMenuUI : MonoBehaviour
     {
-        [Header("Main Menu")]
-        [SerializeField]
-        private Button playButton;
-        [SerializeField]
-        private Button settingsButton;
-        [SerializeField]
-        private Button quitButton;
-
-        [SerializeField, Header("Windows")] 
-        private BaseUIWindow settingsWindow;
         //============================================================================================================//
+
+        [SerializeField]
+        private CinemachineCamera beginCamera;
+        [SerializeField]
+        private CinemachineCamera menuCamera;
         
         // Start is called before the first frame update
         private void Start()
         {
-            Assert.IsNotNull(settingsWindow);
-            
-            ScreenFader.ForceSetColorBlack();
-            playButton.onClick.AddListener(OnPlayButtonPressed);
-            
-            settingsButton.onClick.AddListener(OnSettingButtonPressed);
+            ScreenFader.FadeIn(2f, null);
+            menuCamera.Priority = -100;
+        }
 
-#if UNITY_WEBGL
-            quitButton.gameObject.SetActive(false);
-#else
-            quitButton.onClick.AddListener(OnQuitButtonPressed);
-#endif
-
-            ScreenFader.FadeIn(1f, null);
+        private void Update()
+        {
+            if (menuCamera.Priority < 0 && Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
+                menuCamera.Priority = 100;
+            else if(menuCamera.Priority > 0 && Input.GetKeyDown(KeyCode.Escape))
+                menuCamera.Priority = -100;
         }
 
         //============================================================================================================//
         
-        private void OnPlayButtonPressed()
+        public void OnPlayButtonPressed()
         {
             SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
 
@@ -52,15 +45,8 @@ namespace UI
                 SceneManager.LoadScene(1);
             });
         }
-        
-        private void OnSettingButtonPressed()
-        {
-            SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
 
-            settingsWindow.OpenWindow();
-        }
-
-        private void OnQuitButtonPressed()
+        public void OnQuitButtonPressed()
         {
             SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
 
