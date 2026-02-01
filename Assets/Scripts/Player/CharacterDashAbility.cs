@@ -5,6 +5,7 @@ using GGJ.Player.Enums;
 using GGJ.Player.Interfaces;
 using Interactables;
 using Samples.CharacterController3D.Scripts;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
 using Utilities.Debugging;
@@ -30,6 +31,16 @@ namespace GGJ.Player
         [SerializeField]
         private ParticleSystem dashParticleSystem;
 
+        [SerializeField]
+        private CinemachineCamera cinemachineCamera;
+
+        [SerializeField]
+        private float dashingFov;
+
+        private float m_originalFov;
+        private float m_targetFov;
+        private float m_fovVelocity;
+        
         private RaycastHit[] m_raycastHits;
         private float m_lastUsed;
 
@@ -38,6 +49,12 @@ namespace GGJ.Player
         private void Start()
         {
             IAbility.CharacterController3D ??= FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
+            m_targetFov = m_originalFov = cinemachineCamera.Lens.FieldOfView;
+        }
+
+        private void Update()
+        {
+            cinemachineCamera.Lens.FieldOfView = Mathf.SmoothDamp(cinemachineCamera.Lens.FieldOfView, m_targetFov, ref m_fovVelocity, 0.2f);
         }
 
         //TODO Consider if we should be checking the Grounded state or the Coyote Time
@@ -95,10 +112,13 @@ namespace GGJ.Player
 
         private IEnumerator DashCoroutine(Transform targetTransform, Vector3 startPos, Vector3 destination, float totalTime, float maxT = 1f)
         {
+            
             IsBusy = true;
             Dashing?.Invoke(true);
             dashParticleSystem.Play();
             VFX.DASH.PlayAtLocation(targetTransform.position);
+
+            m_targetFov = dashingFov;
 
             playerAnimator.SetBool(DodgingAnimationHash, true);
             IAbility.CharacterController3D.TogglePhysics(false);
@@ -118,7 +138,8 @@ namespace GGJ.Player
             playerAnimator.SetBool(DodgingAnimationHash, false);
 
             m_lastUsed = Time.timeSinceLevelLoad;
-            
+
+            m_targetFov = m_originalFov;
             IsBusy = false;
             Dashing?.Invoke(false);
             dashParticleSystem.Stop();

@@ -58,95 +58,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 1128837692835708650}
   - {fileID: 4562877318800544521}
-  particleSystem: {fileID: 0}
-  maskGradients:
-  - serializedVersion: 2
-    key0: {r: 0, g: 0, b: 0, a: 0}
-    key1: {r: 0, g: 0, b: 0, a: 0}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: 0
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  - serializedVersion: 2
-    key0: {r: 0.6, g: 0.72156864, b: 0.59607846, a: 1}
-    key1: {r: 0.43529415, g: 0.5294118, b: 0.43529415, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: 0
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  - serializedVersion: 2
-    key0: {r: 0.56078434, g: 0.04705883, b: 0.24313727, a: 1}
-    key1: {r: 0.9058824, g: 0.2901961, b: 0.37647063, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 65535
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: 0
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
 --- !u!114 &1293718183415021081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +74,8 @@ MonoBehaviour:
   playerCollider: {fileID: 975587328670491526}
   playerAnimator: {fileID: 5688627116297719645}
   dashParticleSystem: {fileID: 4313208788575295615}
+  cinemachineCamera: {fileID: 8374091799105472626}
+  dashingFov: 80
 --- !u!114 &5734676151587384364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,6 +676,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7257873160547157232, guid: 9e3077fec33907d45bec35acf5f182f1, type: 3}
   m_PrefabInstance: {fileID: 8301565246325349122}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8374091799105472626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 505482347060319088, guid: 9e3077fec33907d45bec35acf5f182f1, type: 3}
+  m_PrefabInstance: {fileID: 8301565246325349122}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8800301820140193592
 PrefabInstance:
   m_ObjectHideFlags: 0

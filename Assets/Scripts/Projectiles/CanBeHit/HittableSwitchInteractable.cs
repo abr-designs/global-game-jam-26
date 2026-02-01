@@ -14,6 +14,8 @@ namespace Projectiles.CanBeHit
 
         [SerializeField]
         private VFX vfxOnActivate;
+        [SerializeField]
+        private Vector3 localOffset;
         
         
         public void OnEnable()
@@ -31,7 +33,7 @@ namespace Projectiles.CanBeHit
             base.Interact();
             
             if(vfxOnActivate != VFX.NONE)
-                vfxOnActivate.PlayAtLocation(transform.position);
+                vfxOnActivate.PlayAtLocation(transform.TransformPoint(localOffset));
         }
         
         public override bool Hit(Projectile _)
@@ -43,6 +45,10 @@ namespace Projectiles.CanBeHit
         private void OnDrawGizmos()
         {
             Draw.Circle(transform.position, Vector3.up, Color.white, InteractionDistance);
+            
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(transform.TransformPoint(localOffset),
+                0.25f);
         }
     }
 }
