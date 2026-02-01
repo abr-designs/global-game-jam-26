@@ -27,8 +27,9 @@ namespace GGJ.Player
         private void OnEnable()
         {
             GameInputDelegator.OnJumpPressed += OnJumpPressed;
+            StageManager.OnPlayerReset += OnPlayerReset;
         }
-        
+
         private void Start()
         {
             m_abilities = new IAbility[abilities.Length];
@@ -43,6 +44,7 @@ namespace GGJ.Player
         private void OnDisable()
         {
             GameInputDelegator.OnJumpPressed -= OnJumpPressed;
+            StageManager.OnPlayerReset -= OnPlayerReset;
         }
 
         //================================================================================================================//
@@ -104,6 +106,11 @@ namespace GGJ.Player
                 return;
             
             UseAbility();
+        }
+        
+        private void OnPlayerReset()
+        {
+            EquipMask(MASK_TYPE.NONE);
         }
 
     }

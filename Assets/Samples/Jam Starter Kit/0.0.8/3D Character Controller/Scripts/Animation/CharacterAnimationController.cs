@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Samples.CharacterController3D.Scripts
@@ -6,6 +7,7 @@ namespace Samples.CharacterController3D.Scripts
     {
         private static readonly int SpeedHash = Animator.StringToHash("Speed");
         private static readonly int IsGroundedHash = Animator.StringToHash("Grounded");
+        private static readonly int IsDeadHash = Animator.StringToHash("Dead");
 
         [SerializeField]
         private Animator animator;
@@ -21,7 +23,13 @@ namespace Samples.CharacterController3D.Scripts
 
         //Unity Functions
         //============================================================================================================//
-        
+
+        private void OnEnable()
+        {
+            StageLogicalObject.OnCharacterDamaged += OnCharacterDamaged;
+            StageManager.OnPlayerReset += OnPlayerReset;
+        }
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start()
         {
@@ -39,6 +47,12 @@ namespace Samples.CharacterController3D.Scripts
             
             animator.SetFloat(SpeedHash, GetNormalizedSpeed());
         }
+        
+        private void OnDisable()
+        {
+            StageLogicalObject.OnCharacterDamaged -= OnCharacterDamaged;
+            StageManager.OnPlayerReset -= OnPlayerReset;
+        }
 
         //CharacterAnimationController Functions
         //============================================================================================================//
@@ -48,6 +62,19 @@ namespace Samples.CharacterController3D.Scripts
             var velocity = characterRigidbody.linearVelocity;
             velocity.y = 0;
             return velocity.sqrMagnitude / m_sqrSpeed;
+        }
+
+        //Callbacks
+        //================================================================================================================//
+
+        private void OnCharacterDamaged()
+        {
+            animator.SetTrigger(IsDeadHash);
+        }
+        
+        private void OnPlayerReset()
+        {
+            animator.ResetTrigger(IsDeadHash);
         }
         
         

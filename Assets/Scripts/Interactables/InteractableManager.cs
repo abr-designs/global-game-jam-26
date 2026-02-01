@@ -159,6 +159,9 @@ namespace Interactables
             for (int i = 0; i < m_inRangeCount; i++)
             {
                 var interactable = m_interactablesInRange[i];
+                if(interactable == null)
+                    continue;
+                
                 Gizmos.DrawLine(pos, interactable.transform.position);
             }
         }
