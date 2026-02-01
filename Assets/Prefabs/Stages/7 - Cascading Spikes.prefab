@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 4158979118713130718}
   - component: {fileID: 3680607228496949992}
   m_Layer: 0
-  m_Name: Cascading Spikes
+  m_Name: 7 - Cascading Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
