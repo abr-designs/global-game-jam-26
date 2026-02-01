@@ -541,6 +541,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3407418605342326453, guid: abffe6c89a1bdaf4d9da22ada59aa1e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7138085271486551963, guid: abffe6c89a1bdaf4d9da22ada59aa1e7, type: 3}
       propertyPath: m_Name
       value: Animated Player Variant
@@ -1217,7 +1221,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1532368704433194625, guid: f08c65c8e2c82ed4e9e9ed6e3e62b33d, type: 3}
+    - {fileID: 3591667490291433657, guid: f08c65c8e2c82ed4e9e9ed6e3e62b33d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f08c65c8e2c82ed4e9e9ed6e3e62b33d, type: 3}
