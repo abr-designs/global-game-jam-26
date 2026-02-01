@@ -61,3 +61,7 @@ MonoBehaviour:
     type: 5
     prefab: {fileID: 3276860915772333424, guid: c4fea26880057f64f883b627042d0d07, type: 3}
     lifetime: 1
+  - name: WALL_EXPLODE
+    type: 6
+    prefab: {fileID: 3187481110904108724, guid: 026a530e5753ac2478ae9aa8166d50f8, type: 3}
+    lifetime: 3
