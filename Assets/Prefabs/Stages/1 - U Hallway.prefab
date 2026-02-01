@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7549180927336628523}
   - component: {fileID: 9144649355891634958}
   m_Layer: 0
-  m_Name: Alex Stage 1
+  m_Name: 1 - U Hallway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

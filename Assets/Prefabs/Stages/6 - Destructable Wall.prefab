@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 1495376178299581755}
   - component: {fileID: 1553487621818179232}
   m_Layer: 0
-  m_Name: Destructable Wall Stage
+  m_Name: 6 - Destructable Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

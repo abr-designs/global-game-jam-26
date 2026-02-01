@@ -1881,7 +1881,7 @@ GameObject:
   - component: {fileID: 7656650058107135286}
   - component: {fileID: 3559228618203892584}
   m_Layer: 0
-  m_Name: 3 floors with lever gate
+  m_Name: 8 - Dash Spikes and Lever Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2291,15 +2291,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.000002
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0000019073486
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalRotation.w
