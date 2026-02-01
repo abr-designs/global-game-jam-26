@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     edgeDetectionMaterial: {fileID: 2100000, guid: 516c5b9c6813c0241b24789a1675522f, type: 2}
-    renderPassEvent: 500
+    renderPassEvent: 450
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,6 +4,9 @@ Shader "Hidden/Edge Detection"
     {
         _OutlineThickness ("Outline Thickness", Float) = 1
         _OutlineColor ("Outline Color", Color) = (0, 0, 0, 1)
+        _DepthThreshold ("Depth Threshold", Range(0, 1)) = 0.1
+        _NormalsThreshold ("Normals Threshold", Range(0, 1)) = 0.1
+        _LineFadeDistance("Line Fade Distance", Float) = 100.0
     }
 
     SubShader
@@ -31,6 +34,9 @@ Shader "Hidden/Edge Detection"
 
             float _OutlineThickness;
             float4 _OutlineColor;
+            float _DepthThreshold;
+            float _NormalsThreshold;
+            float _LineFadeDistance;
 
             #pragma vertex Vert // vertex shader is provided by the Blit.hlsl include
             #pragma fragment frag
@@ -104,11 +110,11 @@ Shader "Hidden/Edge Detection"
                 // float edge_luminance = RobertsCross(luminance_samples);
                 
                 // Threshold the edges (discontinuity must be above certain threshold to be counted as an edge). The sensitivities are hardcoded here.
-                float depth_threshold = 1 / 1000.0f;
-                edge_depth = edge_depth > depth_threshold ? 1 : 0;
+                // float depth_threshold = 1 / 1000.0f;
+                edge_depth = edge_depth > _DepthThreshold ? 1 : 0;
                 
-                float normal_threshold = 1 / 4.0f;
-                edge_normal = edge_normal > normal_threshold ? 1 : 0;
+                // float normal_threshold = 1 / 4.0f;
+                edge_normal = edge_normal > _NormalsThreshold ? 1 : 0;
                 
                 // float3 centerNormal = SampleSceneNormals(uv);
                 // float3 worldPos = ComputeWorldSpacePosition(uv, rawDepth, UNITY_MATRIX_I_VP);
@@ -125,7 +131,7 @@ Shader "Hidden/Edge Detection"
                 
                 // Color the edge with a custom color.
                 float3 c = edge * _OutlineColor.rgb;
-                float depthFactor = 1.0 - clamp(linearDepth / 100.0, 0, 1.0);
+                float depthFactor = 1.0 - clamp(linearDepth / _LineFadeDistance, 0, 1.0);
                 float4 outColor = float4(c, min(depthFactor,edge) ); //float4(c, edge * 1.0);
 
                 // return edge * _OutlineColor;
