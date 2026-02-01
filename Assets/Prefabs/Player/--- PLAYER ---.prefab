@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4835964767345743515}
+  - component: {fileID: 996532746601571461}
   - component: {fileID: 1293718183415021081}
   - component: {fileID: 5734676151587384364}
   - component: {fileID: 710755784897349847}
@@ -38,6 +39,25 @@ Transform:
   - {fileID: 1696784709896511474}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &996532746601571461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169258498058466993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c95cc99e546c48c9b20f85abf4fe3cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGJ.Player.PlayerMaskManager
+  abilities:
+  - {fileID: 1293718183415021081}
+  - {fileID: 5734676151587384364}
+  maskObjects:
+  - {fileID: 0}
+  - {fileID: 7625972561477191089}
+  - {fileID: 6801003464259695762}
 --- !u!114 &1293718183415021081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,6 +85,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a2539323c74b0fbf2cd23fb47f7f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGJ.Player.CharacterShootAbility
+  projectilePrefab: {fileID: 2754638029764164281, guid: 0c11c04ac749e68479ff8b37a43417b1, type: 3}
+  characterMovement3DData: {fileID: 11400000, guid: ea5bdefc5e4990145beac3b5ff298db5, type: 2}
+  fireCooldown: 0.5
+  maxActiveProjectiles: 0
 --- !u!114 &710755784897349847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactables.InteractableManager
   characterController3D: {fileID: 3982724268736218870}
-  interactionRange: 3
+  interactionRange: 2.25
   dotThreshold: -1
   checkFrequency: 10
 --- !u!1 &8145352286825375579
@@ -483,6 +507,16 @@ MonoBehaviour:
 --- !u!95 &5688627116297719645 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7931378758649630466, guid: abffe6c89a1bdaf4d9da22ada59aa1e7, type: 3}
+  m_PrefabInstance: {fileID: 2370013589700821087}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6801003464259695762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9115846755853874381, guid: abffe6c89a1bdaf4d9da22ada59aa1e7, type: 3}
+  m_PrefabInstance: {fileID: 2370013589700821087}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7625972561477191089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5275720047796291054, guid: abffe6c89a1bdaf4d9da22ada59aa1e7, type: 3}
   m_PrefabInstance: {fileID: 2370013589700821087}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8301565246325349122

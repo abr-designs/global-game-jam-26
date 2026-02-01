@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class StageLogicalObject : MonoBehaviour
 {
-    public static event Action CharacterDamaged;
+    public static event Action OnCharacterDamaged;
 
-    protected void OnCharacterDamaged()
+    public static void CharacterDamaged()
     {
-        CharacterDamaged?.Invoke();
+        OnCharacterDamaged?.Invoke();
     }
 }

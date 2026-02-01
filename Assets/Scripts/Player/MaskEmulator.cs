@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using GameInput;
 using GGJ.Player.Enums;
@@ -6,9 +7,10 @@ using UnityEngine;
 
 namespace GGJ.Player
 {
-    public class MaskEmulator : MonoBehaviour, IAbility
+    [Obsolete]
+    public class MaskEmulator : MonoBehaviour//, IAbility
     {
-        public MASK_TYPE MaskType => maskType;
+        /*public MASK_TYPE MaskType => maskType;
         
         [SerializeField] 
         private MASK_TYPE maskType = MASK_TYPE.NONE;
@@ -58,6 +60,6 @@ namespace GGJ.Player
                 return;
             
             UseAbility();
-        }
+        }*/
     }
 }

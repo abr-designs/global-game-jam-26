@@ -2,8 +2,8 @@
 {
     public enum MASK_TYPE
     {
-        NONE,
-        DASH,
-        SHOOT
+        NONE = 0,
+        DASH = 1,
+        SHOOT = 2
     }
 }

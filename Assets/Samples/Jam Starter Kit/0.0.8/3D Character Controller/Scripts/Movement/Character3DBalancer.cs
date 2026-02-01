@@ -17,6 +17,7 @@ namespace Samples.CharacterController3D.Scripts
 
         private Quaternion m_targetRotation;
         private Rigidbody m_rigidbody;
+        
         private RaycastHit[] m_raycastHits;
 
         private float m_groundDifference;
@@ -32,7 +33,7 @@ namespace Samples.CharacterController3D.Scripts
         private void Start()
         {
             m_raycastHits = new RaycastHit[5];
-            m_rigidbody = GetComponent<Rigidbody>();
+            m_rigidbody ??= GetComponent<Rigidbody>();
 
             FaceDirection(transform.forward);
         }
@@ -46,7 +47,8 @@ namespace Samples.CharacterController3D.Scripts
             Debug.DrawRay(m_rigidbody.position, Vector3.down * (characterMovementData.rideHeight * 2f), Color.red);
             Debug.DrawRay(m_rigidbody.position, Vector3.down * characterMovementData.rideHeight, Color.yellow);
             
-            Draw.Arrow(transform.position, velocity.normalized, Color.green);
+            if(velocity.normalized != Vector3.zero)
+                Draw.Arrow(transform.position, velocity.normalized, Color.green);
             
             Debug.DrawRay(m_rigidbody.position + (Vector3.down * characterMovementData.rideHeight), Vector3.up * m_groundDifference, Color.green);
 
@@ -67,6 +69,14 @@ namespace Samples.CharacterController3D.Scripts
 
         //============================================================================================================//
 
+        public void ForceFaceDirection(Vector3 direction)
+        {
+            if (direction == Vector3.zero)
+                return;
+            m_rigidbody ??= GetComponent<Rigidbody>();
+            
+            m_rigidbody.rotation = Quaternion.LookRotation(direction, Vector3.up);
+        }
         public void FaceDirection(Vector3 direction)
         {
             if (direction == Vector3.zero)
