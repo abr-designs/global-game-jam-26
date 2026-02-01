@@ -26,6 +26,9 @@ namespace GGJ.Player
         private int maxActiveProjectiles;
         private List<ICustomUpdate> m_activeProjectiles;
 
+        [SerializeField]
+        private ParticleSystem shootParticles;
+
         //Unity Functions
         //================================================================================================================//
 
@@ -66,6 +69,7 @@ namespace GGJ.Player
             m_coolDown = fireCooldown;
 
             SFXManager.PlaySound(SFX.PROJECTILE);
+            shootParticles.Emit(Random.Range(20,50));
 
             var characterControllerTransform = IAbility.CharacterController3D.transform;
             var speed = characterMovement3DData.maxSpeed * 2f;
@@ -75,6 +79,7 @@ namespace GGJ.Player
             projectile.Launch(speed, characterControllerTransform.forward.normalized);
             
             m_activeProjectiles.Add(projectile);
+            
         }
     }
 }

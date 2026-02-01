@@ -44,4 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed810f9539c92e24787ab21e499cdac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfxDatas: []
+  vfxDatas:
+  - name: NONE
+    type: 0
+    prefab: {fileID: 0}
+    lifetime: 0
+  - name: BOUNCE
+    type: 4
+    prefab: {fileID: 1922072749481392877, guid: f533ab88e3c3e0e4fa92b154d99beda9, type: 3}
+    lifetime: 0.5

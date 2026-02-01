@@ -20,6 +20,11 @@ namespace GGJ.Player
         
         [SerializeField]
         private GameObject[] maskObjects = new GameObject[3];
+        
+        [SerializeField]
+        private ParticleSystem particleSystem;
+        [SerializeField]
+        private Gradient[] maskGradients;
 
         //Unity Functions
         //================================================================================================================//
@@ -69,11 +74,33 @@ namespace GGJ.Player
         
         private void SetMaskVisual(MASK_TYPE maskType)
         {
+            //SetParticles(maskType);
+            
             for (int i = 1; i < 3; i++)
             {
                 maskObjects[i].SetActive(i == (int)maskType);
             }
         }
+        
+        /*
+        private void SetParticles(MASK_TYPE maskType)
+        {
+            if (particleSystem == null)
+                return;
+            
+            if(maskType == MASK_TYPE.NONE)
+                particleSystem.Stop();
+            else
+            {
+                var mainModule = particleSystem.main;
+                var startColor = mainModule.startColor;
+                startColor.mode = ParticleSystemGradientMode.RandomColor;
+                startColor.gradient = maskGradients[(int)maskType];
+
+                mainModule.startColor = startColor;
+                particleSystem?.Play();
+            }
+        }*/
 
         //Functions
         //================================================================================================================//
@@ -90,12 +117,12 @@ namespace GGJ.Player
                 .UseAbility();
         }
 
-        [Button, Conditional("DEBUG")]
+        /*[Button, Conditional("DEBUG")]
         private void GiveNoMask() => EquipMask(MASK_TYPE.NONE);
         [Button, Conditional("DEBUG")]
         private void GiveDashMask() => EquipMask(MASK_TYPE.DASH);
         [Button, Conditional("DEBUG")]
-        private void GiveShootMask() => EquipMask(MASK_TYPE.SHOOT);
+        private void GiveShootMask() => EquipMask(MASK_TYPE.SHOOT);*/
         
         //Callbacks
         //================================================================================================================//

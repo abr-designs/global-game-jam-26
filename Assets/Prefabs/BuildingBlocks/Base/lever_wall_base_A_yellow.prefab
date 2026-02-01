@@ -48,10 +48,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3bb21348a3b2aff498b7de84b60bba78, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3bb21348a3b2aff498b7de84b60bba78, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e1c1745b21b16e24280eac39a4e78448, type: 2}
+    - target: {fileID: -7186983631659621083, guid: 3bb21348a3b2aff498b7de84b60bba78, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e1c1745b21b16e24280eac39a4e78448, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 3bb21348a3b2aff498b7de84b60bba78, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8007441879807768515, guid: a506b368ecf4c564387238ea38d2127b, type: 3}
+    - target: {fileID: -2263866489313058465, guid: 3bb21348a3b2aff498b7de84b60bba78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2263866489313058465, guid: 3bb21348a3b2aff498b7de84b60bba78, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2263866489313058465, guid: 3bb21348a3b2aff498b7de84b60bba78, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2263866489313058465, guid: 3bb21348a3b2aff498b7de84b60bba78, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2263866489313058465, guid: 3bb21348a3b2aff498b7de84b60bba78, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3bb21348a3b2aff498b7de84b60bba78, type: 3}
       propertyPath: m_Name
       value: lever_wall_base_A_yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 4448386345613742586, guid: 3bb21348a3b2aff498b7de84b60bba78, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2710639019973281325, guid: a506b368ecf4c564387238ea38d2127b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -133,10 +173,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.8000002, y: 1.2, z: 0.40000027}
-  m_Center: {x: 0, y: 0.000000029802322, z: 0.20000005}
+  m_Size: {x: 1.42, y: 1.44, z: 0.56}
+  m_Center: {x: 0, y: 0.000000029802322, z: 0.23}
 --- !u!114 &21710197881873522
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -67,6 +67,89 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4298954521416087726, guid: f782726099ff10347a8b3d9795af205b, type: 3}
   m_PrefabInstance: {fileID: 31349472066304000}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &442063424184844158
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5311562220918262151}
+    m_Modifications:
+    - target: {fileID: 2089459190883348467, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089459190883348467, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.b
+      value: 0.6431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089459190883348467, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.g
+      value: 0.6682769
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089459190883348467, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.r
+      value: 0.9647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012050297132569161, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: m_Name
+      value: CircleClimbParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774349190480318438, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.010000245
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774349190480318438, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774349190480318438, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1199999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774349190480318438, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.68970275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774349190480318438, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.68970263
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774349190480318438, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15591732
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774349190480318438, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.1559172
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774349190480318438, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774349190480318438, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774349190480318438, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -115.477
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+--- !u!198 &1935921426774888589 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2089459190883348467, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+  m_PrefabInstance: {fileID: 442063424184844158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9216130989345616024 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8774349190480318438, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+  m_PrefabInstance: {fileID: 442063424184844158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2281770491777296574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -255,6 +338,9 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d5d016fdf9847c743a0000ca947cd8b1, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 9216130989345616024}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d5d016fdf9847c743a0000ca947cd8b1, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 3831555124048828833}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d5d016fdf9847c743a0000ca947cd8b1, type: 3}
       insertIndex: -1
@@ -296,6 +382,95 @@ MonoBehaviour:
   - {fileID: 4496769156748821275}
   - {fileID: 4307574783819169966}
   interactionDistance: 1
+  particleSystem: {fileID: 1935921426774888589}
+  maskGradients:
+  - serializedVersion: 2
+    key0: {r: 0, g: 0, b: 0, a: 0}
+    key1: {r: 0, g: 0, b: 0, a: 0}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  - serializedVersion: 2
+    key0: {r: 0.6, g: 0.72156864, b: 0.59607846, a: 1}
+    key1: {r: 0.43529415, g: 0.5294118, b: 0.43529415, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  - serializedVersion: 2
+    key0: {r: 0.56078434, g: 0.04705883, b: 0.24313727, a: 1}
+    key1: {r: 0.9058824, g: 0.2901961, b: 0.37647063, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 65535
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
 --- !u!136 &8752238280247742043
 CapsuleCollider:
   m_ObjectHideFlags: 0

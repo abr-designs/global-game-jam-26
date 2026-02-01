@@ -26,6 +26,9 @@ namespace Samples.CharacterController3D.Scripts
         private float m_targetRideHeightMult = 1f;
         private float m_rideHeightVelocity;
 
+        [SerializeField]
+        private ParticleSystem runningParticles;
+
         //Unity Functions
         //============================================================================================================//
         
@@ -95,7 +98,7 @@ namespace Samples.CharacterController3D.Scripts
 
             if (hitCount == 0)
             {
-                grounded = false;
+                SetGrouded(false);
                 return;
             }
 
@@ -118,8 +121,7 @@ namespace Samples.CharacterController3D.Scripts
             //Check if Grounded
             //------------------------------------------------//
             m_groundDifference = rayHit.distance - (characterMovementData.rideHeight * m_targetRideHeightMult);
-            grounded = m_groundDifference <= 0f;
-
+            SetGrouded(m_groundDifference <= 0f);
             if (!grounded)
                 return;
            
@@ -158,6 +160,22 @@ namespace Samples.CharacterController3D.Scripts
 
             var rotRadian = rotDegrees * Mathf.Deg2Rad;
             m_rigidbody.AddTorque((rotAxis * (rotRadian * characterMovementData.uprightStrength)) - (m_rigidbody.angularVelocity * characterMovementData.uprightDamper));
+        }
+
+        private void SetGrouded(bool state)
+        {
+            if (grounded == state) 
+                return;
+            
+            if(state)
+                runningParticles.Play();
+            else
+                runningParticles.Stop();
+                
+            if(grounded == false && state)
+                runningParticles.Emit(Random.Range(5,20));
+
+            grounded = state;
         }
 
 #if UNITY_EDITOR

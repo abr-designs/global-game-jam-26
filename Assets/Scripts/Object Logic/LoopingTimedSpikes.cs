@@ -22,6 +22,9 @@ public class LoopingTimedSpikes : MonoBehaviour
 
     private Coroutine _loopRoutine;
 
+    [SerializeField]
+    private ParticleSystem particleSystem;
+
     private void Start()
     {
         ResetTrap();
@@ -54,6 +57,8 @@ public class LoopingTimedSpikes : MonoBehaviour
             _retractedHeight,
             _deployedHeight,
             _deployDuration);
+        
+        particleSystem.Emit(Random.Range(10,30));
     }
 
     private IEnumerator Retract()
