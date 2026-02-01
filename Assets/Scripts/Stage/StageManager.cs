@@ -34,10 +34,10 @@ public class StageManager : MonoBehaviour
         m_inGameMenu.ExitStage -= BreakdownCurrentStage;
     }
 
-    private void Awake()
-    {
-        ValidateLevels();
-    }
+    //private void Awake()
+    //{
+    //    ValidateLevels();
+    //}
 
     private void Start()
     {
@@ -144,34 +144,34 @@ public class StageManager : MonoBehaviour
         }
     }
 
-    private void ValidateLevels()
-    {
-        LevelLoader levelLoader = GetComponent<LevelLoader>();
+    //private void ValidateLevels()
+    //{
+    //    LevelLoader levelLoader = GetComponent<LevelLoader>();
 
-        bool allLevelsValid = true;
-        foreach(LevelDataDefinition levelData in levelLoader.Levels)
-        {
-            StageController stageController = (StageController)levelData;
+    //    bool allLevelsValid = true;
+    //    foreach(LevelDataDefinition levelData in levelLoader.Levels)
+    //    {
+    //        StageController stageController = (StageController)levelData;
             
-            if (stageController.StageSpawnPoint == null)
-            {
-                Debug.LogError($"StageManger -> ValidateLevels: Level [{stageController.levelName}] is not valid. No StageSpawnPoint found.");
-                allLevelsValid = false;
-            }
+    //        if (stageController.StageSpawnPoint == null)
+    //        {
+    //            Debug.LogError($"StageManger -> ValidateLevels: Level [{stageController.levelName}] is not valid. No StageSpawnPoint found.");
+    //            allLevelsValid = false;
+    //        }
 
-            if (stageController.StageExitTrigger == null)
-            {
-                Debug.LogError($"StageManger -> ValidateLevels: Level [{stageController.levelName}] is not valid. No StageExitTrigger found.");
-                allLevelsValid = false;
-            }
-        }
+    //        if (stageController.StageExitTrigger == null)
+    //        {
+    //            Debug.LogError($"StageManger -> ValidateLevels: Level [{stageController.levelName}] is not valid. No StageExitTrigger found.");
+    //            allLevelsValid = false;
+    //        }
+    //    }
 
-        if(!allLevelsValid)
-        {
-            Debug.LogError("StageManger -> ValidateLevels: Not all levels valid.");
-                return;
-        }
-    }
+    //    if(!allLevelsValid)
+    //    {
+    //        Debug.LogError("StageManger -> ValidateLevels: Not all levels valid.");
+    //            return;
+    //    }
+    //}
 
     // ---------- EVENTS ACTIONS ---------- //
     private void RestartStage() // TODO - restart actually needs to restart instead of just respawn

@@ -1192,16 +1192,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6879450150730211499, guid: 48be5035de444314280d198f12e930a2, type: 3}
       propertyPath: levels.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6879450150730211499, guid: 48be5035de444314280d198f12e930a2, type: 3}
       propertyPath: 'levels.Array.data[0]'
       value: 
-      objectReference: {fileID: 3559228618203892584, guid: d1d45c01faca3e94689800a364bc61fa, type: 3}
+      objectReference: {fileID: 9144649355891634958, guid: 9cf6b8d897ce22b4f90b194794958f20, type: 3}
     - target: {fileID: 6879450150730211499, guid: 48be5035de444314280d198f12e930a2, type: 3}
       propertyPath: 'levels.Array.data[1]'
       value: 
-      objectReference: {fileID: 9144649355891634958, guid: 9cf6b8d897ce22b4f90b194794958f20, type: 3}
+      objectReference: {fileID: 4980173513598363984, guid: cc0784fa4684f0d419ae39ecb9af9d22, type: 3}
     - target: {fileID: 6879450150730211499, guid: 48be5035de444314280d198f12e930a2, type: 3}
       propertyPath: 'levels.Array.data[2]'
       value: 
@@ -1209,7 +1209,15 @@ PrefabInstance:
     - target: {fileID: 6879450150730211499, guid: 48be5035de444314280d198f12e930a2, type: 3}
       propertyPath: 'levels.Array.data[3]'
       value: 
-      objectReference: {fileID: 4980173513598363984, guid: cc0784fa4684f0d419ae39ecb9af9d22, type: 3}
+      objectReference: {fileID: 2673424571430005736, guid: 9e67d054140ce06499101cc1ea54c4e1, type: 3}
+    - target: {fileID: 6879450150730211499, guid: 48be5035de444314280d198f12e930a2, type: 3}
+      propertyPath: 'levels.Array.data[4]'
+      value: 
+      objectReference: {fileID: 3559228618203892584, guid: d1d45c01faca3e94689800a364bc61fa, type: 3}
+    - target: {fileID: 6879450150730211499, guid: 48be5035de444314280d198f12e930a2, type: 3}
+      propertyPath: 'levels.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1553487621818179232, guid: eddaea83b3d14a043afb034bd9741440, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

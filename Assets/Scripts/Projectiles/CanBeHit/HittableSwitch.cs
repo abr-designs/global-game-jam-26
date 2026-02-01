@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Audio;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Projectiles.CanBeHit
@@ -10,6 +11,8 @@ namespace Projectiles.CanBeHit
 
         public virtual void Interact()
         {
+            SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
+
             hitEvent.Invoke();
         }
         

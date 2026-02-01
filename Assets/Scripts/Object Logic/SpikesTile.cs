@@ -27,7 +27,7 @@ public class SpikesTile : StageLogicalObject
         if (_playerDashing)
             return;
 
-        PlaySuccumsToSpikes();
+        PlayerSuccumbsToSpikes();
     }
 
     private void OnTriggerExit(Collider other)
@@ -46,12 +46,12 @@ public class SpikesTile : StageLogicalObject
             return;
 
         if (_playerInSpikes)
-            PlaySuccumsToSpikes();
+            PlayerSuccumbsToSpikes();
     }    
 
-    private void PlaySuccumsToSpikes()
+    private void PlayerSuccumbsToSpikes()
     {
-        Debug.LogWarning("PlaySuccumsToSpikes");
+        Debug.LogWarning("PlayerSuccumbsToSpikes");
         SFXManager.PlaySound(SFX.PLAYER_DIED);
         base.OnCharacterDamaged();
     }
