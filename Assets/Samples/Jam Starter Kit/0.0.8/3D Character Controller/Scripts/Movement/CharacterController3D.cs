@@ -37,6 +37,8 @@ namespace Samples.CharacterController3D.Scripts
 
         private Character3DBalancer m_3dBalancer;
 
+        private bool m_isDead;
+
         //Jump Vars
         //------------------------------------------------//
         public float VerticalVelocity { get; private set; }
@@ -65,6 +67,7 @@ namespace Samples.CharacterController3D.Scripts
         public bool Hit(Projectile _)
         {
             //TODO Announce that the player has been f'd up
+            StageLogicalObject.CharacterDamaged();
             return false;
         }
         
@@ -74,7 +77,10 @@ namespace Samples.CharacterController3D.Scripts
         {
             GameInput.GameInputDelegator.OnMovementChanged += OnMovementChanged;
             GameInput.GameInputDelegator.OnJumpPressed += OnJumpPressed;
+            StageLogicalObject.OnCharacterDamaged += OnCharacterDamaged;
+            StageManager.OnPlayerReset += OnPlayerReset;
         }
+
 
         private void Start()
         {
@@ -86,6 +92,9 @@ namespace Samples.CharacterController3D.Scripts
 
         private void Update()
         {
+            if (m_isDead)
+                return;
+            
             CountTimers();
             JumpInputChecks();
             
@@ -95,6 +104,9 @@ namespace Samples.CharacterController3D.Scripts
 
         private void FixedUpdate()
         {
+            if (m_isDead)
+                return;
+            
             if (!usePhysics)
                 return;
             
@@ -110,6 +122,8 @@ namespace Samples.CharacterController3D.Scripts
         {
             GameInput.GameInputDelegator.OnMovementChanged -= OnMovementChanged;
             GameInput.GameInputDelegator.OnJumpPressed -= OnJumpPressed;
+            StageLogicalObject.OnCharacterDamaged -= OnCharacterDamaged;
+            StageManager.OnPlayerReset -= OnPlayerReset;
         }
 
         //Locomotion Functions
@@ -380,12 +394,28 @@ namespace Samples.CharacterController3D.Scripts
 
         private void OnMovementChanged(Vector2 movementValue)
         {
+            if (m_isDead)
+                return;
+            
             m_movementInput = movementValue;
         }
         
         private void OnJumpPressed(bool pressed)
         {
             //m_isJumpPressed = pressed;
+        }
+        
+        private void OnCharacterDamaged()
+        {
+            m_isDead = true;
+            m_movementInput = Vector2.zero;
+            m_3dBalancer.enabled = false;
+        }
+        
+        private void OnPlayerReset()
+        {
+            m_isDead = false;
+            m_3dBalancer.enabled = true;
         }
         
         //============================================================================================================//

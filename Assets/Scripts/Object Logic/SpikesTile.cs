@@ -53,6 +53,6 @@ public class SpikesTile : StageLogicalObject
     {
         Debug.LogWarning("PlaySuccumsToSpikes");
         SFXManager.PlaySound(SFX.PLAYER_DIED);
-        base.OnCharacterDamaged();
+        CharacterDamaged();
     }
 }

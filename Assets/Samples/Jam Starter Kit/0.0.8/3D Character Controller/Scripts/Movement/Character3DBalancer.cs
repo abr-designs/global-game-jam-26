@@ -68,6 +68,13 @@ namespace Samples.CharacterController3D.Scripts
 
         //============================================================================================================//
 
+        public void ForceFaceDirection(Vector3 direction)
+        {
+            if (direction == Vector3.zero)
+                return;
+            
+            m_rigidbody.rotation = Quaternion.LookRotation(direction, Vector3.up);
+        }
         public void FaceDirection(Vector3 direction)
         {
             if (direction == Vector3.zero)

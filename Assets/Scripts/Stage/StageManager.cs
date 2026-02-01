@@ -1,3 +1,4 @@
+using System;
 using Audio;
 using Levels;
 using Samples.CharacterController3D.Scripts;
@@ -6,9 +7,11 @@ using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
+using Object = UnityEngine.Object;
 
 public class StageManager : MonoBehaviour
 {
+    public static event Action OnPlayerReset;
     [SerializeField] private Transform m_stageContainer;
     [SerializeField] private Transform m_playerCharacter;
     [SerializeField] private StageController m_currentStage;
@@ -64,13 +67,13 @@ public class StageManager : MonoBehaviour
 
     private void LoadStage()
     {
-        StageLogicalObject.CharacterDamaged += LoseStage;
+        StageLogicalObject.OnCharacterDamaged += LoseStage;
         StartStage();
     }
 
     private void LoadStageLogicalObjects()
     {
-        StageLogicalObject.CharacterDamaged += LoseStage;
+        StageLogicalObject.OnCharacterDamaged += LoseStage;
     }
 
     private void StartStage()
@@ -87,9 +90,8 @@ public class StageManager : MonoBehaviour
         //    return;
         //}
 
-        m_playerCharacter.transform.position = m_currentStage.StageSpawnPoint.position;
-
-        m_playerCharacter.GetComponent<Character3DBalancer>()?.FaceDirection(m_currentStage.StageSpawnPoint.transform.forward.normalized);
+        m_playerCharacter.GetComponent<Rigidbody>().position = m_currentStage.StageSpawnPoint.position;
+        m_playerCharacter.GetComponent<Character3DBalancer>()?.ForceFaceDirection(m_currentStage.StageSpawnPoint.transform.forward.normalized);
 
         m_currentStage.StageExitTrigger.PlayerReachedExit += EndStage;
 
@@ -132,7 +134,7 @@ public class StageManager : MonoBehaviour
         // destroy existing stage
         Destroy(m_currentStage.gameObject);
 
-        StageLogicalObject.CharacterDamaged -= LoseStage;
+        StageLogicalObject.OnCharacterDamaged -= LoseStage;
     }
 
     // ---------- HELPERS ---------- //
@@ -190,6 +192,7 @@ public class StageManager : MonoBehaviour
             LevelLoader.Restart();
             m_currentStage = ((StageController)LevelLoader.CurrentLevelDataDefinition);
             m_currentStage.transform.SetParent(m_stageContainer, false);
+            OnPlayerReset?.Invoke();
             LoadStage();
 
             ScreenFader.FadeIn(null);
