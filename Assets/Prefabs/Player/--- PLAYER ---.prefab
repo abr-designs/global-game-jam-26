@@ -65,6 +65,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a2539323c74b0fbf2cd23fb47f7f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGJ.Player.CharacterShootAbility
+  projectilePrefab: {fileID: 2754638029764164281, guid: 0c11c04ac749e68479ff8b37a43417b1, type: 3}
+  characterMovement3DData: {fileID: 11400000, guid: ea5bdefc5e4990145beac3b5ff298db5, type: 2}
+  fireCooldown: 0.5
+  maxActiveProjectiles: 0
 --- !u!114 &710755784897349847
 MonoBehaviour:
   m_ObjectHideFlags: 0
