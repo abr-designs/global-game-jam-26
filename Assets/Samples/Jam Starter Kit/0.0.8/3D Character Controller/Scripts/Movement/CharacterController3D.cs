@@ -407,6 +407,7 @@ namespace Samples.CharacterController3D.Scripts
         
         private void OnCharacterDamaged()
         {
+            TogglePhysics(false);
             m_isDead = true;
             m_movementInput = Vector2.zero;
             m_3dBalancer.enabled = false;
@@ -416,6 +417,7 @@ namespace Samples.CharacterController3D.Scripts
         {
             m_isDead = false;
             m_3dBalancer.enabled = true;
+            TogglePhysics(true);
         }
         
         //============================================================================================================//

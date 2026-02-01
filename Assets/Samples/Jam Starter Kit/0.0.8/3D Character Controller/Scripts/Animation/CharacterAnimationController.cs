@@ -69,12 +69,12 @@ namespace Samples.CharacterController3D.Scripts
 
         private void OnCharacterDamaged()
         {
-            animator.SetBool(IsDeadHash, true);
+            animator.SetTrigger(IsDeadHash);
         }
         
         private void OnPlayerReset()
         {
-            animator.SetBool(IsDeadHash, false);
+            animator.ResetTrigger(IsDeadHash);
         }
         
         
