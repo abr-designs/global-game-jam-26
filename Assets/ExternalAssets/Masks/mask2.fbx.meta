@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 09b51e87c16e8d4498d7cdbc5d75cb0f
+guid: 0a7fca641fc7c6b42891abce273035c1
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: prototype_texture.037
-    second: {fileID: 2100000, guid: 4dd698f57944e2f478851fba4bc0c735, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: toon_character
-    second: {fileID: 2100000, guid: 4dd698f57944e2f478851fba4bc0c735, type: 2}
+    second: {fileID: 2100000, guid: 3d708bc853edba84fb05d813e558aa7d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
