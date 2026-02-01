@@ -241,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8374091799105472626, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: Lens.FieldOfView
-      value: 60.06866
+      value: 60.07309
       objectReference: {fileID: 0}
     - target: {fileID: 9063051205189052594, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_Enabled
@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9126555564412712927, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: field of view
-      value: 60.06866
+      value: 60.07309
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

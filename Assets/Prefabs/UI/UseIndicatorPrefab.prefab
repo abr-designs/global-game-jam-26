@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionHint
   spriteRenderer: {fileID: 1973477887842535304}
   displayDistance: 1
-  triggerDistance: 4
+  triggerDistance: 3
   fadeSpeed: 2
   fadeCurve:
     serializedVersion: 2

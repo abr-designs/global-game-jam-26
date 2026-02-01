@@ -381,7 +381,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 4496769156748821275}
   - {fileID: 4307574783819169966}
-  interactionDistance: 1
+  interactionDistance: 0.75
   particleSystem: {fileID: 1935921426774888589}
   maskGradients:
   - serializedVersion: 2

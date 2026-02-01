@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 using GameInput;
 using Audio;
 using UnityUtils;
+using Samples.CharacterController3D.Scripts;
 
 namespace UI
 {
@@ -37,6 +38,8 @@ namespace UI
 
         public event Action RestartStage;
         public event Action ExitStage;
+
+        private LockPlayerMouse _lockPlayerMouse;
 
         //============================================================================================================//
         private void Awake()
@@ -77,12 +80,15 @@ namespace UI
 
             ScreenFader.FadeIn(1f, null);
 
+            _lockPlayerMouse = FindFirstObjectByType<LockPlayerMouse>();
+
             if (shouldStartOpen)
                 OpenWindow();
             else
             {
                 isOpen = false;
                 inGameMenuWindow.gameObject.SetActive(false);
+                _lockPlayerMouse?.CloseWindow();
             }
         }   
 
@@ -97,7 +103,10 @@ namespace UI
             SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
 
             if (isOpen)
+            {
                 CloseWindow();
+                _lockPlayerMouse?.CloseWindow();
+            }
             else
                 OpenWindow();
         }
@@ -143,11 +152,13 @@ namespace UI
         {
             isOpen = false;
             inGameMenuWindow.CloseWindow();
+            _lockPlayerMouse?.CloseWindow();
         }
 
         private void OnCloseWindow()
         {
             isOpen = false;
+            _lockPlayerMouse?.CloseWindow();
         }
     }
 }

@@ -219,7 +219,7 @@ MonoBehaviour:
   hitEvent:
     m_PersistentCalls:
       m_Calls: []
-  interactionDistance: 0.1
+  interactionDistance: 1
   vfxOnActivate: 5
   localOffset: {x: 0, y: 3, z: 0}
 --- !u!65 &8852433488062167628

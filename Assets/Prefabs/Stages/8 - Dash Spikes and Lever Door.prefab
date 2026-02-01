@@ -2238,6 +2238,10 @@ PrefabInstance:
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4654058880140484260, guid: 423fadd4872b3fd4d89186586344fc9b, type: 3}
+      propertyPath: interactionDistance
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654058880140484260, guid: 423fadd4872b3fd4d89186586344fc9b, type: 3}
       propertyPath: hitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5372578978463064315}

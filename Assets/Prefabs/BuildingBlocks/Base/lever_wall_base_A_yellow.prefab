@@ -227,7 +227,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionDistance: 0.25
+  interactionDistance: 0.5
   vfxOnActivate: 5
   localOffset: {x: 0, y: 0, z: 0.42}
 --- !u!65 &2055048429612135971

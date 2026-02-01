@@ -42,7 +42,7 @@ MonoBehaviour:
   dashCollisionLayer:
     serializedVersion: 2
     m_Bits: 69
-  maxSpeed: 6
+  maxSpeed: 4.5
   GroundAcceleration: 100
   AirAcceleration: 40
   accelerationFactorFromDot:
