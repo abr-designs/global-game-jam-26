@@ -162,6 +162,7 @@ MonoBehaviour:
   moveData: {fileID: 11400000, guid: ea5bdefc5e4990145beac3b5ff298db5, type: 2}
   playerCollider: {fileID: 975587328670491526}
   playerAnimator: {fileID: 5688627116297719645}
+  dashParticleSystem: {fileID: 4313208788575295615}
 --- !u!114 &5734676151587384364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,6 +603,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3298e5433373f54daaf9c720f308c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!198 &4313208788575295615 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1961425699028391968, guid: abffe6c89a1bdaf4d9da22ada59aa1e7, type: 3}
+  m_PrefabInstance: {fileID: 2370013589700821087}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4562877318800544521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2283714730004337494, guid: abffe6c89a1bdaf4d9da22ada59aa1e7, type: 3}

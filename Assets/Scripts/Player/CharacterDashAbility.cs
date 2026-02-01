@@ -8,6 +8,7 @@ using Samples.CharacterController3D.Scripts;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
 using Utilities.Debugging;
+using VisualFX;
 
 namespace GGJ.Player
 {
@@ -25,6 +26,9 @@ namespace GGJ.Player
 
         [SerializeField]
         private Animator playerAnimator;
+
+        [SerializeField]
+        private ParticleSystem dashParticleSystem;
 
         private RaycastHit[] m_raycastHits;
         private float m_lastUsed;
@@ -93,6 +97,8 @@ namespace GGJ.Player
         {
             IsBusy = true;
             Dashing?.Invoke(true);
+            dashParticleSystem.Play();
+            VFX.DASH.PlayAtLocation(targetTransform.position);
 
             playerAnimator.SetBool(DodgingAnimationHash, true);
             IAbility.CharacterController3D.TogglePhysics(false);
@@ -115,6 +121,8 @@ namespace GGJ.Player
             
             IsBusy = false;
             Dashing?.Invoke(false);
+            dashParticleSystem.Stop();
+            VFX.DASH.PlayAtLocation(targetTransform.position);
         }
     }
 }
