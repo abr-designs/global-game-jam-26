@@ -64,7 +64,7 @@ namespace Projectiles
 
         private void OnDestroy()
         {
-            VFX.BOUNCE.PlayAtLocation(transform.position, 2f);
+            VFX.BOUNCE.PlayAtLocation(transform.position);
         }
 
         private bool CheckForCollisions()
@@ -92,7 +92,7 @@ namespace Projectiles
                     return false;
                 
                 //TODO Play some SFX for the bounce
-                VFX.BOUNCE.PlayAtLocation(transform.position);
+                VFX.BOUNCE.PlayAtLocation(transform.position, 0.75f);
                 m_currentDirection = Vector3.Reflect(m_currentDirection, m_raycastHits[0].normal);
             }
 

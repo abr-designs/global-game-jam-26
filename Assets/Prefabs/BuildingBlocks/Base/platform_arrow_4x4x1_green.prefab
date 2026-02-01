@@ -10,31 +10,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.9999995
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00000008146034
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -64,8 +64,64 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8608051875586311100}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9039595288716230126}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7394510849053823033}
   m_SourcePrefab: {fileID: 100100000, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
+--- !u!1 &7028445352588515331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}
+  m_PrefabInstance: {fileID: 7875498456356595026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9039595288716230126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7028445352588515331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418b3e42694f75040b136cebc16a25bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
+  _rangeOfMotion: {x: 0, y: 0, z: 8}
+  _moveDuration: 3
+  _waitAtEnds: 2
+  _initialDelay: 0
+  _objectBounds: {x: 4, y: 1, z: 4}
+  _gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+--- !u!54 &7394510849053823033
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7028445352588515331}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 118
+  m_CollisionDetection: 0
 --- !u!4 &7692673059269427897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c1b786117c08d849b04ce8db3c93177, type: 3}

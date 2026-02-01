@@ -85,6 +85,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7777109018335714303, guid: d880fbacf2e96044abf72ff550afb8f3, type: 3}
+      propertyPath: sfxDatas.Array.data[10].maxPlaying
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7777109018335714303, guid: d880fbacf2e96044abf72ff550afb8f3, type: 3}
+      propertyPath: sfxDatas.Array.data[11].maxPlaying
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -103,6 +111,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5491651014156849475}
     m_Modifications:
+    - target: {fileID: 5075773765866298905, guid: 64e020dcbf081c04aaa5df70cab3190b, type: 3}
+      propertyPath: startMusic
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5075773765866298905, guid: 64e020dcbf081c04aaa5df70cab3190b, type: 3}
       propertyPath: musicAudioMixer
       value: 
