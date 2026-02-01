@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
 using Object = UnityEngine.Object;
+using GGJ.Player;
 
 public class StageManager : MonoBehaviour
 {
@@ -92,6 +93,8 @@ public class StageManager : MonoBehaviour
 
         m_playerCharacter.GetComponent<Rigidbody>().position = m_currentStage.StageSpawnPoint.position;
         m_playerCharacter.GetComponent<Character3DBalancer>()?.ForceFaceDirection(m_currentStage.StageSpawnPoint.transform.forward.normalized);
+
+        PlayerMaskManager.EquipMask(GGJ.Player.Enums.MASK_TYPE.NONE);
 
         m_currentStage.StageExitTrigger.PlayerReachedExit += EndStage;
 
