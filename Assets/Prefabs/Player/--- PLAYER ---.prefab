@@ -92,7 +92,6 @@ MonoBehaviour:
   characterMovement3DData: {fileID: 11400000, guid: ea5bdefc5e4990145beac3b5ff298db5, type: 2}
   fireCooldown: 0.5
   maxActiveProjectiles: 0
-  shootParticles: {fileID: 9092574769995348826}
 --- !u!114 &710755784897349847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Utility.CameraObjectHider
   checkFrequency: 3
-  dotThreshold: -0.8
+  dotThreshold: -0.45
 --- !u!1001 &2370013589700821087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -599,11 +598,6 @@ PrefabInstance:
 --- !u!4 &1951413914773642063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5549008849010115827, guid: 778d1831cbe4a154daf2331326f83248, type: 3}
-  m_PrefabInstance: {fileID: 6203386021555019708}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &9092574769995348826 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2898499757043967206, guid: 778d1831cbe4a154daf2331326f83248, type: 3}
   m_PrefabInstance: {fileID: 6203386021555019708}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8301565246325349122
