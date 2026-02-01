@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Interactables;
+using Utilities.Debugging;
 
 namespace Projectiles.CanBeHit
 {
@@ -31,6 +33,9 @@ namespace Projectiles.CanBeHit
             return false;
         }
 
-
+        private void OnDrawGizmos()
+        {
+            Draw.Circle(transform.position, Vector3.up, Color.white, InteractionDistance);
+        }
     }
 }
