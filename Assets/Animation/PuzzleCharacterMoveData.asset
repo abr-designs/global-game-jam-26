@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb53417138442ce8d5b3efd632a3852, type: 3}
   m_Name: PuzzleCharacterMoveData
   m_EditorClassIdentifier: 
-  DashTime: 0.1
   DashDistance: 5
+  DashTime: 0.1
   DashCooldown: 0.5
   DashCurve:
     serializedVersion: 2
@@ -135,6 +135,6 @@ MonoBehaviour:
   JumpCoyoteTime: 0.1
   rideHeight: 1
   springStrength: 1317.9
-  springDamper: 0.1
+  springDamper: 10
   uprightStrength: 70.58
-  uprightDamper: 1
+  uprightDamper: 5
