@@ -1,13 +1,14 @@
 using System;
 using System.Diagnostics;
 using NaughtyAttributes;
+using Projectiles;
 using UnityEngine;
 using Utilities;
 
 namespace Samples.CharacterController3D.Scripts
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class CharacterController3D : MonoBehaviour
+    public class CharacterController3D : MonoBehaviour, ICanBeHit
     {
         public bool IsGrounded => m_3dBalancer.Grounded;
         
@@ -61,7 +62,12 @@ namespace Samples.CharacterController3D.Scripts
         private float m_coyoteTimer;
 
 
-
+        public bool Hit(Projectile _)
+        {
+            //TODO Announce that the player has been f'd up
+            return false;
+        }
+        
         //============================================================================================================//
 
         private void OnEnable()
@@ -383,5 +389,6 @@ namespace Samples.CharacterController3D.Scripts
         }
         
         //============================================================================================================//
+
     }
 }
