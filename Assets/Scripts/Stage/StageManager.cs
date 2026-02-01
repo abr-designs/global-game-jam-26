@@ -4,6 +4,7 @@ using Samples.CharacterController3D.Scripts;
 using System.Collections.Generic;
 using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utilities;
 
 public class StageManager : MonoBehaviour
@@ -16,8 +17,11 @@ public class StageManager : MonoBehaviour
     [SerializeField] private InGameMenuUI m_inGameMenu;
 
     [Header("Runtime")]
-    private List<StageLogicalObject> stageLogicalObjects = new List<StageLogicalObject>(); // may no long er be used
+    //private List<StageLogicalObject> stageLogicalObjects = new List<StageLogicalObject>(); // may no longer be used
     private bool stageIsRestarting;
+
+    // private
+    private int _creditsSceneIndex = 2;
 
     private void OnEnable()
     {
@@ -43,15 +47,6 @@ public class StageManager : MonoBehaviour
             return;
         }
 
-        //if (m_currentStage == null)
-        //    m_currentStage = FindFirstObjectByType<StageController>();
-
-        //if (m_currentStage == null)
-        //{
-        //    Debug.LogError($"StageManager: No StageController found");
-        //    return;
-        //}
-
         StartGame();
     }
 
@@ -62,53 +57,41 @@ public class StageManager : MonoBehaviour
 
         // load level data
         LevelLoader.LoadFirstLevel();
-        StageController startingStageData = ((StageController)LevelLoader.CurrentLevelDataDefinition);
-        
-        LoadStage(startingStageData);
+        m_currentStage = ((StageController)LevelLoader.CurrentLevelDataDefinition);
+
+        LoadStage();
     }
 
-    private void LoadStage(StageController stageController)
+    private void LoadStage()
     {
-        m_currentStage = stageController;
-
-        LoadStageLogicalObjects();
-        StartStage(m_currentStage);
+        StageLogicalObject.CharacterDamaged += LoseStage;
+        StartStage();
     }
 
     private void LoadStageLogicalObjects()
     {
-        stageLogicalObjects.Clear();
-
         StageLogicalObject.CharacterDamaged += LoseStage;
     }
 
-    private void StartStage(StageController stage)
+    private void StartStage()
     {
-        m_currentStage = stage;
+        //if (m_currentStage.StageSpawnPoint == null)
+        //{
+        //    Debug.LogError($"StageManager: Stage [{m_currentStage.name}] has no defined StageSpawnPoint");
+        //    return;
+        //}
 
-        if (m_currentStage.StageSpawnPoint == null)
-        {
-            Debug.LogError($"StageManager: Stage [{m_currentStage.name}] has no defined StageSpawnPoint");
-            return;
-        }
-
-        if (m_currentStage.StageExitTrigger == null)
-        {
-            Debug.LogError($"StageManager: Stage [{m_currentStage.name}] has no defined StageExitTrigger");
-            return;
-        }
-
-        //m_playerCharacter.transform.SetPositionAndRotation(
-        //    m_currentStage.StageSpawnPoint.position,
-        //    m_currentStage.StageSpawnPoint.transform.rotation);
+        //if (m_currentStage.StageExitTrigger == null)
+        //{
+        //    Debug.LogError($"StageManager: Stage [{m_currentStage.name}] has no defined StageExitTrigger");
+        //    return;
+        //}
 
         m_playerCharacter.transform.position = m_currentStage.StageSpawnPoint.position;
 
         m_playerCharacter.GetComponent<Character3DBalancer>()?.FaceDirection(m_currentStage.StageSpawnPoint.transform.forward.normalized);
 
-        stage.StageExitTrigger.PlayerReachedExit += EndStage;
-
-        //SFXManager.PlaySound(SFX.PICKUP_OBJECT);
+        m_currentStage.StageExitTrigger.PlayerReachedExit += EndStage;
 
         ScreenFader.FadeIn(1f, null);
 
@@ -121,12 +104,24 @@ public class StageManager : MonoBehaviour
         {
             SFXManager.PlaySound(SFX.PICKUP_OBJECT);
 
+            // if this is last stage then else change scenes
+            if (LevelLoader.OnLastLevel())
+            {
+                // change to credits scene
+                ScreenFader.FadeOut(1f, () =>
+                {
+                    SceneManager.LoadScene(_creditsSceneIndex);
+                });
+                return; // todo - somewhere fade in is happening before the change to the credits scene
+            }
+
             BreakdownCurrentStage();
 
             // advance to next stage
             LevelLoader.LoadNextLevel();
-            StageController nextStageData = ((StageController)LevelLoader.CurrentLevelDataDefinition);
-            LoadStage(nextStageData);
+            m_currentStage = ((StageController)LevelLoader.CurrentLevelDataDefinition);
+            m_currentStage.transform.SetParent(m_stageContainer, false);
+            LoadStage();
         });
     }
 
@@ -138,8 +133,6 @@ public class StageManager : MonoBehaviour
         Destroy(m_currentStage.gameObject);
 
         StageLogicalObject.CharacterDamaged -= LoseStage;
-
-        stageLogicalObjects.Clear();
     }
 
     // ---------- HELPERS ---------- //
@@ -193,9 +186,11 @@ public class StageManager : MonoBehaviour
         {
             SFXManager.PlaySound(SFX.PICKUP_OBJECT);
 
-            m_playerCharacter.transform.position = m_currentStage.StageSpawnPoint.position;
-
-            m_playerCharacter.GetComponent<Character3DBalancer>()?.FaceDirection(m_currentStage.StageSpawnPoint.transform.forward.normalized);
+            BreakdownCurrentStage();
+            LevelLoader.Restart();
+            m_currentStage = ((StageController)LevelLoader.CurrentLevelDataDefinition);
+            m_currentStage.transform.SetParent(m_stageContainer, false);
+            LoadStage();
 
             ScreenFader.FadeIn(null);
             
