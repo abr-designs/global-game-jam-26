@@ -113,10 +113,7 @@ public class StageManager : MonoBehaviour
             if (LevelLoader.OnLastLevel())
             {
                 // change to credits scene
-                ScreenFader.FadeOut(1f, () =>
-                {
-                    SceneManager.LoadScene(_creditsSceneIndex);
-                });
+                SceneManager.LoadScene(_creditsSceneIndex);
                 return; // todo - somewhere fade in is happening before the change to the credits scene
             }
 
