@@ -8,5 +8,6 @@
         LAND = 3,
         BOUNCE = 4,
         ACTIVATE = 5,
+        WALL_EXPLODE = 6,
     }
 }
