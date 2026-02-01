@@ -3016,14 +3016,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 859871503923216802}
     m_Modifications:
     - target: {fileID: 5004733974514820641, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
-      propertyPath: deploySFX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5004733974514820641, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
-      propertyPath: retractSFX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5004733974514820641, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
       propertyPath: _periodDelay
       value: 0
       objectReference: {fileID: 0}
