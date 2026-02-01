@@ -107,16 +107,9 @@ namespace UI
         {
             SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
 
-            ScreenFader.FadeOut(1f, () =>
-            {
-                RestartStage?.Invoke(); // TODO - need some delay while camera moves
+            RestartStage?.Invoke(); // TODO - need some delay while camera moves
 
-                CloseWindow();
-
-                SFXManager.PlaySound(SFX.PICKUP_OBJECT);
-
-                ScreenFader.FadeIn(null);
-            });
+            CloseWindow();
         }
         
         private void OnSettingButtonPressed()

@@ -1,5 +1,6 @@
 using Audio;
 using Levels;
+using Samples.CharacterController3D.Scripts;
 using System.Collections.Generic;
 using UI;
 using UnityEngine;
@@ -15,7 +16,8 @@ public class StageManager : MonoBehaviour
     [SerializeField] private InGameMenuUI m_inGameMenu;
 
     [Header("Runtime")]
-    private List<StageLogicalObject> stageLogicalObjects = new List<StageLogicalObject>();
+    private List<StageLogicalObject> stageLogicalObjects = new List<StageLogicalObject>(); // may no long er be used
+    private bool stageIsRestarting;
 
     private void OnEnable()
     {
@@ -28,6 +30,11 @@ public class StageManager : MonoBehaviour
         m_inGameMenu.ExitStage -= BreakdownCurrentStage;
     }
 
+    private void Awake()
+    {
+        ValidateLevels();
+    }
+
     private void Start()
     {
         if(m_playerCharacter == null)
@@ -36,14 +43,14 @@ public class StageManager : MonoBehaviour
             return;
         }
 
-        if (m_currentStage == null)
-            m_currentStage = FindFirstObjectByType<StageController>();
+        //if (m_currentStage == null)
+        //    m_currentStage = FindFirstObjectByType<StageController>();
 
-        if (m_currentStage == null)
-        {
-            Debug.LogError($"StageManager: No StageController found");
-            return;
-        }
+        //if (m_currentStage == null)
+        //{
+        //    Debug.LogError($"StageManager: No StageController found");
+        //    return;
+        //}
 
         StartGame();
     }
@@ -62,9 +69,7 @@ public class StageManager : MonoBehaviour
 
     private void LoadStage(StageController stageController)
     {
-        Debug.LogWarning("Instantiate stage");
-        //GameObject newStageObject = Instantiate(stageData.gameObject, m_stageContainer);
-        m_currentStage = stageController;// newStageObject.GetComponent<StageController>();
+        m_currentStage = stageController;
 
         LoadStageLogicalObjects();
         StartStage(m_currentStage);
@@ -75,12 +80,6 @@ public class StageManager : MonoBehaviour
         stageLogicalObjects.Clear();
 
         StageLogicalObject.CharacterDamaged += LoseStage;
-
-        //foreach (StageLogicalObject logicalObject in m_stageContainer.GetComponentsInChildren<StageLogicalObject>(true))
-        //{
-        //    stageLogicalObjects.Add(logicalObject);
-        //    logicalObject.CharacterDamaged += LoseStage;
-        //}
     }
 
     private void StartStage(StageController stage)
@@ -99,15 +98,21 @@ public class StageManager : MonoBehaviour
             return;
         }
 
-        m_playerCharacter.transform.SetPositionAndRotation(
-            m_currentStage.StageSpawnPoint.position,
-            m_currentStage.StageSpawnPoint.transform.rotation);
+        //m_playerCharacter.transform.SetPositionAndRotation(
+        //    m_currentStage.StageSpawnPoint.position,
+        //    m_currentStage.StageSpawnPoint.transform.rotation);
+
+        m_playerCharacter.transform.position = m_currentStage.StageSpawnPoint.position;
+
+        m_playerCharacter.GetComponent<Character3DBalancer>()?.FaceDirection(m_currentStage.StageSpawnPoint.transform.forward.normalized);
 
         stage.StageExitTrigger.PlayerReachedExit += EndStage;
 
         //SFXManager.PlaySound(SFX.PICKUP_OBJECT);
 
         ScreenFader.FadeIn(1f, null);
+
+        stageIsRestarting = false;
     }
 
     private void EndStage()
@@ -134,12 +139,6 @@ public class StageManager : MonoBehaviour
 
         StageLogicalObject.CharacterDamaged -= LoseStage;
 
-        //foreach (StageLogicalObject logicalObject in m_stageContainer.GetComponentsInChildren<StageLogicalObject>(true))
-        //{
-        //    stageLogicalObjects.Add(logicalObject);
-        //    logicalObject.CharacterDamaged -= LoseStage;
-        //}
-
         stageLogicalObjects.Clear();
     }
 
@@ -152,24 +151,61 @@ public class StageManager : MonoBehaviour
         }
     }
 
-    // ---------- EVENTS ACTIONS ---------- //
-    private void RestartStage()
+    private void ValidateLevels()
     {
-        m_playerCharacter.transform.SetPositionAndRotation(
-            m_currentStage.StageSpawnPoint.position,
-            m_currentStage.StageSpawnPoint.transform.rotation);
+        LevelLoader levelLoader = GetComponent<LevelLoader>();
+
+        bool allLevelsValid = true;
+        foreach(LevelDataDefinition levelData in levelLoader.Levels)
+        {
+            StageController stageController = (StageController)levelData;
+            
+            if (stageController.StageSpawnPoint == null)
+            {
+                Debug.LogError($"StageManger -> ValidateLevels: Level [{stageController.levelName}] is not valid. No StageSpawnPoint found.");
+                allLevelsValid = false;
+            }
+
+            if (stageController.StageExitTrigger == null)
+            {
+                Debug.LogError($"StageManger -> ValidateLevels: Level [{stageController.levelName}] is not valid. No StageExitTrigger found.");
+                allLevelsValid = false;
+            }
+        }
+
+        if(!allLevelsValid)
+        {
+            Debug.LogError("StageManger -> ValidateLevels: Not all levels valid.");
+                return;
+        }
+    }
+
+    // ---------- EVENTS ACTIONS ---------- //
+    private void RestartStage() // TODO - restart actually needs to restart instead of just respawn
+    {
+        // exit early if the stage is already restarting
+        if (stageIsRestarting)
+            return;
+
+        stageIsRestarting = true;
+
+        ScreenFader.FadeOut(1f, () =>
+        {
+            SFXManager.PlaySound(SFX.PICKUP_OBJECT);
+
+            m_playerCharacter.transform.position = m_currentStage.StageSpawnPoint.position;
+
+            m_playerCharacter.GetComponent<Character3DBalancer>()?.FaceDirection(m_currentStage.StageSpawnPoint.transform.forward.normalized);
+
+            ScreenFader.FadeIn(null);
+            
+            stageIsRestarting = false;
+        });
     }
 
     private void LoseStage()
     {
-        ScreenFader.FadeOut(1f, () =>
-        {
-            RestartStage(); // TODO - need some delay while camera moves
-
-            SFXManager.PlaySound(SFX.PICKUP_OBJECT);
-
-            ScreenFader.FadeIn(null);
-        });
+            RestartStage();
     }
 
 }

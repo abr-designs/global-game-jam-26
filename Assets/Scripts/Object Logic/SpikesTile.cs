@@ -1,14 +1,10 @@
 using Audio;
 using GGJ.Player;
-using System.ComponentModel;
 using UnityEngine;
 
 public class SpikesTile : StageLogicalObject
 {
-    [SerializeField]
     private bool _playerInSpikes;
-
-    [SerializeField]
     private bool _playerDashing;
 
     private void OnEnable()
