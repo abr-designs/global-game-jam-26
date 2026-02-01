@@ -107,7 +107,7 @@ public class StageManager : MonoBehaviour
     {
         ScreenFader.FadeOut(1f, () =>
         {
-            SFXManager.PlaySound(SFX.PICKUP_OBJECT);
+            //SFXManager.PlaySound(SFX.PICKUP_OBJECT);
 
             // if this is last stage then else change scenes
             if (LevelLoader.OnLastLevel())
@@ -186,7 +186,7 @@ public class StageManager : MonoBehaviour
 
         ScreenFader.FadeOut(1f, () =>
         {
-            SFXManager.PlaySound(SFX.PICKUP_OBJECT);
+            //SFXManager.PlaySound(SFX.PICKUP_OBJECT);
 
             BreakdownCurrentStage();
             LevelLoader.Restart();

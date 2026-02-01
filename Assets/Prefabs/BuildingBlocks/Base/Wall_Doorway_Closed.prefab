@@ -157,9 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38ad14be20aedd4a8eaa908f668477a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestDoor
-  _openedDoorHeight: 4
   _doorOpenAngle: 110
-  _doorSwingDuration: 0.5
+  _doorSwingDuration: 1.67
 --- !u!1001 &8286001044181564079
 PrefabInstance:
   m_ObjectHideFlags: 0

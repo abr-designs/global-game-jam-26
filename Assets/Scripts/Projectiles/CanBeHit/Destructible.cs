@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Audio;
+using UnityEngine;
 
 namespace Projectiles.CanBeHit
 {
@@ -6,6 +7,7 @@ namespace Projectiles.CanBeHit
     {
         public bool Hit(Projectile _)
         {
+            SFXManager.PlaySound(SFX.DRESTROY_WALL);
             Destroy(gameObject);
             return false;
         }

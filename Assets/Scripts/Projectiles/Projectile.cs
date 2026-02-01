@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Audio;
+using System;
 using UnityEngine;
 
 namespace Projectiles
@@ -79,11 +80,17 @@ namespace Projectiles
                 {
                     return canBeHit.Hit(this);
                 }
-                
-                
+
+                SFXManager.PlaySound(SFX.PROJECTILE_BOUNCE);
+
                 if (maxBounces > 0 && m_bouncesRemaining-- == 1)
+                {
+                    // fizzle
+                    //SFXManager.PlaySound(SFX.PROJECTILE_FIZZLE);
                     return false;
-                
+                }
+
+                //SFXManager.PlaySound(SFX.PROJECTILE_BOUNCE);
                 m_currentDirection = Vector3.Reflect(m_currentDirection, m_raycastHits[0].normal);
             }
 
