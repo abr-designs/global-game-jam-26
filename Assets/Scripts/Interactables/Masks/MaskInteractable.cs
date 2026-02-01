@@ -1,4 +1,5 @@
 ﻿using System;
+using Audio;
 using GGJ.Player;
 using GGJ.Player.Enums;
 using UnityEngine;
@@ -38,7 +39,9 @@ namespace Interactables.Masks
         {
             if (PlayerMaskManager.CurrentlyEquippedMask == MASK_TYPE.NONE && currentMaskType == MASK_TYPE.NONE)
                 return;
-            
+
+            SFXManager.PlaySound(SFX.PICKUP_OBJECT);
+
             if (PlayerMaskManager.CurrentlyEquippedMask == MASK_TYPE.NONE)
             {
                 //Move my mask onto the player

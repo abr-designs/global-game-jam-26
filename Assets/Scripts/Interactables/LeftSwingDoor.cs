@@ -1,30 +1,32 @@
 using System.Collections;
 using UnityEngine;
 
-public class TestDoor : MonoBehaviour
+public class LeftSwingDoor : MonoBehaviour
 {
-    [SerializeField] private float _openedDoorHeight = 4f;
     [SerializeField] private float _doorOpenAngle = 110f;
     [SerializeField] private float _doorSwingDuration = 0.5f;
 
-    private bool _openedDoor;
+    private Quaternion _closedRotation;
+    private Quaternion _openRotation;
+    private bool _isOpen;
 
-    public void OpenDoor()
+    private void Awake()
     {
-        if (_openedDoor)
-            return;
-
-        _openedDoor = true;
-        StartCoroutine(SwingDoor());
+        _closedRotation = transform.localRotation;
+        _openRotation = _closedRotation * Quaternion.Euler(0f, _doorOpenAngle, 0f);
     }
 
-    private IEnumerator SwingDoor()
+    public void ToggleDoor()
     {
-        float elapsed = 0f;
+        StopAllCoroutines();
+        StartCoroutine(SwingDoor(_isOpen ? _closedRotation : _openRotation));
+        _isOpen = !_isOpen;
+    }
 
+    private IEnumerator SwingDoor(Quaternion targetRotation)
+    {
         Quaternion startRotation = transform.localRotation;
-        Quaternion targetRotation =
-            startRotation * Quaternion.Euler(0f, _doorOpenAngle, 0f);
+        float elapsed = 0f;
 
         while (elapsed < _doorSwingDuration)
         {
