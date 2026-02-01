@@ -45,7 +45,7 @@ namespace Interactables.Masks
             if (PlayerMaskManager.CurrentlyEquippedMask == MASK_TYPE.NONE && currentMaskType == MASK_TYPE.NONE)
                 return;
 
-            SFXManager.PlaySound(SFX.PICKUP_OBJECT);
+            SFXManager.PlaySoundAtLocation(SFX.PICKUP_OBJECT, transform.position);
 
             if (PlayerMaskManager.CurrentlyEquippedMask == MASK_TYPE.NONE)
             {

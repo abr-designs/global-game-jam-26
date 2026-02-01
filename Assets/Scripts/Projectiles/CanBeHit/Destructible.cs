@@ -7,7 +7,7 @@ namespace Projectiles.CanBeHit
     {
         public bool Hit(Projectile _)
         {
-            SFXManager.PlaySound(SFX.DRESTROY_WALL);
+            SFXManager.PlaySoundAtLocation(SFX.DRESTROY_WALL, transform.position);
             Destroy(gameObject);
             return false;
         }

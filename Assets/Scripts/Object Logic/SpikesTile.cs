@@ -7,6 +7,8 @@ public class SpikesTile : StageLogicalObject
     private bool _playerInSpikes;
     private bool _playerDashing;
 
+    private bool _hasCollided;
+
     private void OnEnable()
     {
         CharacterDashAbility.Dashing += SetPlayerDashing;
@@ -19,6 +21,9 @@ public class SpikesTile : StageLogicalObject
 
     private void OnTriggerEnter(Collider other)
     {
+        if (_hasCollided)
+            return;
+
         if (other.gameObject.tag != "Player")
             return;
 
@@ -27,6 +32,7 @@ public class SpikesTile : StageLogicalObject
         if (_playerDashing)
             return;
 
+        _hasCollided = true;
         PlayerSuccumbsToSpikes();
     }
 

@@ -203,7 +203,7 @@ public class StageManager : MonoBehaviour
 
     private void LoseStage()
     {
-            RestartStage();
+        RestartStage();
     }
 
 }

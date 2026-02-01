@@ -68,7 +68,7 @@ namespace Samples.CharacterController3D.Scripts
         public bool Hit(Projectile _)
         {
             //TODO Announce that the player has been f'd up
-            SFXManager.PlaySound(SFX.PLAYER_DIED);
+            SFXManager.PlaySoundAtLocation(SFX.PLAYER_DIED, transform.position);
             StageLogicalObject.CharacterDamaged();
             return false;
         }
