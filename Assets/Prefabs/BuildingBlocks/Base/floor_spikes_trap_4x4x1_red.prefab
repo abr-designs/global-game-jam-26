@@ -232,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3822723768019901117, guid: 5a5965a523d74bf4d9483ec501ba9b79, type: 3}
       propertyPath: m_Center.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4342683347994314160, guid: 5a5965a523d74bf4d9483ec501ba9b79, type: 3}
       propertyPath: m_Enabled
@@ -241,6 +241,14 @@ PrefabInstance:
     - target: {fileID: 6165113287909875362, guid: 5a5965a523d74bf4d9483ec501ba9b79, type: 3}
       propertyPath: m_Name
       value: floor_spikes_trap_spikes_4x4x1_red
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165113287909875362, guid: 5a5965a523d74bf4d9483ec501ba9b79, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577376369397071012, guid: 5a5965a523d74bf4d9483ec501ba9b79, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8685541886547794057, guid: 5a5965a523d74bf4d9483ec501ba9b79, type: 3}
       propertyPath: m_LocalPosition.y

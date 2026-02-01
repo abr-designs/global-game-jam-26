@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5554547655222349653}
   - component: {fileID: 1845541974215555014}
   - component: {fileID: 6879450150730211499}
-  - component: {fileID: 1489187198550648927}
   m_Layer: 0
   m_Name: === STAGE MANAGER ===
   m_TagString: Untagged
@@ -68,18 +67,3 @@ MonoBehaviour:
   - {fileID: 9144649355891634958, guid: 9cf6b8d897ce22b4f90b194794958f20, type: 3}
   - {fileID: 2673424571430005736, guid: 9e67d054140ce06499101cc1ea54c4e1, type: 3}
   - {fileID: 3559228618203892584, guid: d1d45c01faca3e94689800a364bc61fa, type: 3}
---- !u!114 &1489187198550648927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5441184495515353232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d24a4cb83ca8174682f3a61279298e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGJ.Player.MaskEmulator
-  maskType: 1
-  abilities:
-  - {fileID: 0}

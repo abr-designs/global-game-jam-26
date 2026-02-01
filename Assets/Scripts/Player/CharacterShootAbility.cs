@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Audio;
 using GGJ.Player.Enums;
 using GGJ.Player.Interfaces;
 using Projectiles;
@@ -63,6 +64,8 @@ namespace GGJ.Player
                 return;
 
             m_coolDown = fireCooldown;
+
+            SFXManager.PlaySound(SFX.PROJECTILE);
 
             var characterControllerTransform = IAbility.CharacterController3D.transform;
             var speed = characterMovement3DData.maxSpeed * 2f;
