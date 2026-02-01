@@ -167,6 +167,10 @@ MonoBehaviour:
   _retractDuration: 1.5
   _retractedHeight: -1.25
   _deployedHeight: -0.5
+  deploySFX: 10
+  retractSFX: 11
+  _spikeVolume: 0.5
+  _retractVolume: 0.75
   particleSystem: {fileID: 8759079725651815339}
 --- !u!1001 &4147814652803543144
 PrefabInstance:
