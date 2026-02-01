@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 667943725802149607, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
+      propertyPath: DefaultBlend.Style
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1293718183415021081, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: _playerInvulnerableLayerIndex
       value: 7
@@ -1209,11 +1213,11 @@ PrefabInstance:
     - target: {fileID: 6879450150730211499, guid: 48be5035de444314280d198f12e930a2, type: 3}
       propertyPath: 'levels.Array.data[3]'
       value: 
-      objectReference: {fileID: 2673424571430005736, guid: 9e67d054140ce06499101cc1ea54c4e1, type: 3}
+      objectReference: {fileID: 3559228618203892584, guid: d1d45c01faca3e94689800a364bc61fa, type: 3}
     - target: {fileID: 6879450150730211499, guid: 48be5035de444314280d198f12e930a2, type: 3}
       propertyPath: 'levels.Array.data[4]'
       value: 
-      objectReference: {fileID: 3559228618203892584, guid: d1d45c01faca3e94689800a364bc61fa, type: 3}
+      objectReference: {fileID: 2673424571430005736, guid: 9e67d054140ce06499101cc1ea54c4e1, type: 3}
     - target: {fileID: 6879450150730211499, guid: 48be5035de444314280d198f12e930a2, type: 3}
       propertyPath: 'levels.Array.data[5]'
       value: 

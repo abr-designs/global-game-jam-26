@@ -13,6 +13,8 @@ using GGJ.Player;
 public class StageManager : MonoBehaviour
 {
     public static event Action OnPlayerReset;
+    public static event Action<Transform> OnNewCameraTarget; 
+    
     [SerializeField] private Transform m_stageContainer;
     [SerializeField] private Transform m_playerCharacter;
     [SerializeField] private StageController m_currentStage;
@@ -79,18 +81,6 @@ public class StageManager : MonoBehaviour
 
     private void StartStage()
     {
-        //if (m_currentStage.StageSpawnPoint == null)
-        //{
-        //    Debug.LogError($"StageManager: Stage [{m_currentStage.name}] has no defined StageSpawnPoint");
-        //    return;
-        //}
-
-        //if (m_currentStage.StageExitTrigger == null)
-        //{
-        //    Debug.LogError($"StageManager: Stage [{m_currentStage.name}] has no defined StageExitTrigger");
-        //    return;
-        //}
-
         m_playerCharacter.GetComponent<Rigidbody>().position = m_currentStage.StageSpawnPoint.position;
         m_playerCharacter.GetComponent<Character3DBalancer>()?.ForceFaceDirection(m_currentStage.StageSpawnPoint.transform.forward.normalized);
 
@@ -98,7 +88,12 @@ public class StageManager : MonoBehaviour
 
         m_currentStage.StageExitTrigger.PlayerReachedExit += EndStage;
 
-        ScreenFader.FadeIn(1f, null);
+        ScreenFader.FadeIn(1f, ()=>
+        {
+            OnNewCameraTarget?.Invoke(m_currentStage.cameraLookatPoint == null
+                ? m_playerCharacter.transform
+                : m_currentStage.cameraLookatPoint); 
+        });
 
         stageIsRestarting = false;
     }

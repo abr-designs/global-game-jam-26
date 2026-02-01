@@ -10,5 +10,7 @@ public class StageController : LevelDataDefinition
     [SerializeField] private StageExitTrigger m_stageExitTrigger;
     public StageExitTrigger StageExitTrigger => m_stageExitTrigger;
 
+    public Transform cameraLookatPoint;
+
     public event Action RestartStage;
 }
