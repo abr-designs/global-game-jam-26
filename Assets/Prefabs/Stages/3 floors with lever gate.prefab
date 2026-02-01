@@ -2216,37 +2216,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 4626924121952697628}
     m_Modifications:
     - target: {fileID: 4654058880140484260, guid: 423fadd4872b3fd4d89186586344fc9b, type: 3}
-      propertyPath: interactionDistance
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654058880140484260, guid: 423fadd4872b3fd4d89186586344fc9b, type: 3}
-      propertyPath: hitEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654058880140484260, guid: 423fadd4872b3fd4d89186586344fc9b, type: 3}
-      propertyPath: hitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654058880140484260, guid: 423fadd4872b3fd4d89186586344fc9b, type: 3}
       propertyPath: hitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5372578978463064315}
-    - target: {fileID: 4654058880140484260, guid: 423fadd4872b3fd4d89186586344fc9b, type: 3}
-      propertyPath: hitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654058880140484260, guid: 423fadd4872b3fd4d89186586344fc9b, type: 3}
-      propertyPath: hitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleDoor
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654058880140484260, guid: 423fadd4872b3fd4d89186586344fc9b, type: 3}
-      propertyPath: hitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LeftSwingDoor, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654058880140484260, guid: 423fadd4872b3fd4d89186586344fc9b, type: 3}
-      propertyPath: hitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4996266979296480883, guid: 423fadd4872b3fd4d89186586344fc9b, type: 3}
       propertyPath: m_Name
       value: lever_wall_base_A_yellow
@@ -2319,15 +2291,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 16.000002
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.0000019073486
       objectReference: {fileID: 0}
     - target: {fileID: 4437085209975724301, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
       propertyPath: m_LocalRotation.w
