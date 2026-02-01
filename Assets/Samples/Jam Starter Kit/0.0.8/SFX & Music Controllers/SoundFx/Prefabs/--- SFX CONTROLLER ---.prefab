@@ -222,13 +222,13 @@ MonoBehaviour:
   - name: SWING DOOR
     type: 7
     audioClips:
-    - {fileID: 8300000, guid: 40cffa4025d28d446ad2fde3ed7c5d83, type: 3}
+    - {fileID: 8300000, guid: 1658247446e8e7142b3b0fa14bc06be1, type: 3}
     volume: 1
     maxPlaying: 0
   - name: PROJECTILE BOUNCE
     type: 8
     audioClips:
-    - {fileID: 8300000, guid: bfb8ed78128b324468a25361f5314272, type: 3}
+    - {fileID: 8300000, guid: 0496de1139939ad44be3e1a0138146ac, type: 3}
     volume: 0.7
     maxPlaying: 0
   - name: PROJECTILE FIZZLE
