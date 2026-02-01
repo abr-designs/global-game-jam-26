@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Audio;
+using System;
 using UnityEngine;
 using VisualFX;
 
@@ -84,8 +85,9 @@ namespace Projectiles
                 {
                     return canBeHit.Hit(this);
                 }
-                
-                
+
+                SFXManager.PlaySound(SFX.PROJECTILE_BOUNCE);
+
                 if (maxBounces > 0 && m_bouncesRemaining-- == 1)
                     return false;
                 

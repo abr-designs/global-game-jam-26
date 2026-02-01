@@ -1617,6 +1617,10 @@ PrefabInstance:
       propertyPath: _periodDelay
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5004733974514820641, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
+      propertyPath: _periodDuration
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6630530412756652599, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1869,6 +1873,10 @@ PrefabInstance:
       propertyPath: _periodDelay
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5004733974514820641, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
+      propertyPath: _periodDuration
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6630530412756652599, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1996,6 +2004,10 @@ PrefabInstance:
     - target: {fileID: 5004733974514820641, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
       propertyPath: _periodDelay
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004733974514820641, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
+      propertyPath: _periodDuration
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6630530412756652599, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2245,6 +2257,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6671135612732779688}
     m_Modifications:
+    - target: {fileID: 5004733974514820641, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
+      propertyPath: _periodDuration
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6630530412756652599, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2494,6 +2510,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5254020358902220131}
     m_Modifications:
+    - target: {fileID: 5004733974514820641, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
+      propertyPath: _periodDuration
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6630530412756652599, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2756,6 +2776,10 @@ PrefabInstance:
     - target: {fileID: 5004733974514820641, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
       propertyPath: _periodDelay
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004733974514820641, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
+      propertyPath: _periodDuration
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6630530412756652599, guid: 8f4f7ea1707ba0c4bb8f3743856dad91, type: 3}
       propertyPath: m_LocalPosition.x

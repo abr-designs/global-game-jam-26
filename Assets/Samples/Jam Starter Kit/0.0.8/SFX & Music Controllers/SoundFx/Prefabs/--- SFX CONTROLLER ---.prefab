@@ -189,27 +189,75 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7e16a3a85dd4ff848a3e5e3fc9365674, type: 3}
     volume: 0
     maxPlaying: 0
-  - name: PLAYER_DIED
+  - name: PLAYER DIED
     type: 2
     audioClips:
-    - {fileID: 8300000, guid: 5eedf5e33c59cad469bb1e0bf0b87157, type: 3}
+    - {fileID: 8300000, guid: 37014c0fab6041e4aac82757a4fc5b4b, type: 3}
     volume: 0
     maxPlaying: 0
   - name: PICKUP OBJECT
     type: 3
     audioClips:
-    - {fileID: 8300000, guid: 26da0fedbfec37f49abd70fbba566e19, type: 3}
-    volume: 0
+    - {fileID: 8300000, guid: 44adc94e740db194c993f89b591314f1, type: 3}
+    volume: 1
     maxPlaying: 0
   - name: DASH
     type: 4
     audioClips:
-    - {fileID: 8300000, guid: 77080a94b4f08d048963b5d3d9beff1b, type: 3}
+    - {fileID: 8300000, guid: 8d31dd1be7292cb4a9895652d272770a, type: 3}
     volume: 0
     maxPlaying: 0
   - name: PROJECTILE
     type: 5
     audioClips:
-    - {fileID: 8300000, guid: 03667c8723a3c8e4a8da7b60e491704f, type: 3}
+    - {fileID: 8300000, guid: cc1dde46626e5f34f91dacbc093b3058, type: 3}
     volume: 0
     maxPlaying: 0
+  - name: INTERACT SWITCH
+    type: 6
+    audioClips:
+    - {fileID: 8300000, guid: 7f79274485093a646a8230e34dcccbd4, type: 3}
+    volume: 0
+    maxPlaying: 0
+  - name: SWING DOOR
+    type: 7
+    audioClips:
+    - {fileID: 8300000, guid: 40cffa4025d28d446ad2fde3ed7c5d83, type: 3}
+    volume: 0
+    maxPlaying: 0
+  - name: PROJECTILE BOUNCE
+    type: 8
+    audioClips:
+    - {fileID: 8300000, guid: bfb8ed78128b324468a25361f5314272, type: 3}
+    volume: 0
+    maxPlaying: 0
+  - name: PROJECTILE FIZZLE
+    type: 9
+    audioClips:
+    - {fileID: 8300000, guid: 8ca94bb3f7c64884faa2dd751a36f198, type: 3}
+    volume: 0
+    maxPlaying: 0
+  - name: SPIKES DEPLOY
+    type: 10
+    audioClips:
+    - {fileID: 8300000, guid: 0b4b43af2df09c44998c26d7f8ef917c, type: 3}
+    volume: 0
+    maxPlaying: 8
+  - name: SPIKES RETRACT
+    type: 11
+    audioClips:
+    - {fileID: 8300000, guid: 7981f20a47ef1e943a1b3e20b176a679, type: 3}
+    volume: 0
+    maxPlaying: 8
+  - name: DESTROY WALL
+    type: 12
+    audioClips:
+    - {fileID: 8300000, guid: 8cd0c2ab1aa0dc44180ffe33e16d3b46, type: 3}
+    volume: 0
+    maxPlaying: 0
+  - name: HOVER WOOM
+    type: 13
+    audioClips:
+    - {fileID: 8300000, guid: 2176c8d2123765246acaa1ba7664151d, type: 3}
+    volume: 0
+    maxPlaying: 1

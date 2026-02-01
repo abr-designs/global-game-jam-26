@@ -1,3 +1,4 @@
+using Audio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -45,6 +46,7 @@ public class MenuHighlighter : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        SFXManager.PlaySound(SFX.HOVER_WOOM);
         particleSystem.Play();
         m_hovered = true;
     }
