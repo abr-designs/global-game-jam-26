@@ -8443,7 +8443,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 553112981}
-  - component: {fileID: 553112980}
   - component: {fileID: 553112982}
   m_Layer: 0
   m_Name: --- GYM SCENE CONTROLLER ---
@@ -8452,22 +8451,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &553112980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553112979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d24a4cb83ca8174682f3a61279298e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGJ.Player.MaskEmulator
-  maskType: 2
-  abilities:
-  - {fileID: 1644842304}
-  - {fileID: 1644842303}
 --- !u!4 &553112981
 Transform:
   m_ObjectHideFlags: 0
@@ -14161,6 +14144,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1567857131}
     m_Modifications:
+    - target: {fileID: 2032194375680737317, guid: 9030b07f352293c4eb37cc7eadc614cd, type: 3}
+      propertyPath: currentMaskType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4831227603664009622, guid: 9030b07f352293c4eb37cc7eadc614cd, type: 3}
       propertyPath: m_Name
       value: Floor_Prototype (1)
@@ -22374,28 +22361,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7828444334289246681, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
   m_PrefabInstance: {fileID: 1644578305}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1644842303 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5734676151587384364, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
-  m_PrefabInstance: {fileID: 6847961887198126117}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53a2539323c74b0fbf2cd23fb47f7f28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGJ.Player.CharacterShootAbility
---- !u!114 &1644842304 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1293718183415021081, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
-  m_PrefabInstance: {fileID: 6847961887198126117}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de2fe25f4894e5b94f9775d765bcfe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGJ.Player.CharacterDash
 --- !u!1001 &1646208802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29687,6 +29652,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1567857131}
     m_Modifications:
+    - target: {fileID: 2032194375680737317, guid: 9030b07f352293c4eb37cc7eadc614cd, type: 3}
+      propertyPath: currentMaskType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4831227603664009622, guid: 9030b07f352293c4eb37cc7eadc614cd, type: 3}
       propertyPath: m_Name
       value: Floor_Prototype
@@ -29749,6 +29718,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 710755784897349847, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
+      propertyPath: interactionRange
+      value: 2.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2169258498058466993, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_Name
       value: --- PLAYER ---

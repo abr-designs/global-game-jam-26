@@ -1,7 +1,77 @@
-﻿namespace Interactables.Masks
+﻿using System;
+using GGJ.Player;
+using GGJ.Player.Enums;
+using UnityEngine;
+using Utilities.Debugging;
+
+namespace Interactables.Masks
 {
-    public class MaskInteractable
+    public class MaskInteractable : MonoBehaviour, IInteractable
     {
+        [SerializeField]
+        private MASK_TYPE currentMaskType;
+
+        [SerializeField]
+        private GameObject[] maskObjects = new GameObject[3];
         
+        public float InteractionDistance => interactionDistance;
+        
+        [SerializeField, Min(0.1f)]
+        private float interactionDistance = 0.1f;
+        
+        public void OnEnable()
+        {
+            InteractableManager.Register(this);
+        }
+
+        private void Start()
+        {
+            SetMaskVisual(currentMaskType);
+        }
+
+        public void OnDisable()
+        {
+            InteractableManager.DeRegister(this);
+        }
+
+        public void Interact()
+        {
+            if (PlayerMaskManager.CurrentlyEquippedMask == MASK_TYPE.NONE && currentMaskType == MASK_TYPE.NONE)
+                return;
+            
+            if (PlayerMaskManager.CurrentlyEquippedMask == MASK_TYPE.NONE)
+            {
+                //Move my mask onto the player
+                PlayerMaskManager.EquipMask(currentMaskType);
+                currentMaskType = MASK_TYPE.NONE;
+            }
+            else if (PlayerMaskManager.CurrentlyEquippedMask != MASK_TYPE.NONE && currentMaskType == MASK_TYPE.NONE)
+            {
+                currentMaskType = PlayerMaskManager.UnEquipMask(true);
+            }
+            else if (PlayerMaskManager.CurrentlyEquippedMask != MASK_TYPE.NONE && currentMaskType != MASK_TYPE.NONE)
+            {
+                var playersOldMask = PlayerMaskManager.UnEquipMask(false);
+                var myPreviousMask = currentMaskType;
+
+                currentMaskType = playersOldMask;
+                PlayerMaskManager.EquipMask(myPreviousMask);
+            }
+
+            SetMaskVisual(currentMaskType);
+        }
+
+        private void SetMaskVisual(MASK_TYPE maskType)
+        {
+            for (int i = 1; i < 3; i++)
+            {
+                maskObjects[i].SetActive(i == (int)maskType);
+            }
+        }
+        
+        private void OnDrawGizmos()
+        {
+            Draw.Circle(transform.position, Vector3.up, Color.white, InteractionDistance);
+        }
     }
 }

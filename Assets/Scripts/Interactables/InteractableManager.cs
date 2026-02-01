@@ -137,6 +137,9 @@ namespace Interactables
 
         private void OnJumpPressed(bool pressed)
         {
+            if (!pressed)
+                return;
+            
             TryUseInteractable();
         }
 
