@@ -49,7 +49,7 @@ namespace GameInput
 
         //============================================================================================================//
 
-        public void OnHorizontalMovement(InputAction.CallbackContext context)
+        public void OnMovement(InputAction.CallbackContext context)
         {
             if (LockInputs)
             {
@@ -58,25 +58,8 @@ namespace GameInput
                 return;
             }
             
-            var x = context.ReadValue<float>();
-
-            _currentInput.x = x;
-            OnMovementChanged?.Invoke(_currentInput);
-
-        }
-
-        public void OnVerticalMovement(InputAction.CallbackContext context)
-        {
-            if (LockInputs)
-            {
-                _currentInput = Vector2.zero;
-                OnMovementChanged?.Invoke(_currentInput);
-                return;
-            }
-            
-            var y = context.ReadValue<float>();
-
-            _currentInput.y = y;
+            _currentInput = context.ReadValue<Vector2>();
+            Debug.Log(_currentInput);
             OnMovementChanged?.Invoke(_currentInput);
         }
 
