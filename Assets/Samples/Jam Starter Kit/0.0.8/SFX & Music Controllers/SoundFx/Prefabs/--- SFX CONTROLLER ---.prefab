@@ -224,7 +224,7 @@ MonoBehaviour:
     audioClips:
     - {fileID: 8300000, guid: 92a1f7cf40e13b14d9db46f4084be1bd, type: 3}
     volume: 1
-    maxPlaying: 0
+    maxPlaying: 1
   - name: PROJECTILE BOUNCE
     type: 8
     audioClips:
