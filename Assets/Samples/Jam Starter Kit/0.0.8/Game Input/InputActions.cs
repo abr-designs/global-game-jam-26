@@ -105,12 +105,12 @@ namespace GameInput
                 },
                 {
                     ""name"": ""VerticalMovement"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""bd12a9d6-db60-4d4d-974b-025888a450f1"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Jump"",
@@ -134,10 +134,19 @@ namespace GameInput
                     ""name"": ""Mouse Right Click"",
                     ""type"": ""Button"",
                     ""id"": ""0710c818-4bfa-4517-8352-d9ce6c382a0c"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CameraLook"",
+                    ""type"": ""Value"",
+                    ""id"": ""93f47241-1403-4861-a36b-f8ccc1190083"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -175,6 +184,50 @@ namespace GameInput
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Arrows (Left/Right)"",
+                    ""id"": ""ba0eb767-efff-4f9f-9e64-ae9e5f233df7"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HorizontalMovement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""fdb07834-4cab-425f-8f51-c97eabe6a408"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HorizontalMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""d183e811-14c5-4994-a392-85f266c09574"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HorizontalMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76f7bc40-ec59-4560-bbb8-b912058f8ac1"",
+                    ""path"": ""<Gamepad>/leftStick/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HorizontalMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""WS"",
                     ""id"": ""ffe14137-de7c-4b76-b9d0-f5c3619f2374"",
                     ""path"": ""1DAxis"",
@@ -208,9 +261,64 @@ namespace GameInput
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Arrows (Up/Down)"",
+                    ""id"": ""9d9f45c5-f25b-4acc-93b5-07d2ef126bf8"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMovement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""36648702-a6dc-4cc4-b74f-1835762036c4"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""5b0c2593-883c-4e2a-894a-0bfa4fbef984"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dcb3697f-ef40-496e-9a80-6c327c087295"",
+                    ""path"": ""<Gamepad>/leftStick/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": """",
                     ""id"": ""074ec06e-9645-434a-9fa4-deeead85e4ea"",
                     ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7121454c-3fe8-4ef2-abba-b8123023eb3d"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -237,6 +345,28 @@ namespace GameInput
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Mouse Right Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""789a3f7f-ac15-4426-8c26-fb7464e697d9"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone,ScaleVector2(x=100,y=100)"",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""CameraLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a72326b3-a32d-4c42-a2d6-c09e96744d69"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": ""ScaleVector2(x=3,y=3)"",
+                    ""groups"": """",
+                    ""action"": ""CameraLook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -271,7 +401,19 @@ namespace GameInput
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Gamepad"",
+            ""bindingGroup"": ""Gamepad"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
             // Gameplay
             m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
@@ -280,6 +422,7 @@ namespace GameInput
             m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
             m_Gameplay_MouseLeftClick = m_Gameplay.FindAction("Mouse Left Click", throwIfNotFound: true);
             m_Gameplay_MouseRightClick = m_Gameplay.FindAction("Mouse Right Click", throwIfNotFound: true);
+            m_Gameplay_CameraLook = m_Gameplay.FindAction("CameraLook", throwIfNotFound: true);
             // Menu
             m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
             m_Menu_ToggleMenu = m_Menu.FindAction("ToggleMenu", throwIfNotFound: true);
@@ -369,6 +512,7 @@ namespace GameInput
         private readonly InputAction m_Gameplay_Jump;
         private readonly InputAction m_Gameplay_MouseLeftClick;
         private readonly InputAction m_Gameplay_MouseRightClick;
+        private readonly InputAction m_Gameplay_CameraLook;
         /// <summary>
         /// Provides access to input actions defined in input action map "Gameplay".
         /// </summary>
@@ -400,6 +544,10 @@ namespace GameInput
             /// Provides access to the underlying input action "Gameplay/MouseRightClick".
             /// </summary>
             public InputAction @MouseRightClick => m_Wrapper.m_Gameplay_MouseRightClick;
+            /// <summary>
+            /// Provides access to the underlying input action "Gameplay/CameraLook".
+            /// </summary>
+            public InputAction @CameraLook => m_Wrapper.m_Gameplay_CameraLook;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -441,6 +589,9 @@ namespace GameInput
                 @MouseRightClick.started += instance.OnMouseRightClick;
                 @MouseRightClick.performed += instance.OnMouseRightClick;
                 @MouseRightClick.canceled += instance.OnMouseRightClick;
+                @CameraLook.started += instance.OnCameraLook;
+                @CameraLook.performed += instance.OnCameraLook;
+                @CameraLook.canceled += instance.OnCameraLook;
             }
 
             /// <summary>
@@ -467,6 +618,9 @@ namespace GameInput
                 @MouseRightClick.started -= instance.OnMouseRightClick;
                 @MouseRightClick.performed -= instance.OnMouseRightClick;
                 @MouseRightClick.canceled -= instance.OnMouseRightClick;
+                @CameraLook.started -= instance.OnCameraLook;
+                @CameraLook.performed -= instance.OnCameraLook;
+                @CameraLook.canceled -= instance.OnCameraLook;
             }
 
             /// <summary>
@@ -596,6 +750,19 @@ namespace GameInput
         /// Provides a new <see cref="MenuActions" /> instance referencing this action map.
         /// </summary>
         public MenuActions @Menu => new MenuActions(this);
+        private int m_GamepadSchemeIndex = -1;
+        /// <summary>
+        /// Provides access to the input control scheme.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputControlScheme" />
+        public InputControlScheme GamepadScheme
+        {
+            get
+            {
+                if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
+                return asset.controlSchemes[m_GamepadSchemeIndex];
+            }
+        }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Gameplay" which allows adding and removing callbacks.
         /// </summary>
@@ -638,6 +805,13 @@ namespace GameInput
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnMouseRightClick(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "CameraLook" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnCameraLook(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Menu" which allows adding and removing callbacks.

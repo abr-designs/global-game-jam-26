@@ -116,6 +116,11 @@ namespace GameInput
             OnRightClick?.Invoke(pressed);
         }
 
+        public void OnCameraLook(InputAction.CallbackContext context)
+        {
+            // throw new NotImplementedException();
+        }
+
         //============================================================================================================//
     }
 }
