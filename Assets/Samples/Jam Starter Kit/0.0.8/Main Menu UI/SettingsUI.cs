@@ -9,12 +9,17 @@ namespace UI
 {
     public class SettingsUI : BaseUIWindow
     {
+        [SerializeField]
+        private GameSettings gameSettings;
+
         [SerializeField, Header("Volume Settings")] 
         private VolumeSettings masterVolume;
         [SerializeField] 
         private VolumeSettings musicVolume;
         [SerializeField] 
         private VolumeSettings sfxVolume;
+        [SerializeField]
+        private VolumeSettings lookSpeed; // TODO -- make volumesettings more generic
 
         private float MasterVolume => 0.75f;//TODO Get from a player pref or global location
         private float MusicVolume => 1f;//TODO Get from a player pref or global location
@@ -26,9 +31,13 @@ namespace UI
 
         private void OnEnable()
         {
+            gameSettings.LoadSettings();
+
             masterVolume.Init(OnMasterVolumeChanged, MasterVolume);
             musicVolume.Init(OnMusicVolumeChanged, MusicVolume);
             sfxVolume.Init(OnSFXVolumeChanged, SFXVolume);
+            lookSpeed.Init(OnLookSpeedChanged, gameSettings.lookSensitivity);
+            
         }
 
         private void OnDisable()
@@ -36,6 +45,10 @@ namespace UI
             masterVolume.DeInit();
             musicVolume.DeInit();
             sfxVolume.DeInit();
+            
+            lookSpeed.DeInit();
+            gameSettings.SaveSettings();
+
         }
 
         //Set Volume Functions
@@ -52,6 +65,11 @@ namespace UI
         private void OnSFXVolumeChanged(float value)
         {
             Debug.LogError("MUST SFX MASTER VOLUME.\nChange no Saved...");
+        }
+
+        private void OnLookSpeedChanged(float value)
+        {
+            gameSettings.lookSensitivity = value;
         }
 
         //Volume Settings Class

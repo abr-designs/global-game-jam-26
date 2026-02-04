@@ -137,39 +137,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1696784709896511474, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.324236
+      value: 6.682188
       objectReference: {fileID: 0}
     - target: {fileID: 1696784709896511474, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.7223015
+      value: -7.3723683
       objectReference: {fileID: 0}
     - target: {fileID: 1696784709896511474, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9960062
+      value: 0.96413034
       objectReference: {fileID: 0}
     - target: {fileID: 1696784709896511474, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.089284584
+      value: 0.2654294
       objectReference: {fileID: 0}
     - target: {fileID: 1696784709896511474, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000008378872
+      value: -6.258996e-11
       objectReference: {fileID: 0}
     - target: {fileID: 1696784709896511474, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000045158814
+      value: 1.7231248e-11
       objectReference: {fileID: 0}
-    - target: {fileID: 1940136481635482844, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
-      propertyPath: m_ControllerManager.Controllers.Array.data[0].Input.InputAction
-      value: 
-      objectReference: {fileID: 1474627246}
-    - target: {fileID: 1940136481635482844, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
-      propertyPath: m_ControllerManager.Controllers.Array.data[1].Input.InputAction
-      value: 
-      objectReference: {fileID: 549063543}
     - target: {fileID: 2169258498058466993, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_Name
       value: --- PLAYER ---
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954914132777759004, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
+      propertyPath: accelerationTime.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954914132777759004, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
+      propertyPath: accelerationTime.y
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3782870779173420873, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -177,27 +177,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3782870779173420873, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.324236
+      value: 6.682188
       objectReference: {fileID: 0}
     - target: {fileID: 3782870779173420873, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.7223015
+      value: -7.3723683
       objectReference: {fileID: 0}
     - target: {fileID: 3782870779173420873, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9960062
+      value: 0.9641303
       objectReference: {fileID: 0}
     - target: {fileID: 3782870779173420873, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.08928459
+      value: 0.26542944
       objectReference: {fileID: 0}
     - target: {fileID: 3782870779173420873, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000008487558
+      value: -6.258998e-11
       objectReference: {fileID: 0}
     - target: {fileID: 3782870779173420873, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000007608469
+      value: 1.7231305e-11
       objectReference: {fileID: 0}
     - target: {fileID: 4835964767345743515, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -244,12 +244,8 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7370717489315439235, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
-      propertyPath: VerticalAxis.Range.y
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 8374091799105472626, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
-      propertyPath: Lens.FieldOfView
-      value: 60.07309
+      propertyPath: VerticalAxis.Value
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 9063051205189052594, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_Enabled
@@ -257,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9126555564412712927, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: field of view
-      value: 60.07309
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -390,34 +386,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 742876978909036936, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
   m_PrefabInstance: {fileID: 9715765}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &549063543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Gameplay/CameraLook
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 5bfddf16b6c5bf6478623d699162452d, type: 3}
-  m_ActionId: 93f47241-1403-4861-a36b-f8ccc1190083
---- !u!114 &1474627246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Gameplay/CameraLook
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 5bfddf16b6c5bf6478623d699162452d, type: 3}
-  m_ActionId: 93f47241-1403-4861-a36b-f8ccc1190083
 --- !u!1 &1565648784
 GameObject:
   m_ObjectHideFlags: 0
