@@ -79,27 +79,24 @@ namespace GGJ.Player
         //Functions
         //================================================================================================================//
 
-        private void UseAbility()
+        private void UseAbility(bool buttonPressed)
         {
             if (CurrentlyEquippedMask == MASK_TYPE.NONE)
                 return;
 
-            if (InteractableManager.InteractablesInRange)
-                return;
+            // Cancel out the button press if interactable take priority
+            buttonPressed = buttonPressed && !InteractableManager.InteractablesInRange;
             
             m_abilities.FirstOrDefault(x => x.MaskType == CurrentlyEquippedMask)?
-                .UseAbility();
+                .UseAbility(buttonPressed);
         }
         
         //Callbacks
         //================================================================================================================//
         
         private void OnJumpPressed(bool pressed)
-        {
-            if (!pressed)
-                return;
-            
-            UseAbility();
+        {            
+            UseAbility(pressed);
         }
         
         private void OnPlayerReset()
