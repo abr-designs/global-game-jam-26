@@ -1,5 +1,4 @@
 using Levels;
-using System;
 using UnityEngine;
 
 public class StageController : LevelDataDefinition
@@ -10,5 +9,5 @@ public class StageController : LevelDataDefinition
     [SerializeField] private StageExitTrigger m_stageExitTrigger;
     public StageExitTrigger StageExitTrigger => m_stageExitTrigger;
 
-    public event Action RestartStage;
+    //public event Action RestartStage; // was not used
 }
