@@ -19,8 +19,18 @@ public class CharacterCameraLook : MonoBehaviour
     [SerializeField]
     private float deadZone = 0f;
 
+    [SerializeField]
+    private bool clampSpeed = false;
+
 
     private Vector2 currentVel = Vector2.zero;
+
+    public static bool CameraInputLock {get; private set;}
+    public static void SetCameraInputLock(bool lockState)
+    {
+        CameraInputLock = lockState;
+    }
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,11 +41,16 @@ public class CharacterCameraLook : MonoBehaviour
     // Process and filter the input from the controls
     private Vector2 GetCameraInput()
     {
+        if(CameraInputLock) return Vector2.zero;
+
         var rawInput = GameInputDelegator.GetCameraLookRaw();
 
         // Clamp mouse values to -1 to 1 range
-        rawInput.x = Mathf.Clamp(rawInput.x, -1f, 1f);
-        rawInput.y = Mathf.Clamp(rawInput.y, -1f, 1f);
+        if(clampSpeed)
+        {
+            rawInput.x = Mathf.Clamp(rawInput.x, -1f, 1f);
+            rawInput.y = Mathf.Clamp(rawInput.y, -1f, 1f);
+        }
 
         float mag = rawInput.magnitude;
         if (mag < deadZone) return Vector2.zero;

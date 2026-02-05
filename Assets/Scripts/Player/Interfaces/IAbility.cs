@@ -8,7 +8,7 @@ namespace GGJ.Player.Interfaces
         public static CharacterController3D CharacterController3D;
 
         MASK_TYPE MaskType { get; }
-        
-        void UseAbility();
+
+        void UseAbility(bool buttonPressed);
     }
 }

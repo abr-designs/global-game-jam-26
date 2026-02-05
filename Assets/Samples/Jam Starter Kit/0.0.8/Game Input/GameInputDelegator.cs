@@ -68,7 +68,7 @@ namespace GameInput
             if (LockInputs)
                 return;
 
-            if (context.performed == false)
+            if (!context.performed && !context.canceled)
                 return;
 
             var pressed = context.ReadValueAsButton();

@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using Audio;
+using GameInput;
 using GGJ.Player.Enums;
 using GGJ.Player.Interfaces;
 using Projectiles;
 using Samples.CharacterController3D.Scripts;
+using Unity.Cinemachine;
 using UnityEngine;
 using VisualFX;
 
@@ -27,17 +29,50 @@ namespace GGJ.Player
         private int maxActiveProjectiles;
         private List<ICustomUpdate> m_activeProjectiles;
 
+        [Header("Aim Mode Settings")]
+        [SerializeField]
+        private GameObject aimVFX;
+        
+        [SerializeField]
+        private CinemachineCamera cinemachineCamera;
+        private CinemachineOrbitalFollow m_orbitalFollow;
+        
+
+        [SerializeField]
+        private float aimingCameraDistance;
+        private float m_targetCameraRadialAxis;
+        private float m_originalCameraRadialAxis;
+        private float m_cameraRadialVelocity;
+
+
         //Unity Functions
         //================================================================================================================//
 
         private void Start()
         {
+            IAbility.CharacterController3D ??= FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
+            m_orbitalFollow = cinemachineCamera.GetComponent<CinemachineOrbitalFollow>();
+            m_targetCameraRadialAxis = m_originalCameraRadialAxis = m_orbitalFollow.RadialAxis.Value;
             m_activeProjectiles ??= new List<ICustomUpdate>();
         }
 
         private void Update()
         {
             var deltaTime = Time.deltaTime;
+
+            m_orbitalFollow.RadialAxis.Value = Mathf.SmoothDamp(m_orbitalFollow.RadialAxis.Value, m_targetCameraRadialAxis, ref m_cameraRadialVelocity, 0.2f);
+            
+            if(m_isButtonPressed)
+            {
+                m_buttonHeldTimer += deltaTime;
+                if(m_buttonHeldTimer >= buttonHeldThreshold)
+                {
+                    toggleAim(true);
+                }
+            } else
+            {
+                toggleAim(false);
+            }
 
             if (fireCooldown > 0f && m_coolDown > 0f)
                 m_coolDown -= deltaTime;
@@ -54,8 +89,37 @@ namespace GGJ.Player
         
         //================================================================================================================//
 
+        private bool m_isButtonPressed = false;
+        [SerializeField]
+        private float m_buttonHeldTimer = 0f;
+        [SerializeField]
+        private float buttonHeldThreshold = 0.5f;
+        public void UseAbility(bool buttonPressed)
+        {
+            bool buttonReleased = m_isButtonPressed && !buttonPressed;
+            m_isButtonPressed = buttonPressed;
+            
+            if(buttonReleased)
+            {
+                m_buttonHeldTimer = 0f;
+                activateAbility();
+            }
+        }
 
-        public void UseAbility()
+        private void toggleAim(bool state)
+        {
+            IAbility.CharacterController3D.ToggleAim(state);
+
+            // TODO -- maybe scale to appear?
+            if(aimVFX.activeSelf != state)
+            {                
+                m_targetCameraRadialAxis = state ? aimingCameraDistance : m_originalCameraRadialAxis;
+                aimVFX.SetActive(state);
+                // CharacterCameraLook.SetCameraInputLock(show);
+            }
+        }
+
+        private void activateAbility()
         {
             if (fireCooldown > 0f && m_coolDown > 0f)
                 return;
@@ -65,8 +129,6 @@ namespace GGJ.Player
                 return;
 
             m_coolDown = fireCooldown;
-
-
 
             var characterControllerTransform = IAbility.CharacterController3D.transform;
             var speed = characterMovement3DData.maxSpeed * 2f;
@@ -80,5 +142,6 @@ namespace GGJ.Player
             SFXManager.PlaySound(SFX.PROJECTILE);
             VFX.BOUNCE.PlayAtLocation(startPosition);
         }
+
     }
 }

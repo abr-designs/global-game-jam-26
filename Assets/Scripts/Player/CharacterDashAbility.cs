@@ -58,11 +58,14 @@ namespace GGJ.Player
         }
 
         //TODO Consider if we should be checking the Grounded state or the Coyote Time
-        public void UseAbility()
+        public void UseAbility(bool buttonPressed)
         {
             //TODO Optional if ability & Interactable 
             //if (InteractableManager.InteractablesInRange)
             //    return;
+
+            if(!buttonPressed)
+                return;
             
             if (IsBusy)
                 return;
