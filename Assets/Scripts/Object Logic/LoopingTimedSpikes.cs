@@ -19,8 +19,8 @@ public class LoopingTimedSpikes : MonoBehaviour
     [Header("Audio")]
     [SerializeField]private SFX deploySFX;
     [SerializeField]private SFX retractSFX;
-    [SerializeField, Range(0f, 1f)] private float _spikeVolume = 0.5f;
-    [SerializeField, Range(0f, 1f)] private float _retractVolume = 0.75f;
+    //[SerializeField, Range(0f, 1f)] private float _spikeVolume = 0.5f; // was not used
+    //[SerializeField, Range(0f, 1f)] private float _retractVolume = 0.75f; // was not used
 
     private Coroutine _loopRoutine;
 
