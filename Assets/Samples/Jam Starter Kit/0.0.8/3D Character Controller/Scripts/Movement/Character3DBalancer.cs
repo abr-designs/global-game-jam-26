@@ -79,6 +79,7 @@ namespace Samples.CharacterController3D.Scripts
             m_rigidbody ??= GetComponent<Rigidbody>();
             
             m_rigidbody.rotation = Quaternion.LookRotation(direction, Vector3.up);
+            m_targetRotation = m_rigidbody.rotation;
         }
         public void FaceDirection(Vector3 direction)
         {

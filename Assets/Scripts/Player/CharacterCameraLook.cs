@@ -1,5 +1,7 @@
+using System.Collections;
 using GameInput;
 using Unity.Cinemachine;
+using Unity.Cinemachine.TargetTracking;
 using UnityEngine;
 
 public class CharacterCameraLook : MonoBehaviour
@@ -25,7 +27,7 @@ public class CharacterCameraLook : MonoBehaviour
 
     private Vector2 currentVel = Vector2.zero;
 
-    public static bool CameraInputLock {get; private set;}
+    public static bool CameraInputLock { get; private set; }
     public static void SetCameraInputLock(bool lockState)
     {
         CameraInputLock = lockState;
@@ -36,34 +38,6 @@ public class CharacterCameraLook : MonoBehaviour
     void Start()
     {
         m_orbitalFollow = GetComponent<CinemachineOrbitalFollow>();
-    }
-
-    // Process and filter the input from the controls
-    private Vector2 GetCameraInput()
-    {
-        if(CameraInputLock) return Vector2.zero;
-
-        var rawInput = GameInputDelegator.GetCameraLookRaw();
-
-        // Clamp mouse values to -1 to 1 range
-        if(clampSpeed)
-        {
-            rawInput.x = Mathf.Clamp(rawInput.x, -1f, 1f);
-            rawInput.y = Mathf.Clamp(rawInput.y, -1f, 1f);
-        }
-
-        float mag = rawInput.magnitude;
-        if (mag < deadZone) return Vector2.zero;
-
-        var normalized = rawInput.normalized;
-        float dotX = Mathf.Abs(Vector2.Dot(normalized, Vector2.right));
-        float dotY = Mathf.Abs(Vector2.Dot(normalized, Vector2.up));
-
-        // If movement is 90% in either axis, kill the secondary axis
-        if (dotX > 0.9f) return new Vector2(rawInput.x, 0);
-        if (dotY > 0.9f) return new Vector2(0, rawInput.y);
-
-        return rawInput;
     }
 
     // Update is called once per frame
@@ -94,6 +68,52 @@ public class CharacterCameraLook : MonoBehaviour
         var vDelta = currentVel.y * Time.deltaTime;
         m_orbitalFollow.HorizontalAxis.Value = m_orbitalFollow.HorizontalAxis.ClampValue(m_orbitalFollow.HorizontalAxis.Value + hDelta);
         m_orbitalFollow.VerticalAxis.Value = m_orbitalFollow.VerticalAxis.ClampValue(m_orbitalFollow.VerticalAxis.Value + vDelta);
+    }
+
+
+    // Process and filter the input from the controls
+    private Vector2 GetCameraInput()
+    {
+        if (CameraInputLock) return Vector2.zero;
+
+        var rawInput = GameInputDelegator.GetCameraLookRaw();
+
+        // Clamp mouse values to -1 to 1 range
+        if (clampSpeed)
+        {
+            rawInput.x = Mathf.Clamp(rawInput.x, -1f, 1f);
+            rawInput.y = Mathf.Clamp(rawInput.y, -1f, 1f);
+        }
+
+        float mag = rawInput.magnitude;
+        if (mag < deadZone) return Vector2.zero;
+
+        var normalized = rawInput.normalized;
+        float dotX = Mathf.Abs(Vector2.Dot(normalized, Vector2.right));
+        float dotY = Mathf.Abs(Vector2.Dot(normalized, Vector2.up));
+
+        // If movement is 90% in either axis, kill the secondary axis
+        if (dotX > 0.9f) return new Vector2(rawInput.x, 0);
+        if (dotY > 0.9f) return new Vector2(0, rawInput.y);
+
+        return rawInput;
+    }
+
+    [ContextMenu("Recenter")]
+    public void Recenter(float time = 0.1f)
+    {
+        IEnumerator RecenterRoutine()
+        {
+            SetCameraInputLock(true);
+            var oldSettings = m_orbitalFollow.HorizontalAxis.Recentering;
+            var newSettings = new InputAxis.RecenteringSettings() { Enabled = true, Time = time, Wait = 0};
+            m_orbitalFollow.HorizontalAxis.Recentering = newSettings;
+            yield return new WaitForSeconds(time);
+            m_orbitalFollow.HorizontalAxis.Recentering = oldSettings;
+            SetCameraInputLock(false);
+        }
+
+        StartCoroutine(RecenterRoutine());
     }
 
 

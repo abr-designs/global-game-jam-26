@@ -42,7 +42,6 @@ namespace Interactables.Masks
 
         public void Interact()
         {
-            Debug.Log("Interacting with mask");
             if (PlayerMaskManager.CurrentlyEquippedMask == MASK_TYPE.NONE && currentMaskType == MASK_TYPE.NONE)
                 return;
 

@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 using Utilities;
 using Object = UnityEngine.Object;
 using GGJ.Player;
+using Unity.Cinemachine;
 
 public class StageManager : MonoBehaviour
 {
@@ -93,6 +94,9 @@ public class StageManager : MonoBehaviour
 
         m_playerCharacter.GetComponent<Rigidbody>().position = m_currentStage.StageSpawnPoint.position;
         m_playerCharacter.GetComponent<Character3DBalancer>()?.ForceFaceDirection(m_currentStage.StageSpawnPoint.transform.forward.normalized);
+
+        // Have camera look behind player
+        FindFirstObjectByType<CharacterCameraLook>()?.Recenter();
 
         PlayerMaskManager.EquipMask(GGJ.Player.Enums.MASK_TYPE.NONE);
 

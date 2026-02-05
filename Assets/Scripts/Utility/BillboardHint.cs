@@ -11,6 +11,7 @@ public class BillboardHint : MonoBehaviour
     private static CharacterController3D s_characterController3D;
     private Transform m_cameraTransform;
     private Vector3 m_moveVelocity;
+    private Vector3 m_rotateVelocity;
     void Start() {
         s_characterController3D ??= FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
         m_cameraTransform = FindFirstObjectByType<Camera>(FindObjectsInactive.Exclude).transform;
@@ -25,8 +26,8 @@ public class BillboardHint : MonoBehaviour
         Vector3 worldOffset = m_cameraTransform.TransformDirection(offset);
         var targetPosition = s_characterController3D.transform.position + worldOffset;
 
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref m_moveVelocity, 0.5f);
-        transform.forward = m_cameraTransform.forward;
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref m_moveVelocity, 0.2f);
+        transform.forward = Vector3.SmoothDamp(transform.forward, m_cameraTransform.forward, ref m_rotateVelocity, 0.2f);
     }
 
 }
