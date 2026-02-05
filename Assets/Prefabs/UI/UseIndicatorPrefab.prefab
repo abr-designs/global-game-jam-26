@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2885354709751545085}
   - component: {fileID: 1973477887842535304}
+  - component: {fileID: 6663479000114746899}
   m_Layer: 0
   m_Name: keyboard_space_0
   m_TagString: Untagged
@@ -91,6 +92,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &6663479000114746899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503464919162342861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f9fb2b60528704faa39d3aa41c654a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputSprite
+  keyboardInputSprite: {fileID: -1172492784, guid: a6a6dfbe14a984e4baba94e9e7adc415, type: 3}
+  gamepadInputSprite: {fileID: 21300000, guid: 30146080d446e67439473962978560e9, type: 3}
 --- !u!1 &4777375301606817495
 GameObject:
   m_ObjectHideFlags: 0

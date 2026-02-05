@@ -297,6 +297,17 @@ namespace GameInput
                 },
                 {
                     ""name"": """",
+                    ""id"": ""c13c53c6-61af-4fa7-b98b-c7385d1d1b7a"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""7040ecd5-918f-46a9-a9e3-c87cab51b03f"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
