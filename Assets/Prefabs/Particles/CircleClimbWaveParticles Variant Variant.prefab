@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2089459190883348467, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
+      propertyPath: ringBufferMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089459190883348467, guid: 69c1f764886e93b42bd571be6ae904a8, type: 3}
       propertyPath: NoiseModule.quality
       value: 1
       objectReference: {fileID: 0}

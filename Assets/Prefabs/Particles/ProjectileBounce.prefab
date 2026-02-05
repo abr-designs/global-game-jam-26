@@ -57,6 +57,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7026698740268868994, guid: 6cd3b91aefbc7884380955855af60184, type: 3}
+      propertyPath: ringBufferMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026698740268868994, guid: 6cd3b91aefbc7884380955855af60184, type: 3}
       propertyPath: NoiseModule.frequency
       value: 0.3
       objectReference: {fileID: 0}
