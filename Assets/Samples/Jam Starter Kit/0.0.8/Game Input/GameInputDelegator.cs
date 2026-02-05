@@ -68,8 +68,6 @@ namespace GameInput
             if (LockInputs)
                 return;
 
-            Debug.Log($"Jump event -- performed:({context.performed}) -- canceled:({context.canceled}) -- value:({context.ReadValueAsButton()}) ");
-
             if (!context.performed && !context.canceled)
                 return;
 
