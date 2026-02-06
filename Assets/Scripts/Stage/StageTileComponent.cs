@@ -1,4 +1,7 @@
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class StageTile : MonoBehaviour
 {
@@ -36,7 +39,12 @@ public class StageTile : MonoBehaviour
         if (prefab == null)
             return;
 
+#if UNITY_EDITOR
+        _currentInstance = (GameObject)PrefabUtility.InstantiatePrefab(prefab, transform);
+#else
         _currentInstance = Instantiate(prefab, transform);
+#endif
+
         _currentInstance.transform.localPosition = Vector3.zero;
         _currentInstance.transform.localRotation = Quaternion.identity;
     }

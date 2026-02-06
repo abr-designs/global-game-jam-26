@@ -6,6 +6,8 @@ public class StageExitTrigger : MonoBehaviour
 {
     public event Action PlayerReachedExit;
 
+    private bool _isExitingStage;
+
     // gizmo
     private SphereCollider m_sphereCollider;
     private float sphereRadius = 2f;
@@ -15,6 +17,12 @@ public class StageExitTrigger : MonoBehaviour
     {
         if (other.gameObject.tag != "Player")
             return;
+
+        // prevent queuing multiple exists
+        if (_isExitingStage)
+            return;
+
+        _isExitingStage = true;
 
         PlayerReachedExit?.Invoke();
     }
