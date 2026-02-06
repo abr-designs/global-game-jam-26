@@ -47,12 +47,9 @@ MonoBehaviour:
   newStageName: New Stage
   stageDimensions: {x: 5, y: 2, z: 5}
   tileSize: {x: 4, y: 4, z: 4}
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  prefabLibrary: {fileID: 11400000, guid: 62c85fb8062166643aa24adb5356fc60, type: 2}
+  _stageSpawnPoint: {fileID: 2241450959516019213, guid: 635a1186d27c6ab46b587b7d7619ed47, type: 3}
+  _stageExitTrigger: {fileID: 8704175925069199596, guid: 4f28f621c77189542ae6998567898cb5, type: 3}
   _rotationDirection: -90
   _wallRotationOffset: 0
   _cornerRotationOffset: 90

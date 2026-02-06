@@ -1349,7 +1349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4016503115352877960, guid: 1ac520f6d9760a045894c62ebb0493b9, type: 3}
       propertyPath: stageDimensions.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4016503115352877960, guid: 1ac520f6d9760a045894c62ebb0493b9, type: 3}
       propertyPath: stageDimensions.z
@@ -1518,6 +1518,10 @@ PrefabInstance:
       objectReference: {fileID: 78174729974318306, guid: a4ee753696420aa49832030ddc2ffd8d, type: 3}
     - target: {fileID: 6879450150730211499, guid: 48be5035de444314280d198f12e930a2, type: 3}
       propertyPath: 'levels.Array.data[10]'
+      value: 
+      objectReference: {fileID: 7029231044543102525, guid: 0acf3078dbce4fd40ae1e1ed7ef8fa37, type: 3}
+    - target: {fileID: 6879450150730211499, guid: 48be5035de444314280d198f12e930a2, type: 3}
+      propertyPath: 'levels.Array.data[11]'
       value: 
       objectReference: {fileID: 7029231044543102525, guid: 0acf3078dbce4fd40ae1e1ed7ef8fa37, type: 3}
     m_RemovedComponents: []

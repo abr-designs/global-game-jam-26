@@ -1,51 +1,40 @@
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
-public class StageTile : MonoBehaviour
+public class StageTileComponent : MonoBehaviour
 {
+    [Header("Generatation")]
     public StageTileType tileType;
+    public GameObject generatedObject;
 
     [Header("Prefabs")]
-    public GameObject emptyPrefab;
-    public GameObject floorPrefab;
-    public GameObject floorOneWallPrefab;
-    public GameObject floorCornerWallsPrefab;
-    public GameObject wallNoFloorPrefab;
-    public GameObject cornerNoFloorPrefab;
+    public StageTilePrefabLibrary prefabLibrary;
 
-    private GameObject _currentInstance;
-
+#if UNITY_EDITOR
     public void ApplyTile(Quaternion rotation)
     {
-        if (_currentInstance != null)
-        {
-            DestroyImmediate(_currentInstance);
-        }
+        RemoveGeneratedObject();
 
         transform.localRotation = rotation;
 
-        GameObject prefab = tileType switch
-        {
-            StageTileType.Floor => floorPrefab,
-            StageTileType.FloorOneWall => floorOneWallPrefab,
-            StageTileType.FloorCornerWalls => floorCornerWallsPrefab,
-            StageTileType.WallNoFloor => wallNoFloorPrefab,
-            StageTileType.CornerNoFloor => cornerNoFloorPrefab,
-            _ => emptyPrefab
-        };
+        GameObject prefab = prefabLibrary.GetPrefab(tileType);
 
         if (prefab == null)
             return;
 
-#if UNITY_EDITOR
-        _currentInstance = (GameObject)PrefabUtility.InstantiatePrefab(prefab, transform);
-#else
-        _currentInstance = Instantiate(prefab, transform);
-#endif
+        generatedObject = (GameObject)
+            UnityEditor.PrefabUtility.InstantiatePrefab(prefab, transform);
 
-        _currentInstance.transform.localPosition = Vector3.zero;
-        _currentInstance.transform.localRotation = Quaternion.identity;
+        generatedObject.transform.localPosition = Vector3.zero;
+        generatedObject.transform.localRotation = Quaternion.identity;
     }
+
+    public void RemoveGeneratedObject()
+    {
+        if (generatedObject == null)
+            return;
+
+        DestroyImmediate(generatedObject);
+        generatedObject = null;
+    }
+#endif
 }

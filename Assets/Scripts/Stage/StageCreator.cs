@@ -4,16 +4,13 @@ public class StageCreator : MonoBehaviour
 {
     [Header("New Stage")]
     public string newStageName = "New Stage";
-    public Vector3Int stageDimensions = new Vector3Int(5, 2, 5);
+    public Vector3Int stageDimensions = new Vector3Int(4, 2, 4);
 
     [Header("References")]
     public Vector3 tileSize = new Vector3(4f, 4f, 4f);
-    public GameObject emptyPrefab;
-    public GameObject floorPrefab;
-    public GameObject floorOneWallPrefab;
-    public GameObject floorCornerWallsPrefab;
-    public GameObject wallNoFloorPrefab;
-    public GameObject cornerNoFloorPrefab;
+    public StageTilePrefabLibrary prefabLibrary;
+    [SerializeField] private GameObject _stageSpawnPoint;
+    [SerializeField] private GameObject _stageExitTrigger;
 
     [Header("Rotation Settings")]
     public float _rotationDirection = -90f;
@@ -36,10 +33,6 @@ public class StageCreator : MonoBehaviour
 
             for (int x = 0; x < stageDimensions.x; x++)
             {
-                //GameObject row = new GameObject($"Row_{z}");
-                //row.transform.SetParent(floor.transform);
-                //row.transform.localPosition = new Vector3(0, 0, z * tileSize.z);
-
                 for (int z = 0; z < stageDimensions.z; z++)
                 {
                     GameObject tile = new GameObject($"Tile [{x}, {z}]");
@@ -47,14 +40,9 @@ public class StageCreator : MonoBehaviour
                     tile.transform.SetParent(floor.transform);
                     tile.transform.localPosition = new Vector3(x * tileSize.x, 0, z * tileSize.z);
 
-                    StageTile stageTile = tile.AddComponent<StageTile>();
+                    StageTileComponent stageTile = tile.AddComponent<StageTileComponent>();
 
-                    stageTile.emptyPrefab = emptyPrefab;
-                    stageTile.floorPrefab = floorPrefab;
-                    stageTile.floorOneWallPrefab = floorOneWallPrefab;
-                    stageTile.floorCornerWallsPrefab = floorCornerWallsPrefab;
-                    stageTile.wallNoFloorPrefab = wallNoFloorPrefab;
-                    stageTile.cornerNoFloorPrefab = cornerNoFloorPrefab;
+                    stageTile.prefabLibrary = prefabLibrary;
 
                     StageTileType type = GetTileType(x, y, z, out Quaternion rotation);
 
@@ -64,6 +52,19 @@ public class StageCreator : MonoBehaviour
                 }
             }
         }
+
+        // generate spawn and exit
+        GameObject spawnPoint = Instantiate(_stageSpawnPoint, stageRoot.transform);
+        spawnPoint.transform.position = new Vector3(0, 1f, 0); // offset for floor mesh height
+        stageController.SetStageSpawnPoint(spawnPoint.transform);
+
+        GameObject exitTrigger = Instantiate(_stageExitTrigger, stageRoot.transform);
+        exitTrigger.transform.position = new Vector3(
+            tileSize.x * (stageDimensions.x - 1),
+            1f, // offset for floor mesh height
+            tileSize.z * (stageDimensions.z - 1)); 
+        StageExitTrigger stageExitTrigger = exitTrigger.GetComponent<StageExitTrigger>();
+        stageController.SetStageExitTrigger(stageExitTrigger);
     }
 
     private StageTileType GetTileType(

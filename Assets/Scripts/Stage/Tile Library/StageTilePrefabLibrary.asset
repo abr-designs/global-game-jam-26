@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15814c7b1078d414387a1b82bd177fe2, type: 3}
+  m_Name: StageTilePrefabLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::StageTilePrefabLibrary
+  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
+  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
+  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
+  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
+  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
+  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
