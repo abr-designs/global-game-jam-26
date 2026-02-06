@@ -14,8 +14,8 @@ public class StageCreatorEditor : Editor
         EditorGUI.EndDisabledGroup();
 
         // Draw New Stage header
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("newStageName"));
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("stageDimensions"));
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("_newStageName"));
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("_stageDimensions"));
 
         // Button placed between stageDimensions and tileSize
         EditorGUILayout.Space();
@@ -30,8 +30,8 @@ public class StageCreatorEditor : Editor
         DrawRemainingProperties(
             serializedObject,
             "m_Script",
-            "newStageName",
-            "stageDimensions"
+            "_newStageName",
+            "_stageDimensions"
         );
 
         serializedObject.ApplyModifiedProperties();

@@ -3,50 +3,50 @@ using UnityEngine;
 public class StageCreator : MonoBehaviour
 {
     [Header("New Stage")]
-    public string newStageName = "New Stage";
-    public Vector3Int stageDimensions = new Vector3Int(4, 2, 4);
+    [SerializeField] private string _newStageName = "New Stage";
+    [SerializeField] private Vector3Int _stageDimensions = new Vector3Int(4, 2, 4);
 
     [Header("References")]
-    public Vector3 tileSize = new Vector3(4f, 4f, 4f);
-    public StageTilePrefabLibrary prefabLibrary;
+    [SerializeField] private Vector3 _tileSize = new Vector3(4f, 4f, 4f);
+    [SerializeField] private StageTilePrefabLibrary _prefabLibrary;
     [SerializeField] private GameObject _stageSpawnPoint;
     [SerializeField] private GameObject _stageExitTrigger;
 
     [Header("Rotation Settings")]
-    public float _rotationDirection = -90f;
-    public float _wallRotationOffset = -90f;
-    public float _cornerRotationOffset = -90f;
+    [SerializeField] private float _rotationDirection = -90f;
+    [SerializeField] private float _wallRotationOffset = -90f;
+    [SerializeField] private float _cornerRotationOffset = -90f;
 
     [ContextMenu("Create New Stage")]
     public void CreateNewStage()
     {
-        GameObject stageRoot = new GameObject(newStageName);
+        GameObject stageRoot = new GameObject(_newStageName);
         stageRoot.transform.localPosition = Vector3.zero;
         StageController stageController = stageRoot.AddComponent<StageController>();
-        stageController.levelName = newStageName;
+        stageController.levelName = _newStageName;
 
-        for (int y = 0; y < stageDimensions.y; y++)
+        for (int y = 0; y < _stageDimensions.y; y++)
         {
             GameObject floor = new GameObject($"Floor {y}");
             floor.transform.SetParent(stageRoot.transform);
-            floor.transform.localPosition = new Vector3(0, y * tileSize.y, 0);
+            floor.transform.localPosition = new Vector3(0, y * _tileSize.y, 0);
 
-            for (int x = 0; x < stageDimensions.x; x++)
+            for (int x = 0; x < _stageDimensions.x; x++)
             {
-                for (int z = 0; z < stageDimensions.z; z++)
+                for (int z = 0; z < _stageDimensions.z; z++)
                 {
                     GameObject tile = new GameObject($"Tile [{x}, {z}]");
                     //tile.transform.SetParent(row.transform);
                     tile.transform.SetParent(floor.transform);
-                    tile.transform.localPosition = new Vector3(x * tileSize.x, 0, z * tileSize.z);
+                    tile.transform.localPosition = new Vector3(x * _tileSize.x, 0, z * _tileSize.z);
 
                     StageTileComponent stageTile = tile.AddComponent<StageTileComponent>();
 
-                    stageTile.prefabLibrary = prefabLibrary;
+                    stageTile.SetPrefabLibrary(_prefabLibrary);
 
                     StageTileType type = GetTileType(x, y, z, out Quaternion rotation);
 
-                    stageTile.tileType = type;
+                    stageTile.SetTileType(type);
                     stageTile.ApplyTile(rotation);
 
                 }
@@ -60,9 +60,9 @@ public class StageCreator : MonoBehaviour
 
         GameObject exitTrigger = Instantiate(_stageExitTrigger, stageRoot.transform);
         exitTrigger.transform.position = new Vector3(
-            tileSize.x * (stageDimensions.x - 1),
+            _tileSize.x * (_stageDimensions.x - 1),
             1f, // offset for floor mesh height
-            tileSize.z * (stageDimensions.z - 1)); 
+            _tileSize.z * (_stageDimensions.z - 1)); 
         StageExitTrigger stageExitTrigger = exitTrigger.GetComponent<StageExitTrigger>();
         stageController.SetStageExitTrigger(stageExitTrigger);
     }
@@ -76,9 +76,9 @@ public class StageCreator : MonoBehaviour
         rotation = Quaternion.identity;
 
         bool minX = x == 0;
-        bool maxX = x == stageDimensions.x - 1;
+        bool maxX = x == _stageDimensions.x - 1;
         bool minZ = z == 0;
-        bool maxZ = z == stageDimensions.z - 1;
+        bool maxZ = z == _stageDimensions.z - 1;
 
         bool isEdgeX = minX || maxX;
         bool isEdgeZ = minZ || maxZ;

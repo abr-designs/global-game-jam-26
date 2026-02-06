@@ -3,11 +3,20 @@ using UnityEngine;
 public class StageTileComponent : MonoBehaviour
 {
     [Header("Generatation")]
-    public StageTileType tileType;
-    public GameObject generatedObject;
+    [SerializeField] private StageTileType _tileType;
+    public void SetTileType(StageTileType tileType)
+    {
+        _tileType = tileType;
+    }
+
+    [SerializeField] private GameObject _generatedObject;
 
     [Header("Prefabs")]
-    public StageTilePrefabLibrary prefabLibrary;
+    [SerializeField] private StageTilePrefabLibrary _prefabLibrary;
+    public void SetPrefabLibrary(StageTilePrefabLibrary prefabLibrary)
+    {
+        _prefabLibrary = prefabLibrary;
+    }
 
 #if UNITY_EDITOR
     public void ApplyTile(Quaternion rotation)
@@ -16,25 +25,25 @@ public class StageTileComponent : MonoBehaviour
 
         transform.localRotation = rotation;
 
-        GameObject prefab = prefabLibrary.GetPrefab(tileType);
+        GameObject prefab = _prefabLibrary.GetPrefab(_tileType);
 
         if (prefab == null)
             return;
 
-        generatedObject = (GameObject)
+        _generatedObject = (GameObject)
             UnityEditor.PrefabUtility.InstantiatePrefab(prefab, transform);
 
-        generatedObject.transform.localPosition = Vector3.zero;
-        generatedObject.transform.localRotation = Quaternion.identity;
+        _generatedObject.transform.localPosition = Vector3.zero;
+        _generatedObject.transform.localRotation = Quaternion.identity;
     }
 
     public void RemoveGeneratedObject()
     {
-        if (generatedObject == null)
+        if (_generatedObject == null)
             return;
 
-        DestroyImmediate(generatedObject);
-        generatedObject = null;
+        DestroyImmediate(_generatedObject);
+        _generatedObject = null;
     }
 #endif
 }

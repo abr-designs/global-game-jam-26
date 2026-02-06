@@ -13,8 +13,8 @@ public class StageTileComponentEditor : Editor
         EditorGUILayout.PropertyField(serializedObject.FindProperty("m_Script"));
         EditorGUI.EndDisabledGroup();
 
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("tileType"));
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("generatedObject"));
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("_tileType"));
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("_generatedObject"));
 
         EditorGUILayout.BeginHorizontal();
 
@@ -30,8 +30,8 @@ public class StageTileComponentEditor : Editor
         DrawRemainingProperties(
             serializedObject,
             "m_Script",
-            "tileType",
-            "generatedObject"
+            "_tileType",
+            "_generatedObject"
         );
 
         serializedObject.ApplyModifiedProperties();
