@@ -55,7 +55,7 @@ public class CharacterCameraLook : MonoBehaviour
         if (isMouse)
         {
             hDelta = input.x * maxSpeed.x * gain.x * settings.LookSensitivity;
-            vDelta = input.y * maxSpeed.y * gain.y * settings.LookSensitivity;
+            vDelta = input.y * maxSpeed.y * gain.y * settings.LookSensitivity * settings.YInversion; // YInversion of -1 means on, down is up;
         }
         else
         {
@@ -66,7 +66,7 @@ public class CharacterCameraLook : MonoBehaviour
 
             Vector2 targetVel = new Vector2(
                 input.x * maxSpeed.x * gain.x * settings.LookSensitivity,
-                input.y * maxSpeed.y * gain.y * settings.LookSensitivity
+                input.y * maxSpeed.y * gain.y * settings.LookSensitivity * settings.YInversion // YInversion of -1 means on, down is up;
             );
             currentVel.x = Mathf.MoveTowards(
                 currentVel.x,

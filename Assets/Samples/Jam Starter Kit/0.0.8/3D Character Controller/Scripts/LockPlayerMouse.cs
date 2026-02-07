@@ -9,6 +9,9 @@ namespace Samples.CharacterController3D.Scripts
     public class LockPlayerMouse : MonoBehaviour
     {
         [SerializeField]
+        private bool _allowCursorLock;
+
+        [SerializeField]
         private CursorLockMode stateOnStart = CursorLockMode.Confined;
 
         private InputActions inputActions;
@@ -34,6 +37,9 @@ namespace Samples.CharacterController3D.Scripts
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start()
         {
+            if (!_allowCursorLock)
+                return;
+
             Cursor.lockState = stateOnStart;
             isOpen = false;
         }
@@ -53,18 +59,27 @@ namespace Samples.CharacterController3D.Scripts
 
         private void OpenWindow()
         {
+            if (!_allowCursorLock)
+                return;
+
             isOpen = true;
             Cursor.lockState = CursorLockMode.Confined;
         }
 
         public void CloseWindow()
         {
+            if (!_allowCursorLock)
+                return;
+
             isOpen = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void OnCloseWindow()
         {
+            if (!_allowCursorLock)
+                return;
+
             Cursor.lockState = CursorLockMode.Locked;
         }
     }

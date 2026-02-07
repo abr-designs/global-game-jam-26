@@ -18,8 +18,11 @@ namespace UI
         private VolumeSettings musicVolume;
         [SerializeField] 
         private VolumeSettings sfxVolume;
+
+        [Header("Camera Settings")]
         [SerializeField]
         private VolumeSettings lookSpeed; // TODO -- make volumesettings more generic
+        [SerializeField] private Toggle _yInversionToggle;
 
         private float MasterVolume => 0.75f;//TODO Get from a player pref or global location
         private float MusicVolume => 1f;//TODO Get from a player pref or global location
@@ -37,7 +40,7 @@ namespace UI
             musicVolume.Init(OnMusicVolumeChanged, MusicVolume);
             sfxVolume.Init(OnSFXVolumeChanged, SFXVolume);
             lookSpeed.Init(OnLookSpeedChanged, gameSettings.lookSensitivity);
-            
+            _yInversionToggle.SetIsOnWithoutNotify(gameSettings.YInversion == -1f); // -1 means on, down is up;
         }
 
         private void OnDisable()
@@ -48,7 +51,6 @@ namespace UI
             
             lookSpeed.DeInit();
             gameSettings.SaveSettings();
-
         }
 
         //Set Volume Functions
@@ -126,5 +128,9 @@ namespace UI
 
         //============================================================================================================//
 
+        public void OnToggleYInversion()
+        {
+            gameSettings.SetYInversion(_yInversionToggle.isOn);
+        }
     }
 }
