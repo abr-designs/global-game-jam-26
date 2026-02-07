@@ -28,7 +28,7 @@ public class InteractionHint : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        s_characterController3D ??= FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
+        if(s_characterController3D == null) s_characterController3D = FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
         m_cameraTransform = FindFirstObjectByType<Camera>(FindObjectsInactive.Exclude).transform;
         m_color = spriteRenderer.color;
         UpdateFade(0f);

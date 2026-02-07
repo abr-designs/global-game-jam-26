@@ -4,6 +4,7 @@ using Audio;
 using NaughtyAttributes;
 using Projectiles;
 using UnityEngine;
+using UnityEngine.UI;
 using Utilities;
 
 namespace Samples.CharacterController3D.Scripts
@@ -434,6 +435,7 @@ namespace Samples.CharacterController3D.Scripts
             m_isDead = false;
             m_3dBalancer.enabled = true;
             TogglePhysics(true);
+            ToggleAim(false);
         }
 
         //============================================================================================================//

@@ -48,7 +48,8 @@ namespace GGJ.Player
 
         private void Start()
         {
-            IAbility.CharacterController3D ??= FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
+            if(IAbility.CharacterController3D == null)
+                IAbility.CharacterController3D = FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
             m_targetFov = m_originalFov = cinemachineCamera.Lens.FieldOfView;
         }
 

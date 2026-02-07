@@ -34,7 +34,7 @@ namespace Interactables
         public static void Register(IInteractable interactable)
         {
             s_interactables ??= new List<IInteractable>();
-            
+
             s_interactables.Add(interactable);
         }
 
@@ -73,7 +73,7 @@ namespace Interactables
         {
             if (s_interactables == null || s_interactables.Count < 0)
                 return;
-            
+
             var playerFacingDirection =
                 Vector3.ProjectOnPlane(characterController3D.transform.forward.normalized, Vector3.up);
             var playerPosition = characterController3D.transform.position;
@@ -94,7 +94,7 @@ namespace Interactables
                 //TODO This might be optional
                 if (Vector3.Dot(playerFacingDirection, flatDir) < dotThreshold)
                     continue;
-                
+
                 //TODO Might need to determine if there is a wall between the player & the object
 
                 m_interactablesInRange[m_inRangeCount++] = interactable;
@@ -112,7 +112,7 @@ namespace Interactables
 
             var foundIndex = -1;
             var shortestDist = float.MaxValue;
-            
+
             for (int i = 0; i < m_inRangeCount; i++)
             {
                 var interactable = m_interactablesInRange[i];
@@ -128,7 +128,7 @@ namespace Interactables
 
             if (foundIndex < 0)
                 return;
-            
+
             m_interactablesInRange[foundIndex].Interact();
         }
 
@@ -139,7 +139,7 @@ namespace Interactables
         {
             if (!pressed)
                 return;
-            
+
             TryUseInteractable();
         }
 
@@ -149,7 +149,7 @@ namespace Interactables
         private void OnDrawGizmos()
         {
             var pos = characterController3D.transform.position;
-            
+
             Draw.Circle(pos, Vector3.up, Color.white, interactionRange);
 
             if (!Application.isPlaying)
@@ -159,9 +159,9 @@ namespace Interactables
             for (int i = 0; i < m_inRangeCount; i++)
             {
                 var interactable = m_interactablesInRange[i];
-                if(interactable == null)
+                if (interactable == null)
                     continue;
-                
+
                 Gizmos.DrawLine(pos, interactable.transform.position);
             }
         }

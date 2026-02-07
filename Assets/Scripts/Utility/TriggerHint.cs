@@ -34,7 +34,8 @@ public class TriggerHint : MonoBehaviour
 
     void Start()
     {
-        s_characterController3D ??= FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
+        if(s_characterController3D == null) 
+            s_characterController3D = FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
         m_cameraTransform = FindFirstObjectByType<Camera>(FindObjectsInactive.Exclude).transform;
         m_sprites = GetComponentsInChildren<SpriteRenderer>().ToList();
         m_text = GetComponentsInChildren<TMP_Text>().ToList();
@@ -69,7 +70,6 @@ public class TriggerHint : MonoBehaviour
 
     private void Trigger()
     {
-        Debug.Log("Triggered!");
         m_isTriggered = true;
         particleEffect.SetActive(true);
     }

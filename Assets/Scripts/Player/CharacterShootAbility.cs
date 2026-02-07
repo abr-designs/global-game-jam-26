@@ -48,9 +48,19 @@ namespace GGJ.Player
         //Unity Functions
         //================================================================================================================//
 
+        private void OnEnable()
+        {
+            StageManager.OnPlayerReset += OnPlayerReset;
+        }
+        private void OnDisable()
+        {
+            StageManager.OnPlayerReset -= OnPlayerReset;
+        }
+
         private void Start()
         {
-            IAbility.CharacterController3D ??= FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
+            if(IAbility.CharacterController3D == null)
+                IAbility.CharacterController3D = FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
             m_orbitalFollow = cinemachineCamera.GetComponent<CinemachineOrbitalFollow>();
             m_targetCameraRadialAxis = m_originalCameraRadialAxis = m_orbitalFollow.RadialAxis.Value;
             m_activeProjectiles ??= new List<ICustomUpdate>();
@@ -141,6 +151,13 @@ namespace GGJ.Player
             
             SFXManager.PlaySound(SFX.PROJECTILE);
             VFX.BOUNCE.PlayAtLocation(startPosition);
+        }
+
+        private void OnPlayerReset()
+        {
+            m_isButtonPressed = false;
+            m_buttonHeldTimer = 0f;
+            toggleAim(false);
         }
 
     }

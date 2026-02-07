@@ -13,7 +13,8 @@ public class BillboardHint : MonoBehaviour
     private Vector3 m_moveVelocity;
     private Vector3 m_rotateVelocity;
     void Start() {
-        s_characterController3D ??= FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
+        if(s_characterController3D == null)
+            s_characterController3D = FindFirstObjectByType<CharacterController3D>(FindObjectsInactive.Exclude);
         m_cameraTransform = FindFirstObjectByType<Camera>(FindObjectsInactive.Exclude).transform;
     }
     // Update is called once per frame

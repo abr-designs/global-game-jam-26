@@ -163,14 +163,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: --- PLAYER ---
       objectReference: {fileID: 0}
-    - target: {fileID: 2954914132777759004, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
-      propertyPath: accelerationTime.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2954914132777759004, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
-      propertyPath: accelerationTime.y
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 3782870779173420873, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -242,14 +234,6 @@ PrefabInstance:
     - target: {fileID: 4894401732698707908, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: m_Layer
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7370717489315439235, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
-      propertyPath: HorizontalAxis.Center
-      value: 90.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7370717489315439235, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
-      propertyPath: TrackerSettings.BindingMode
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8374091799105472626, guid: 02988f21ce6df3b42a945b39b4b053ea, type: 3}
       propertyPath: Lens.FieldOfView

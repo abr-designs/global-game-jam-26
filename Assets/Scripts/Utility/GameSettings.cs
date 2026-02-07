@@ -14,13 +14,13 @@ public class GameSettings : ScriptableObject
     // Call this to save to disk
     public void SaveSettings()
     {
-        PlayerPrefs.SetFloat("LookSensitvity", lookSensitivity);
+        PlayerPrefs.SetFloat("LookSensitivity", lookSensitivity);
         PlayerPrefs.Save();
     }
 
     // Call this on game startup
     public void LoadSettings()
     {
-        lookSensitivity = PlayerPrefs.GetFloat("LookSensitvity", 1.0f); // 1.0 is default
+        lookSensitivity = Mathf.Clamp01(PlayerPrefs.GetFloat("LookSensitivity", 0.5f)); // 0.5 is default
     }
 }

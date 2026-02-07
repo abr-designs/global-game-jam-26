@@ -252,15 +252,37 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "b0796aaf-26da-477d-b2ac-989319a53baf",
-                    "path": "<Pointer>/delta",
+                    "name": "One Modifier",
+                    "id": "79dd649e-9a07-4ac1-a4ea-23411f6808a6",
+                    "path": "OneModifier",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=0.1,y=0.1)",
-                    "groups": "Mouse and Keyboard",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraLook",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "131b6bf0-c58c-4b50-b91f-051415408172",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "CameraLook",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "fd35b118-a4d9-43d4-8782-a71b106a9683",
+                    "path": "<Pointer>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraLook",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

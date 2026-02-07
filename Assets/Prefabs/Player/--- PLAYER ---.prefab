@@ -5342,8 +5342,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8145352286825375579}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2654295, y: 0.000000003183485, z: -8.7642804e-10, w: 0.9641303}
-  m_LocalPosition: {x: 0, y: 6.6821876, z: -7.3723683}
+  m_LocalRotation: {x: 0.26542944, y: -6.258998e-11, z: 1.7231305e-11, w: 0.9641303}
+  m_LocalPosition: {x: 0, y: 6.682188, z: -7.3723683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5382,7 +5382,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 200
-  field of view: 60.00004
+  field of view: 60.00008
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -5851,7 +5851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7257873160547157232, guid: 9e3077fec33907d45bec35acf5f182f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.6821876
+      value: 6.682188
       objectReference: {fileID: 0}
     - target: {fileID: 7257873160547157232, guid: 9e3077fec33907d45bec35acf5f182f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5859,7 +5859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7257873160547157232, guid: 9e3077fec33907d45bec35acf5f182f1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9641303
+      value: 0.96413034
       objectReference: {fileID: 0}
     - target: {fileID: 7257873160547157232, guid: 9e3077fec33907d45bec35acf5f182f1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5889,6 +5889,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7627314646140839902, guid: 9e3077fec33907d45bec35acf5f182f1, type: 3}
+      propertyPath: m_ControllerManager.Controllers.Array.data[1].Input.Gain
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627314646140839902, guid: 9e3077fec33907d45bec35acf5f182f1, type: 3}
+      propertyPath: m_ControllerManager.Controllers.Array.data[0].Input.InputAction
+      value: 
+      objectReference: {fileID: -8361163184200658367, guid: 5bfddf16b6c5bf6478623d699162452d, type: 3}
+    - target: {fileID: 7627314646140839902, guid: 9e3077fec33907d45bec35acf5f182f1, type: 3}
+      propertyPath: m_ControllerManager.Controllers.Array.data[1].Input.InputAction
+      value: 
+      objectReference: {fileID: -8361163184200658367, guid: 5bfddf16b6c5bf6478623d699162452d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5920,11 +5932,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterCameraLook
   settings: {fileID: 11400000, guid: 38f157e71ac575144b676e18ad5d29a9, type: 2}
-  maxSpeed: {x: 180, y: 0}
+  maxSpeed: {x: 180, y: 45}
   gain: {x: 1, y: 1}
-  accelerationTime: {x: 0, y: 0}
-  deadZone: 0
-  clampSpeed: 1
+  accelerationTime: {x: 0.01, y: 0.01}
+  deadZone: {x: 0, y: 0}
+  aimingFactor: 0.2
+  UseInputBias: 0
 --- !u!114 &8374091799105472626 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 505482347060319088, guid: 9e3077fec33907d45bec35acf5f182f1, type: 3}
