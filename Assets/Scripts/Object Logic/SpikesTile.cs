@@ -57,7 +57,6 @@ public class SpikesTile : StageLogicalObject
 
     private void PlayerSuccumbsToSpikes()
     {
-        Debug.LogWarning("PlayerSuccumbsToSpikes");
         SFXManager.PlaySound(SFX.PLAYER_DIED);
         CharacterDamaged();
     }

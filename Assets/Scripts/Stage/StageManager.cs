@@ -22,7 +22,6 @@ public class StageManager : MonoBehaviour
     [SerializeField] private InGameMenuUI m_inGameMenu;
 
     [Header("Runtime")]
-    //private List<StageLogicalObject> stageLogicalObjects = new List<StageLogicalObject>(); // may no longer be used
     private bool stageIsRestarting;
 
     // private
@@ -73,25 +72,8 @@ public class StageManager : MonoBehaviour
         StartStage();
     }
 
-    private void LoadStageLogicalObjects()
-    {
-        StageLogicalObject.OnCharacterDamaged += LoseStage;
-    }
-
     private void StartStage()
     {
-        //if (m_currentStage.StageSpawnPoint == null)
-        //{
-        //    Debug.LogError($"StageManager: Stage [{m_currentStage.name}] has no defined StageSpawnPoint");
-        //    return;
-        //}
-
-        //if (m_currentStage.StageExitTrigger == null)
-        //{
-        //    Debug.LogError($"StageManager: Stage [{m_currentStage.name}] has no defined StageExitTrigger");
-        //    return;
-        //}
-
         m_playerCharacter.GetComponent<Rigidbody>().position = m_currentStage.StageSpawnPoint.position;
         m_playerCharacter.GetComponent<Character3DBalancer>()?.ForceFaceDirection(m_currentStage.StageSpawnPoint.transform.forward.normalized);
 

@@ -132,10 +132,9 @@ namespace UI
         {
             SFXManager.PlaySound(SFX.UI_BUTTON_CLICK);
 
-            ExitStage?.Invoke();
-
             ScreenFader.FadeOut(1f, () =>
             {
+                ExitStage?.Invoke();
                 SceneManager.LoadScene(0);
             });
         }
@@ -152,12 +151,14 @@ namespace UI
         {
             isOpen = false;
             inGameMenuWindow.CloseWindow();
+            settingsWindow.CloseWindow();
             _lockPlayerMouse?.CloseWindow();
         }
 
         private void OnCloseWindow()
         {
             isOpen = false;
+            settingsWindow.CloseWindow();
             _lockPlayerMouse?.CloseWindow();
         }
     }
