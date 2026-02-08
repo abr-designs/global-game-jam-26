@@ -35,7 +35,7 @@ namespace GameInput
         private void OnDisable()
         {
             Inputs.Input.Gameplay.Disable();
-            Inputs.Input.Gameplay.RemoveCallbacks(null);
+            Inputs.Input.Gameplay.RemoveCallbacks(this);
         }
 
         //Lock Input
@@ -65,6 +65,7 @@ namespace GameInput
 
         public void OnJump(InputAction.CallbackContext context)
         {
+            Debug.Log("OnJump");
             if (LockInputs)
                 return;
 
