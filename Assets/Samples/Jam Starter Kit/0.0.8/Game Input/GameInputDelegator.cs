@@ -65,7 +65,6 @@ namespace GameInput
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            Debug.Log("OnJump");
             if (LockInputs)
                 return;
 
