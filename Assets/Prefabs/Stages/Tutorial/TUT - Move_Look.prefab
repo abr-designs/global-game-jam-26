@@ -421,13 +421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 2
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &431779741541979938
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +699,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: dc1f198144bbf8c4c88e6bdaa4a789ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 561ed89a5b7fb3444b48c950d6b56329, type: 3}
   m_Color: {r: 0.426, g: 0.30276427, b: 0.18445799, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -725,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f9fb2b60528704faa39d3aa41c654a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputSprite
-  keyboardInputSprite: {fileID: 21300000, guid: dc1f198144bbf8c4c88e6bdaa4a789ae, type: 3}
+  keyboardInputSprite: {fileID: 21300000, guid: 561ed89a5b7fb3444b48c950d6b56329, type: 3}
   gamepadInputSprite: {fileID: 21300000, guid: ce92062e2f6603e40af571bef3e47bc3, type: 3}
 --- !u!1 &608072834019543127
 GameObject:
@@ -895,13 +891,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 2
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &1013644939692471352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,13 +1098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 3
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &1437122341782169351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,13 +1146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 2
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &1573671533343877438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,13 +1607,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 2
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &2095177755602309307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,13 +1655,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 3
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &2122771787097079527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,13 +2187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 2
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &2363169580456282903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,13 +2394,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 1
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &2427629080902873150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2842,13 +2810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 1
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &2973707254050163310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3197,13 +3161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 2
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &3438855423699349260
 GameObject:
   m_ObjectHideFlags: 0
@@ -3998,13 +3958,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 2
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &4027163551710008051
 GameObject:
   m_ObjectHideFlags: 0
@@ -4083,13 +4039,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 2
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &4061300370741028212
 GameObject:
   m_ObjectHideFlags: 0
@@ -4561,13 +4513,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 1
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &4601902700177567970
 GameObject:
   m_ObjectHideFlags: 0
@@ -4772,13 +4720,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 1
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &4731761944228192173
 GameObject:
   m_ObjectHideFlags: 0
@@ -5103,13 +5047,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 2
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &5060455680455936824
 GameObject:
   m_ObjectHideFlags: 0
@@ -6122,13 +6062,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 1
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &5497008748459602128
 GameObject:
   m_ObjectHideFlags: 0
@@ -6228,13 +6164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 3
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &5623403769807313501
 GameObject:
   m_ObjectHideFlags: 0
@@ -7156,13 +7088,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 2
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &6797197332525986076
 GameObject:
   m_ObjectHideFlags: 0
@@ -7208,13 +7136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 1
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &6831283841817584951
 GameObject:
   m_ObjectHideFlags: 0
@@ -7440,13 +7364,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 1
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &6933761762240465340
 GameObject:
   m_ObjectHideFlags: 0
@@ -7672,13 +7592,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 1
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &7357731750478716757
 GameObject:
   m_ObjectHideFlags: 0
@@ -8014,13 +7930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 2
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &7563470682143358647
 GameObject:
   m_ObjectHideFlags: 0
@@ -8135,13 +8047,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 3
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &7887798849881776984
 GameObject:
   m_ObjectHideFlags: 0
@@ -8176,7 +8084,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.02, y: -0.254}
+  m_AnchoredPosition: {x: 1.094, y: -0.254}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &7335447087491693376
@@ -8566,13 +8474,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 2
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1 &8142038451388059075
 GameObject:
   m_ObjectHideFlags: 0
@@ -9557,13 +9461,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a77e8867224f454eb7c4cf725a48ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTile
-  tileType: 1
-  emptyPrefab: {fileID: 1768437972379528778, guid: 780989122c5b5504994671c54f0fab6b, type: 3}
-  floorPrefab: {fileID: 7489459833704973155, guid: ace72fb02bfd98245a6a034544a5168f, type: 3}
-  floorOneWallPrefab: {fileID: 3342288958799779204, guid: a9c5126206473c24ebccfcd02d0f3007, type: 3}
-  floorCornerWallsPrefab: {fileID: 1497823854615667560, guid: 3a1421e8fb23e2240842602cb3415af1, type: 3}
-  wallNoFloorPrefab: {fileID: 7676734744237933311, guid: c7802caad20907343826efa0e5d5afc8, type: 3}
-  cornerNoFloorPrefab: {fileID: 4980924633113981790, guid: 0969bfdc59aa92949b3d56ca4020a5e1, type: 3}
+  _tileType: 0
+  _generatedObject: {fileID: 0}
+  _prefabLibrary: {fileID: 0}
 --- !u!1001 &2288114161049489324
 PrefabInstance:
   m_ObjectHideFlags: 0
