@@ -17,6 +17,7 @@ public class StageCreator : MonoBehaviour
     [SerializeField] private float _wallRotationOffset = -90f;
     [SerializeField] private float _cornerRotationOffset = -90f;
 
+#if UNITY_EDITOR
     [ContextMenu("Create New Stage")]
     public void CreateNewStage()
     {
@@ -66,6 +67,7 @@ public class StageCreator : MonoBehaviour
         StageExitTrigger stageExitTrigger = exitTrigger.GetComponent<StageExitTrigger>();
         stageController.SetStageExitTrigger(stageExitTrigger);
     }
+#endif
 
     private StageTileType GetTileType(
     int x,
